@@ -1001,18 +1001,18 @@ livery_update.stop();
 	<animation>
 		<type>rotate</type>
 		<object-name>aileron.L</object-name>
-		<property>controls/flight/aileron</property>
+		<property>surface-positions/left-aileron-pos-norm</property>
 			<interpolation>
 			<entry>
-				<ind>1.0</ind>
-				<dep>-25.0</dep>
+				<ind>1</ind>
+				<dep>-25</dep>
 			</entry>
 			<entry>
-				<ind>0.0</ind>
+				<ind>0</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>-1.00</ind>
+				<ind>-1</ind>
 				<dep>15.0</dep>
 			</entry>
 		</interpolation>
@@ -1034,19 +1034,19 @@ livery_update.stop();
 	<animation>
 		<type>rotate</type>
 		<object-name>aileron.R</object-name>
-		<property>controls/flight/aileron</property>
+		<property>surface-positions/right-aileron-pos-norm</property>
 		<interpolation>
 			<entry>
-				<ind>1.0</ind>
-				<dep>-25.0</dep>
+				<ind>-1</ind>
+				<dep>-25</dep>
 			</entry>
 			<entry>
-				<ind>0.0</ind>
+				<ind>0</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>-1.00</ind>
-				<dep>15.0</dep>
+				<ind>1</ind>
+				<dep>15</dep>
 			</entry>
 		</interpolation>
 		<center>
@@ -1069,7 +1069,7 @@ livery_update.stop();
 		<type>rotate</type>
 		<object-name>flap.L</object-name>
 		<property>surface-positions/flap-pos-norm</property>
-		<factor>-37.0</factor>
+		<factor>-38.0</factor>
 		<center>
 			<x-m>5.007</x-m>
 			<y-m>-2.982</y-m>
@@ -1089,7 +1089,7 @@ livery_update.stop();
 		<type>rotate</type>
 		<object-name>flap.R</object-name>
 		<property>surface-positions/flap-pos-norm</property>
-		<factor>37.0</factor>
+		<factor>38.0</factor>
 		<center>
 			<x-m>5.007</x-m>
 			<y-m>2.982</y-m>

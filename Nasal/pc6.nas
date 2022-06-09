@@ -1,3 +1,5 @@
+aircraft.livery.init("Aircraft/pilatus-pc6-family/Models/Liveries");
+
 var fuel_used_value = 0;
 var last_fuel_read = 0;
 var g_dt = 0;
@@ -11,8 +13,6 @@ var init = func {
 	#setprop("/sim/rendering/random-vegetation",1);
 	
 	last_fuel_read = getprop("/consumables/fuel/total-fuel-lbs");
-	print("Init Nasal PC6-B2H4 ...done");
-	
 	
 	main_loop();
 }
@@ -32,7 +32,6 @@ var main_loop = func {
 	stall_horn();
 	
 	##failures
-	check_g_load();
 	check_vne_flaps();
 	check_vne_structure();
 	
@@ -118,7 +117,7 @@ setlistener("/controls/switches/pos_landing_L-click",adjust_left_landing_light);
 setlistener("/controls/switches/pos_landing_R-click",adjust_right_landing_light);
 
 # Terrain lookup function, for testing (et peut etre test de crash, etc ...)
-var terrain_loockup = func {
+var terrain_lookup = func {
 
    var lat = getprop("/position/latitude-deg");
    var lon = getprop("/position/longitude-deg");
@@ -156,41 +155,24 @@ var terrain_loockup = func {
       }
    }
 
-   settimer(terrain_loockup, 0.1);
+   #settimer(terrain_loockup, 0.1);
 }
 
-setlistener("/sim/signals/fdm-initialized", terrain_loockup);
-
-var check_g_load = func{
-	var g_load = getprop("/accelerations/pilot-g");
-	if(g_load!=nil and (g_load>3.58 or g_load<-1.43)){
-		g_dt = g_dt + 1;
-	}else{
-		g_dt = 0;
-	}
-
-	if(g_dt>5){
-		setprop("/controls/flight/wing_destroyed",1);
-		setprop("/sim/sound/crash",1);
-		setprop("/sim/messages/copilot","Too much G load !!!!!!!!!!!!!");
-	}
-}
+setlistener("/sim/signals/fdm-initialized", terrain_lookup);
 
 var check_vne_flaps = func{
 	var kias = getprop("velocities/airspeed-kt");
 	var flaps = getprop("/controls/flight/flaps");
 	if(kias!=nil and kias>95 and flaps!=nil and flaps>0){
 		setprop("/sim/failure-manager/controls/flight/flaps/serviceable",0);
-#		setprop("/sim/sound/crash",1);
-		setprop("/sim/messages/copilot","VNE for flaps exceed !!!!!!!!!!!!!");
+		setprop("/sim/messages/copilot","Vfe exceeded");
 	}
 }
 
 var	check_vne_structure = func{
 	var kias = getprop("velocities/airspeed-kt");
 	if(kias!=nil and kias>151){
-		setprop("/controls/flight/wing_destroyed",1);
 		setprop("/sim/sound/crash",1);
-		setprop("/sim/messages/copilot","VNE exceed !!!!!!!!!!!!!");
+		setprop("/sim/messages/copilot","VNE exceeded");
 	}
 }

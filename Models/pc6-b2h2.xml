@@ -5,8 +5,8 @@
 <PropertyList>
 	
 	<path>pc6-b2h2.ac</path>
-        <nasal>
-        	<load><![CDATA[
+	<nasal>
+		<load><![CDATA[
 var rplayer = cmdarg();
 var livery_update = aircraft.livery_update.new("Aircraft/pilatus-pc6-family/Models/Liveries");
 
@@ -22,14 +22,14 @@ rplayer.getNode ("engines/pt6a/failure/propeller-blade", 1).
   alias (rplayer.getNode ("sim/multiplay/generic/bool[7]"));
 rplayer.getNode ("engines/pt6a/failure/turbine", 1).
   alias (rplayer.getNode ("sim/multiplay/generic/bool[8]"));
-rplayer.getNode ("engines/pt6a/prop_rpm", 1).
+rplayer.getNode ("engines/engine/thruster/rpm", 1).
   alias (rplayer.getNode ("sim/multiplay/generic/float[6]"));
-        	]]></load>
-        	<unload><![CDATA[
+		]]></load>
+		<unload><![CDATA[
 var rplayer = cmdarg();
 livery_update.stop();
-        	]]></unload>
-        </nasal>
+		]]></unload>
+	</nasal>
 
 	<animation>
 		<type>shader</type>
@@ -425,31 +425,21 @@ livery_update.stop();
 
 	<!--Tail wheel lock-->
 	<animation>
-        <type>rotate</type>
-        <object-name>tailwheel_lock.manette</object-name>
-        <property>controls/gear/tailwheel-lock</property>
-		<center>
-			<x-m>3.66</x-m>
-			<y-m>0</y-m>
-			<z-m>-0.11</z-m>
-		</center>
-		<interpolation>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>1.0</ind><dep>90.0</dep></entry>
-		</interpolation>
+		<type>knob</type>
+		<object-name>tailwheel_lock.manette</object-name>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tailwheel_lock.manette</object-name>
-		<visible>true</visible>
+		<center>
+			<x-m>3.66</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.11</z-m>
+		</center>
+		<property>controls/gear/tailwheel-lock</property>
+		<factor>90</factor>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/gear/tailwheel-lock</property>
@@ -459,23 +449,16 @@ livery_update.stop();
 
 	<!--ParkingBrakeControl-->
 	<animation>
-        <type>translate</type>
-        <object-name>parking_brake</object-name>
-        <property>controls/gear/brake-parking</property>
-        <factor>0.006</factor>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>1</z>
-        </axis>
-	</animation>
-	<animation>
-		<type>pick</type>
+		<type>slider</type>
 		<object-name>parking_brake</object-name>
-		<visible>true</visible>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<property>controls/gear/brake-parking</property>
+		<factor>0.006</factor>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/gear/brake-parking</property>
@@ -485,28 +468,21 @@ livery_update.stop();
 
 	<!--Fuel Valve control-->
 	<animation>
-	        <type>rotate</type>
-	        <object-name>fuel_valve.valve</object-name>
-	        <property>consumables/fuel/switch-position</property>
-	        <factor>90</factor>
-	        <center>
+		<type>knob</type>
+		<object-name>fuel_valve.valve</object-name>
+		<axis>
+		    <x>1</x>
+		    <y>0</y>
+		    <z>0</z>
+		</axis>
+		<center>
 			<x-m>3.236</x-m>
 			<y-m>-0.543</y-m>
 			<z-m>0.062</z-m>
 		</center>
-	        <axis>
-	            <x>1</x>
-	            <y>0</y>
-	            <z>0</z>
-	        </axis>
-		</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>fuel_valve.valve</object-name>
-		<visible>true</visible>
+		<property>consumables/fuel/switch-position</property>
+		<factor>90</factor>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>consumables/fuel/switch-position</property>
@@ -516,145 +492,88 @@ livery_update.stop();
 
 <!-- flaps manette -->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>flaps_manette.tige</object-name>
 		<object-name>flaps_manette.manette</object-name>
-		<property>surface-positions/flap-pos-norm</property>
-		<factor>4320</factor>
-		<center>
-			<x-m>3.68</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
 		<axis>
 			<x>0</x>
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>FlapsClickUp</object-name>
+		<center>
+			<x-m>3.68</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>4320</factor>
 		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/flight/flaps</property>
-				<step type="double">0.01</step>
+				<factor>0.01</factor>
 				<min>0</min>
 				<max>1</max>
-			</binding>          
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>FlapsClickDn</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/flight/flaps</property>
-				<step type="double">-0.01</step>
-				<min>0</min>
-				<max>1</max>
-			</binding>          
+			</binding>	  
 		</action>
 	</animation>
  
 
 <!-- aileron trim -->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>aileron_trim.knob</object-name>
-		<property>controls/flight/aileron-trim</property>
-		<factor>3600</factor>
-		<center>
-			<x-m>3.82</x-m>
-			<y-m>0.155</y-m>
-			<z-m>0.91</z-m>
-		</center>
 		<axis>
 			<x>0</x>
 			<y>0</y>
 			<z>1</z>
 		</axis>
+		<center>
+			<x-m>3.82</x-m>
+			<y-m>0.155</y-m>
+			<z-m>0.91</z-m>
+		</center>
+		<property>controls/flight/aileron-trim</property>
+		<factor>3600</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/aileron-trim</property>
+				<factor>0.01</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
 	</animation>
 	<animation>
 		<type>translate</type>
 		<object-name>aileron_trim.aiguille</object-name>
-		<property>controls/flight/aileron-trim</property>
-		<interpolation>
-			<entry><ind>1</ind><dep>0.08</dep></entry>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>-1</ind><dep>-0.08</dep></entry>
-		</interpolation>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>AileronClickRight</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/flight/aileron-trim</property>
-				<step type="double">0.01</step>
-				<min>-1</min>
-				<max>1</max>
-			</binding>          
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>AileronClickLeft</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/flight/aileron-trim</property>
-				<step type="double">-0.01</step>
-				<min>-1</min>
-				<max>1</max>
-			</binding>          
-		</action>
+		<property>controls/flight/aileron-trim</property>
+		<factor>0.08</factor>
 	</animation>
 	
 	<!-- elevator trim -->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>elevator_trim.trim_lever</object-name>
-		<property>controls/switches/elevator-trim-click</property>
-		<factor>30</factor>
-		<center>
-			<x-m>3.079</x-m>
-			<y-m>-0.36</y-m>
-			<z-m>0.263</z-m>
-		</center>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>ClickUp.elevator_trim.trim_lever</object-name>
+		<center>
+			<x-m>3.079</x-m>
+			<y-m>-0.36</y-m>
+			<z-m>0.263</z-m>
+		</center>
+		<property>controls/switches/elevator-trim-click</property>
+		<factor>30</factor>
 		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
 			<binding>
 				<condition>
 					<and>
@@ -670,88 +589,42 @@ livery_update.stop();
 				</condition>
 				<command>property-adjust</command>
 				<property>controls/flight/elevator-trim</property>
-				<step type="double">0.01</step>
+				<factor>0.01</factor>
 				<min>-1</min>
 				<max>1</max>
 			</binding>
 			<binding>
 				<command>property-assign</command>
 				<property>controls/switches/elevator-trim-click</property>
-				<value type="double">1.0</value>
+				<value type="bool">true</value>
 			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/switches/elevator-trim-click</property>
-					<value type="double">0.0</value>
-				</binding>
-			</mod-up>
 		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>ClickDn.elevator_trim.trim_lever</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<condition>
-					<and>
-						<equals>
-							<property>controls/switches/elevator-trim-interrupt-click</property>
-							<value type="double">1</value>
-						</equals>
-						<equals>
-							<property>instrumentation/trim/serviceable</property>
-							<value type="double">1</value>
-						</equals>
-					</and>
-				</condition>
-				<command>property-adjust</command>
-				<property>controls/flight/elevator-trim</property>
-				<step type="double">-0.01</step>
-				<min>-1</min>
-				<max>1</max>
-			</binding>    
+		<release>
 			<binding>
 				<command>property-assign</command>
 				<property>controls/switches/elevator-trim-click</property>
-				<value type="double">-1.0</value>
+				<value type="bool">false</value>
 			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/switches/elevator-trim-click</property>
-					<value type="double">0.0</value>
-				</binding>
-			</mod-up>
 		</action>
 	</animation>
 	
 	<!--elevator trim interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>elevator_trim.interrupt_lever</object-name>
-		<property>controls/switches/elevator-trim-interrupt-click</property>
-		<factor>60</factor>
-		<center>
-			<x-m>3.079</x-m>
-			<y-m>-0.36</y-m>
-			<z-m>0.263</z-m>
-		</center>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>elevator_trim.interrupt_lever</object-name>
+		<center>
+			<x-m>3.079</x-m>
+			<y-m>-0.36</y-m>
+			<z-m>0.263</z-m>
+		</center>
+		<property>controls/switches/elevator-trim-interrupt-click</property>
+		<factor>60</factor>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<condition>
 					<equals>
@@ -777,27 +650,21 @@ livery_update.stop();
 
 	<!--elevator trim interrupt lock-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>elevator_trim.interrupt_lock.lever</object-name>
-		<property>controls/switches/elevator-trim-interrupt-lock-click</property>
-		<factor>90</factor>
-		<center>
-			<x-m>3.073</x-m>
-			<y-m>-0.454</y-m>
-			<z-m>0.275</z-m>
-		</center>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>elevator_trim.interrupt_lock.lever</object-name>
+		<center>
+			<x-m>3.073</x-m>
+			<y-m>-0.454</y-m>
+			<z-m>0.275</z-m>
+		</center>
+		<property>controls/switches/elevator-trim-interrupt-lock-click</property>
+		<factor>90</factor>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<condition>
 					<equals>
@@ -813,301 +680,152 @@ livery_update.stop();
 	
 <!-- rudder trim -->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>trim_rudder.manette</object-name>
-		<property>controls/flight/rudder-trim</property>
-		<center>
-			<x-m>3.704</x-m>
-			<y-m>-0.492</y-m>
-			<z-m>-0.103</z-m>
-		</center>
-		<interpolation>
-			<entry><ind>0.1</ind><dep>-15.0</dep></entry>
-			<entry><ind>0.2</ind><dep>-30.0</dep></entry>
-			<entry><ind>0.3</ind><dep>-45.0</dep></entry>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>-0.1</ind><dep>15.0</dep></entry>
-			<entry><ind>-0.2</ind><dep>30.0</dep></entry>
-			<entry><ind>-0.3</ind><dep>45.0</dep></entry>
-		</interpolation>
 		<axis>
 			<x>0</x>
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>RudderClickRight</object-name>
+		<center>
+			<x-m>3.704</x-m>
+			<y-m>-0.492</y-m>
+			<z-m>-0.103</z-m>
+		</center>
+		<property>controls/flight/rudder-trim</property>
+		<interpolation>
+			<entry><ind>0.3</ind><dep>-45.0</dep></entry>
+			<entry><ind>-0.3</ind><dep>45.0</dep></entry>
+		</interpolation>
 		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/flight/rudder-trim</property>
-				<step type="double">0.01</step>
+				<factor>0.01</factor>
 				<min>-1</min>
 				<max>1</max>
-			</binding>          
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>RudderClickLeft</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/flight/rudder-trim</property>
-				<step type="double">-0.01</step>
-				<min>-1</min>
-				<max>1</max>
-			</binding>          
+			</binding>	  
 		</action>
 	</animation>
 	
 	<!-- tirette.1-->
 	<animation>
-		<type>pick</type>
+		<type>slider</type>
 		<object-name>tirette.1</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/tirette.1</property>
-				<value>1</value>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.1</object-name>
-		<visible>true</visible>
-		<action>
-			<button>1</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/tirette.1</property>
-				<value>0</value>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.1</object-name>
-		<action>
-			<button>3</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/switches/tirette.1</property>
-				<step>0.1</step>
-				<min>0</min>
-				<max>1</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.1</object-name>
-		<action>
-			<button>4</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/switches/tirette.1</property>
-				<step>-0.1</step>
-				<min>0</min>
-				<max>1</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>translate</type>
-		<object-name>tirette.1</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
 		<property>controls/switches/tirette.1</property>
 		<factor>0.03</factor>
-		<axis>
-		<x>-1.0</x>
-		<y>0.0</y>
-		<z>0.0</z>
-		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/switches/tirette.1</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/switches/tirette.1</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</shift-action>
 	</animation>
 	
 	<!-- tirette.2-->
 	<animation>
-		<type>pick</type>
+		<type>slider</type>
 		<object-name>tirette.2</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/tirette.2</property>
-				<value>1</value>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.2</object-name>
-		<visible>true</visible>
-		<action>
-			<button>1</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/tirette.2</property>
-				<value>0</value>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.2</object-name>
-		<action>
-			<button>3</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/switches/tirette.2</property>
-				<step>0.1</step>
-				<min>0</min>
-				<max>1</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.2</object-name>
-		<action>
-			<button>4</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/switches/tirette.2</property>
-				<step>-0.1</step>
-				<min>0</min>
-				<max>1</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>translate</type>
-		<object-name>tirette.2</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
 		<property>controls/switches/tirette.2</property>
 		<factor>0.03</factor>
-		<axis>
-		<x>-1.0</x>
-		<y>0.0</y>
-		<z>0.0</z>
-		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/switches/tirette.2</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/switches/tirette.2</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</shift-action>
 	</animation>
 	
 	<!-- tirette.3-->
 	<animation>
-		<type>pick</type>
+		<type>slider</type>
 		<object-name>tirette.3</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/tirette.3</property>
-				<value>1</value>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.3</object-name>
-		<visible>true</visible>
-		<action>
-			<button>1</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/tirette.3</property>
-				<value>0</value>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.3</object-name>
-		<action>
-			<button>3</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/switches/tirette.3</property>
-				<step>0.1</step>
-				<min>0</min>
-				<max>1</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>tirette.3</object-name>
-		<action>
-			<button>4</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/switches/tirette.3</property>
-				<step>-0.1</step>
-				<min>0</min>
-				<max>1</max>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>translate</type>
-		<object-name>tirette.3</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
 		<property>controls/switches/tirette.3</property>
 		<factor>0.03</factor>
-		<axis>
-		<x>-1.0</x>
-		<y>0.0</y>
-		<z>0.0</z>
-		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/switches/tirette.3</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/switches/tirette.3</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</shift-action>
 	</animation>
 	
 	<!--ICS-->
 	<animation>
-		<type>pick</type>
+		<type>slider</type>
 		<object-name>ics.push</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/ics-click</property>
-				<value>0</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/switches/ics-click</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action>
-	</animation>
-	<animation>
-		<type>translate</type>
-		<object-name>ics.push</object-name>
-		<property>controls/switches/ics-click</property>
-		<factor>0.007</factor>
 		<axis>
 			<x>1.0</x>
 			<y>0.0</y>
 			<z>0.0</z>
 		</axis>
+		<property>controls/switches/ics-click</property>
+		<factor>0.007</factor>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/switches/ics-click</property>
+				<value>0</value>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/switches/ics-click</property>
+				<value>1</value>
+			</binding>
+		</release>
 	</animation>
 
 	<!--Yoke-->
@@ -1147,7 +865,7 @@ livery_update.stop();
 	
 	<!--throttle-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>throttle</object-name>
 		<property>controls/engines/engine[0]/throttle</property>
 		<factor>70.0</factor>
@@ -1161,31 +879,21 @@ livery_update.stop();
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>throttle</object-name>
-		<visible>true</visible>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script>pc6.mouseHandler.set( "/controls/engines/engine[0]/throttle", 0.01 );</script>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/throttle</property>
+				<factor>0.01</factor>
+				<min>0</min>
+				<max>1</max>
 			</binding>
-			<mod-up>
-				<binding>
-					<command>nasal</command>
-					<script>pc6.mouseHandler.set()</script>
-				</binding>
-			</mod-up>
 		</action>
 	</animation>
 
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>feather</object-name>
-		<property>engines/pt6a/propeller-pitch-lever</property>
+		<property>controls/engines/engine/propeller-pitch</property>
 		<factor>70.0</factor>
 		<center>
 			<x-m>3.0663</x-m>
@@ -1197,34 +905,11 @@ livery_update.stop();
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>feather</object-name>
-		<visible>true</visible>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>engines/pt6a/propeller-pitch-lever</property>
-				<step type="double">1</step>
-				<min>0</min>
-				<max>1</max>
-			</binding>  
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>feather</object-name>
-		<visible>true</visible>
-		<action>
-			<button>1</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>engines/pt6a/propeller-pitch-lever</property>
-				<step type="double">-1</step>
+				<property>controls/engines/engine/propeller-pitch</property>
+				<factor>0.01</factor>
 				<min>0</min>
 				<max>1</max>
 			</binding>  
@@ -1232,9 +917,9 @@ livery_update.stop();
 	</animation>
 	
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>condition</object-name>
-		<property>engines/pt6a/condition</property>
+		<property>controls/engines/engine/condition</property>
 		<factor>35.0</factor>
 		<center>
 			<x-m>3.0663</x-m>
@@ -1246,36 +931,13 @@ livery_update.stop();
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>condition</object-name>
-		<visible>true</visible>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>engines/pt6a/condition</property>
-				<step type="double">1</step>
+				<property>controls/engines/engine/condition</property>
+				<factor>0.01</factor>
 				<min>0</min>
-				<max>2</max>
-			</binding>   
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>condition</object-name>
-		<visible>true</visible>
-		<action>
-			<button>1</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>engines/pt6a/condition</property>
-				<step type="double">-1</step>
-				<min>0</min>
-				<max>2</max>
+				<max>1</max>
 			</binding>   
 		</action>
 	</animation>
@@ -1287,7 +949,7 @@ livery_update.stop();
 		<object-name>prop.2</object-name>
 		<condition>
 			<less-than>
-				<property>engines/pt6a/prop_rpm</property>
+				<property>engines/engine/thruster/rpm</property>
 				<value>1000</value>
 			</less-than>
 		</condition>
@@ -1303,7 +965,7 @@ livery_update.stop();
 					<value>0</value>
 				</equals>
 				<less-than>
-					<property>engines/pt6a/prop_rpm</property>
+					<property>engines/engine/thruster/rpm</property>
 					<value>1000</value>
 				</less-than>
 			</and>
@@ -1318,8 +980,8 @@ livery_update.stop();
 		<object-name>prop.2</object-name>
 		<object-name>prop.3</object-name>
 		<object-name>prop.4</object-name>
-		<property>engines/pt6a/prop_rpm</property>
-		<factor>-0.479</factor>
+		<property>engines/engine/thruster/rpm</property>
+		<factor>-1</factor>
 		<center>
 			<x-m>0.318</x-m>
 			<y-m>0.0</y-m>
@@ -1468,8 +1130,8 @@ livery_update.stop();
 		<object-name>RightLandingLight</object-name>
 		<object-name>RightLandingCone</object-name>
 		<condition>
-            	<property>controls/lighting/landing-lights-R</property>
-        	</condition>
+	    	<property>controls/lighting/landing-lights-R</property>
+		</condition>
 	</animation>
 	
 	<animation>
@@ -1496,8 +1158,8 @@ livery_update.stop();
 		<object-name>LeftLandingLight</object-name>
 		<object-name>LeftLandingCone</object-name>
 		<condition>
-            <property>controls/lighting/landing-lights-L</property>
-        </condition>
+	    <property>controls/lighting/landing-lights-L</property>
+	</condition>
 	</animation>
 	
 	<!-- Rudder -->
@@ -1728,9 +1390,9 @@ livery_update.stop();
 			<z>1.0</z>
 		</axis>
 	<center> 
-        <x-m>10.62</x-m>
-        <y-m>0</y-m>
-        <z-m>0.02</z-m>
+	<x-m>10.62</x-m>
+	<y-m>0</y-m>
+	<z-m>0.02</z-m>
       </center>
 	</animation>
 
@@ -2009,11 +1671,9 @@ livery_update.stop();
 	</animation>
 	
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>phandle.L</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>pc6.toggle_pilotdoor()</script>
@@ -2022,11 +1682,9 @@ livery_update.stop();
 	</animation>
 	
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>phandle.R</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>pc6.toggle_copilotdoor()</script>
@@ -2035,11 +1693,9 @@ livery_update.stop();
 	</animation>
 
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>fswdoorhandle</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>pc6.toggle_fswingdoor()</script>
@@ -2048,11 +1704,9 @@ livery_update.stop();
 	</animation>
 	
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>rswdoorhandle</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>pc6.toggle_rswingdoor()</script>
@@ -2061,11 +1715,9 @@ livery_update.stop();
 	</animation>
 	
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>sldoorhandle</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>pc6.toggle_slidedoor()</script>
@@ -2074,11 +1726,9 @@ livery_update.stop();
 	</animation>
 	
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>rearhatch</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<condition>
 					<not>
@@ -2095,24 +1745,10 @@ livery_update.stop();
 	</animation>
 
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>registration.plaqueL</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>pc6.registrationDialog.toggle();</script>
-			</binding>
-		</action>
-	</animation>
-	
-	<animation>
-		<type>pick</type>
 		<object-name>registration.plaqueR</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>pc6.registrationDialog.toggle();</script>
@@ -2128,7 +1764,7 @@ livery_update.stop();
 			<x-m>0.35</x-m>
 			<y-m>0.0</y-m>
 			<z-m>0.0</z-m>
-		 	<pitch-deg>-2.0</pitch-deg>
+		 	<pitch-deg>-2.8</pitch-deg>
 		</offsets>
 	</model>
 
@@ -3266,42 +2902,6 @@ livery_update.stop();
 	</animation>
 	
 	<animation>
-		<name>Exterior</name>
-		<property-base>sim/model/livery</property-base>
-		<object-name>Exterior</object-name>
-		<!--<object-name>fuselage</object-name>
-		<object-name>swingdoor.R_0</object-name>
-		<object-name>swingdoor.F_0</object-name>
-		<object-name>pdoor.L_0</object-name>
-		<object-name>vstab</object-name>
-		<object-name>rudder</object-name>
-		<object-name>hstab.L</object-name>
-		<object-name>hstab.R</object-name>
-		<object-name>elevator.L</object-name>
-		<object-name>elevator.R</object-name>
-		<object-name>rearhatch</object-name>
-		<object-name>slidedoor_0</object-name>
-		<object-name>pdoor.R_0</object-name>
-		<object-name>hauban.R</object-name>
-		<object-name>hauban.L</object-name>
-		<object-name>wing.R</object-name>
-		<object-name>wing.L</object-name>
-		<object-name>saumon.R</object-name>
-		<object-name>saumon.L</object-name>
-		<object-name>aileron.R</object-name>
-		<object-name>aileron.L</object-name>
-		<object-name>flap.R</object-name>
-		<object-name>flap.L</object-name>
-		<object-name>trapdoor.R</object-name>
-		<object-name>trapdoor.L</object-name>
-		<object-name>marche_pieds.planche1</object-name>
-		<object-name>marche_pieds.planche2</object-name>
-		<object-name>wheel.L</object-name>
-		<object-name>wheel.R</object-name>
-		<object-name>tailwheel</object-name>-->
-	</animation>
-	
-	<animation>
 		<type>material</type>
 		<object-name>Exterior</object-name>
 		<property-base>sim/model/livery</property-base>
@@ -3567,27 +3167,4 @@ livery_update.stop();
 			<z-m>0.12</z-m>
 		</offsets>
 	</model>
-	
-	<!--Wing destroyed by g load-->
-	<animation>
-		<type>select</type>
-		<object-name>wing.R</object-name>
-		<object-name>aileron.R</object-name>
-		<object-name>flap.R</object-name>
-		<object-name>saumon.R</object-name>
-		<object-name>hauban.R</object-name>
-		<object-name>landinglight.R</object-name>
-		<object-name>lightglass.R</object-name>
-		<object-name>Right Nav Light</object-name>
-		<object-name>RightLandingCone</object-name>
-		<object-name>RightLandingLight</object-name>
-		<object-name>lightR.light</object-name>
-		<object-name>lightR.support</object-name>
-		<condition>
-			<equals>
-				<property>controls/flight/wing_destroyed</property>
-				<value>0</value>
-			</equals>
-		</condition>
-	</animation>
 </PropertyList>

@@ -33,7 +33,7 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 		<aircraft-version>V 1.0 30/03/2011</aircraft-version>
 		<flight-model>jsb</flight-model>
 		<aero>Systems/pc6-b2h2-fdm</aero>
-		<status>early production</status>
+		<status>alpha</status>
 		<rating>
 			<FDM type="int">3</FDM>
 			<systems type="int">4</systems>
@@ -676,7 +676,6 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<file>Nasal/pc6.nas</file>
 			<file>Nasal/doors.nas</file>
 			<!--<file>Nasal/tools.nas</file>-->
-			<file>Nasal/liveries.nas</file>
 			<file>Nasal/registration.nas</file>
 			<file>Nasal/electrical.nas</file>
 			<file>Nasal/radio.nas</file>

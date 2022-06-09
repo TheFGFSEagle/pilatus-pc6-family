@@ -673,16 +673,16 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 	<!-- Nasal files/scripts -->
 	<nasal>
 		<pc6>
-			<file>Aircraft/PC-6/Nasal/pc6-b2h4.nas</file>
+			<file>Aircraft/PC-6/Nasal/pc6.nas</file>
 			<file>Aircraft/PC-6/Nasal/doors.nas</file>
-			<file>Aircraft/PC-6/Nasal/tools.nas</file>
+			<!--<file>Aircraft/PC-6/Nasal/tools.nas</file>-->
 			<file>Aircraft/PC-6/Nasal/liveries.nas</file>
 			<file>Aircraft/PC-6/Nasal/registration.nas</file>
 			<file>Aircraft/PC-6/Nasal/electrical.nas</file>
 			<file>Aircraft/PC-6/Nasal/radio.nas</file>
-			<file>Aircraft/PC-6/Nasal/instruments.nas</file>
+			<!--<file>Aircraft/PC-6/Nasal/instruments.nas</file>-->
 			<file>Aircraft/PC-6/Nasal/annunciators.nas</file>
-			<file>Aircraft/PC-6/Nasal/engine.nas</file>
+			<!--<file>Aircraft/PC-6/Nasal/engine.nas</file>-->
 		</pc6>
 		<systems>
 			<file>Aircraft/PC-6/Models/Instruments/KLN90B/kln90b.nas</file>
@@ -699,65 +699,6 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 					<property>controls/gear/tailwheel-lock</property>
 				</binding>
 			</key>
-			<!--tip placement instruments-->
-			<!--<key n="357">
-				<name>up</name>
-				<binding n="0">
-					<command>property-adjust</command>
-					<property>/mymodel/z</property>
-					<step>0.001</step>
-				</binding>
-				</key>
-				<key n="359">
-				<name>down</name>
-				<binding n="0">
-					<command>property-adjust</command>
-					<property>/mymodel/z</property>
-					<step>-0.001</step>
-				</binding>
-			</key>
-
-			<key n="356">
-				<name>left</name>
-				<binding n="0">
-					<command>property-adjust</command>
-					<property>/mymodel/y</property>
-					<step>-0.001</step>
-				</binding>
-				</key>
-				<key n="358">
-				<name>right</name>
-				<binding n="0">
-					<command>property-adjust</command>
-					<property>/mymodel/y</property>
-					<step>0.001</step>
-				</binding>
-			</key>
-
-			<key n="360">
-				<name>fwd</name>
-				<binding n="0">
-					<command>property-adjust</command>
-					<property>/mymodel/x</property>
-					<step>-0.001</step>
-				</binding>
-				</key>
-				<key n="361">
-				<name>backwd</name>
-				<binding n="0">
-					<command>property-adjust</command>
-					<property>/mymodel/x</property>
-					<step>0.001</step>
-				</binding>
-			</key>-->
-			<!--tip placement instruments-->
 		</keyboard>
 	</input>
-	<!--placement instruments -->
-	<!--<mymodel>
-		<x>2.852</x>
-		<y>0.276</y>
-		<z>-0.26</z>
-	</mymodel>-->
-	<!--placement instruments -->
 </PropertyList>

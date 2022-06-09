@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 
-<!-- Pilatus PC-6 Turbo Porter by Detlef Faber et JeeP Cheney-->
+<!-- Pilatus PC-6 Turbo Porter by Detlef Faber, JeeP Cheney and TheEagle -->
 
 <PropertyList>
 	
-	<path>porter.ac</path>
+	<path>pc6-b2h2.ac</path>
         <nasal>
         	<load><![CDATA[
 var rplayer = cmdarg();
-print ("Loading remote PC-6 and aliasing properties");
-var livery_update = aircraft.livery_update.new ("Aircraft/PC-6/Models/Liveries");
+var livery_update = aircraft.livery_update.new("Aircraft/pilatus-pc6-family/Models/Liveries");
 
 for (var i=0; i <= 5; i=i+1) {
    rplayer.getNode ("controls/doors/door" ~ i ~ "/enabled", 1).
@@ -25,11 +24,9 @@ rplayer.getNode ("engines/pt6a/failure/turbine", 1).
   alias (rplayer.getNode ("sim/multiplay/generic/bool[8]"));
 rplayer.getNode ("engines/pt6a/prop_rpm", 1).
   alias (rplayer.getNode ("sim/multiplay/generic/float[6]"));
-print ("Done.");     
         	]]></load>
         	<unload><![CDATA[
 var rplayer = cmdarg();
-print("Unload PC-6", rplayer.getPath());
 livery_update.stop();
         	]]></unload>
         </nasal>
@@ -37,13 +34,13 @@ livery_update.stop();
 	<animation>
 		<type>shader</type>
 		<shader>chrome</shader>
-		<texture>Aircraft/PC-6/Models/chrome2.png</texture>
+		<texture>Models/chrome2.png</texture>
 		<object-name>prophub</object-name>
 	</animation>
 
 	<model>
 		<name>Left Electric Switches Panel</name>
-		<path>Aircraft/PC-6/Models/Instruments/left_electric_panel/left_electric_panel.xml</path>
+		<path>Models/Instruments/left_electric_panel/left_electric_panel.xml</path>
 		<offsets>
 			<x-m>3.078</x-m>
 			<y-m>-0.571</y-m>
@@ -54,7 +51,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Right Electric Switches Panel</name>
-		<path>Aircraft/PC-6/Models/Instruments/right_electric_panel/right_electric_panel.xml</path>
+		<path>Models/Instruments/right_electric_panel/right_electric_panel.xml</path>
 		<offsets>
 			<x-m>2.988</x-m>
 			<y-m>0.284</y-m>
@@ -64,7 +61,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Left Circuit breakers Panel</name>
-		<path>Aircraft/PC-6/Models/Instruments/left_cb_panel/left_cb_panel.xml</path>
+		<path>Models/Instruments/left_cb_panel/left_cb_panel.xml</path>
 		<offsets>
 			<x-m>3.074</x-m>
 			<y-m>-0.546</y-m>
@@ -75,7 +72,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Right Circuit breakers Panel</name>
-		<path>Aircraft/PC-6/Models/Instruments/right_cb_panel/right_cb_panel.xml</path>
+		<path>Models/Instruments/right_cb_panel/right_cb_panel.xml</path>
 		<offsets>
 			<x-m>3.074</x-m>
 			<y-m>0.542</y-m>
@@ -86,7 +83,7 @@ livery_update.stop();
 
 	<model>
 		<name>Magnetic compass</name>
-		<path>Aircraft/PC-6/Models/Instruments/mag-compass/mag-compass.xml</path>
+		<path>Models/Instruments/mag-compass/mag-compass.xml</path>
 		<offsets>
 			<x-m>3.063</x-m>
 			<y-m>0</y-m>
@@ -95,7 +92,7 @@ livery_update.stop();
 	</model>
 	
 	<model>
-		<path>Aircraft/PC-6/Models/Instruments/asi/asi.xml</path>
+		<path>Models/Instruments/asi/asi.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>-0.386</y-m>
@@ -106,7 +103,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Attitude Indicator</name>
-		<path>Aircraft/PC-6/Models/Instruments/ai/ai-gauge.xml</path>
+		<path>Models/Instruments/ai/ai-gauge.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>-0.283</y-m>
@@ -116,7 +113,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Altimeter</name>
-		<path>Aircraft/PC-6/Models/Instruments/alt2/alt2-3d.xml</path>
+		<path>Models/Instruments/alt2/alt2-3d.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>-0.184</y-m>
@@ -127,7 +124,7 @@ livery_update.stop();
 <!-- indicateur de trim -->
 	<model>
 		<name>Trim</name>
-		<path>Aircraft/PC-6/Models/Instruments/trim/trim.xml</path>
+		<path>Models/Instruments/trim/trim.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>-0.48</y-m>
@@ -136,7 +133,7 @@ livery_update.stop();
 	</model>
 	
 	<model>
-		<path>Aircraft/PC-6/Models/Instruments/turn/turn.xml</path>
+		<path>Models/Instruments/turn/turn.xml</path>
 		<offsets>
 			<x-m>2.998</x-m>
 			<y-m>-0.386</y-m>
@@ -146,7 +143,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Pilot HSI</name>
-		<path>Aircraft/PC-6/Models/Instruments/hdg/hdg.xml</path>
+		<path>Models/Instruments/hdg/hdg.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>-0.283</y-m>
@@ -156,7 +153,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Vertical Speed</name>
-		<path>Aircraft/PC-6/Models/Instruments/vsi/vsi-gauge.xml</path>
+		<path>Models/Instruments/vsi/vsi-gauge.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>-0.184</y-m>
@@ -166,7 +163,7 @@ livery_update.stop();
 
 	<model>
 		<name>Altimeter Para</name>
-		<path>Aircraft/PC-6/Models/Instruments/alt_para/alt_para.xml</path>
+		<path>Models/Instruments/alt_para/alt_para.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>-0.184</y-m>
@@ -177,7 +174,7 @@ livery_update.stop();
 	<!-- gps -->
 	<model>
 		<name>GPS</name>
-		<path>Aircraft/PC-6/Models/Instruments/KLN90B/kln90b.xml</path>
+		<path>Models/Instruments/KLN90B/kln90b.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>-0.35</y-m>
@@ -187,7 +184,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Torq gauge</name>
-		<path>Aircraft/PC-6/Models/Instruments/torque/torque.xml</path>
+		<path>Models/Instruments/torque/torque.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>-0.09</y-m>
@@ -197,7 +194,7 @@ livery_update.stop();
 	
 	<model>
 		<name>ITT gauge</name>
-		<path>Aircraft/PC-6/Models/Instruments/itt/itt.xml</path>
+		<path>Models/Instruments/itt/itt.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>-0.02</y-m>
@@ -207,7 +204,7 @@ livery_update.stop();
 
 	<model>
 		<name>RPM gauge</name>
-		<path>Aircraft/PC-6/Models/Instruments/prop-rpm/prop-rpm.xml</path>
+		<path>Models/Instruments/prop-rpm/prop-rpm.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>-0.09</y-m>
@@ -217,7 +214,7 @@ livery_update.stop();
 	
 	<model>
 		<name>prop percent rpm gauge</name>
-		<path>Aircraft/PC-6/Models/Instruments/prop_percent_rpm/prop_percent_rpm.xml</path>
+		<path>Models/Instruments/prop_percent_rpm/prop_percent_rpm.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>-0.02</y-m>
@@ -227,7 +224,7 @@ livery_update.stop();
 	
 	<model>
 		<name>fuelflow</name>
-		<path>Aircraft/PC-6/Models/Instruments/fuelflow/fuelflow.xml</path>
+		<path>Models/Instruments/fuelflow/fuelflow.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>-0.09</y-m>
@@ -237,7 +234,7 @@ livery_update.stop();
 
 	<model>
 		<name>oil</name>
-		<path>Aircraft/PC-6/Models/Instruments/oil/oil.xml</path>
+		<path>Models/Instruments/oil/oil.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>-0.02</y-m>
@@ -248,7 +245,7 @@ livery_update.stop();
 
 	<model>
 		<name>radiomixer</name>
-		<path>Aircraft/PC-6/Models/Instruments/ka134/ka134.xml</path>
+		<path>Models/Instruments/ka134/ka134.xml</path>
 		<offsets>
 			<x-m>2.992</x-m>
 			<y-m>0.105</y-m>
@@ -258,7 +255,7 @@ livery_update.stop();
 	
 	<model>
 		<name>com1</name>
-		<path>Aircraft/PC-6/Models/Instruments/ky196/ky196-comm1.xml</path>
+		<path>Models/Instruments/ky196/ky196-comm1.xml</path>
 		<offsets>
 			<x-m>2.993</x-m>
 			<y-m>0.105</y-m>
@@ -268,7 +265,7 @@ livery_update.stop();
 	
 	<model>
 		<name>com2</name>
-		<path>Aircraft/PC-6/Models/Instruments/ky196/ky196-comm2.xml</path>
+		<path>Models/Instruments/ky196/ky196-comm2.xml</path>
 		<offsets>
 			<x-m>2.993</x-m>
 			<y-m>0.105</y-m>
@@ -278,7 +275,7 @@ livery_update.stop();
 
 	<model>
 		<name>ident</name>
-		<path>Aircraft/PC-6/Models/Instruments/KT76A/KT76A.xml</path>
+		<path>Models/Instruments/KT76A/KT76A.xml</path>
 		<offsets>
 			<x-m>2.983</x-m>
 			<y-m>0.105</y-m>
@@ -318,7 +315,7 @@ livery_update.stop();
 	<!-- annunciators -->
 	<model>
 		<name>stall warning</name>
-		<path>Aircraft/PC-6/Models/Instruments/annunciator/stall_warning.xml</path>
+		<path>Models/Instruments/annunciator/stall_warning.xml</path>
 		<offsets>
 			<x-m>2.984</x-m>
 			<y-m>-0.457</y-m>
@@ -328,7 +325,7 @@ livery_update.stop();
 	
 	<model>
 		<name>caution warning</name>
-		<path>Aircraft/PC-6/Models/Instruments/annunciator/caution_warning.xml</path>
+		<path>Models/Instruments/annunciator/caution_warning.xml</path>
 		<offsets>
 			<x-m>2.984</x-m>
 			<y-m>-0.186</y-m>
@@ -338,7 +335,7 @@ livery_update.stop();
 	
 	<model>
 		<name>warning warning</name>
-		<path>Aircraft/PC-6/Models/Instruments/annunciator/warning_warning.xml</path>
+		<path>Models/Instruments/annunciator/warning_warning.xml</path>
 		<offsets>
 			<x-m>2.984</x-m>
 			<y-m>-0.234</y-m>
@@ -348,7 +345,7 @@ livery_update.stop();
 	
 	<model>
 		<name>annunciator</name>
-		<path>Aircraft/PC-6/Models/Instruments/annunciator/annunciator.xml</path>
+		<path>Models/Instruments/annunciator/annunciator.xml</path>
 		<offsets>
 			<x-m>2.981</x-m>
 			<y-m>-0.051</y-m>
@@ -358,7 +355,7 @@ livery_update.stop();
 	
 	<model>
 		<name>elt</name>
-		<path>Aircraft/PC-6/Models/Instruments/elt/elt.xml</path>
+		<path>Models/Instruments/elt/elt.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>0.155</y-m>
@@ -368,7 +365,7 @@ livery_update.stop();
 
 	<model>
 		<name>Fuel Used</name>
-		<path>Aircraft/PC-6/Models/Instruments/fuel-used/fuel-used.xml</path>
+		<path>Models/Instruments/fuel-used/fuel-used.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>0.233</y-m>
@@ -378,7 +375,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Fuel Qty</name>
-		<path>Aircraft/PC-6/Models/Instruments/fuel-qty/fuel-qty.xml</path>
+		<path>Models/Instruments/fuel-qty/fuel-qty.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>0.307</y-m>
@@ -387,7 +384,7 @@ livery_update.stop();
 	</model>
 	<model>
 		<name>Voltmeter</name>
-		<path>Aircraft/PC-6/Models/Instruments/voltmeter/voltmeter.xml</path>
+		<path>Models/Instruments/voltmeter/voltmeter.xml</path>
 		<offsets>
 			<x-m>2.987</x-m>
 			<y-m>0.381</y-m>
@@ -398,7 +395,7 @@ livery_update.stop();
 	<!--palonnier-->
 	<model>
 		<name>Rudder Left</name>
-		<path>Aircraft/PC-6/Models/Instruments/pedals/pedals.xml</path>
+		<path>Models/Instruments/pedals/pedals.xml</path>
 		<offsets>
 			<x-m>2.701</x-m>
 			<y-m>-0.276</y-m>
@@ -408,7 +405,7 @@ livery_update.stop();
 	
 	<model>
 		<name>Rudder Right</name>
-		<path>Aircraft/PC-6/Models/Instruments/pedals/pedals.xml</path>
+		<path>Models/Instruments/pedals/pedals.xml</path>
 		<offsets>
 			<x-m>2.701</x-m>
 			<y-m>0.276</y-m>
@@ -418,7 +415,7 @@ livery_update.stop();
 
 	<model>
 		<name>Thermometer</name>
-		<path>Aircraft/PC-6/Models/Instruments/thermometer/OAT.xml</path>
+		<path>Models/Instruments/thermometer/OAT.xml</path>
 		<offsets>
 			<x-m>3.70</x-m>
 			<y-m>0.66</y-m>
@@ -2124,7 +2121,7 @@ livery_update.stop();
 	</animation>
 	
 	<model> 
-		<path>Aircraft/PC-6/Models/pdisk.xml</path>
+		<path>Models/pdisk.xml</path>
 		<name>pdisk</name>
 <!--		<nopreview/>-->
 		<offsets> 
@@ -2208,7 +2205,7 @@ livery_update.stop();
 
 
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/pilot.xml</path>
+		<path>Models/Humans/pilot.xml</path>
 		<name>pilot</name>
 		<offsets> 
 			<x-m>3.65</x-m>
@@ -2228,7 +2225,7 @@ livery_update.stop();
 	</animation>
 	
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_demi_chaise.xml</path>
+		<path>Models/Humans/para_assis_demi_chaise.xml</path>
 		<name>para_copilote</name>
 		<offsets> 
 			<x-m>3.34</x-m>
@@ -2256,7 +2253,7 @@ livery_update.stop();
 		</condition>
 	</animation>
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_floor.xml</path>
+		<path>Models/Humans/para_assis_floor.xml</path>
 		<name>para_1_floor</name>
 		<offsets> 
 			<x-m>3.95</x-m>
@@ -2276,7 +2273,7 @@ livery_update.stop();
 		</condition>
 	</animation>
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_floor.xml</path>
+		<path>Models/Humans/para_assis_floor.xml</path>
 		<name>para_2_floor</name>
 		<offsets> 
 			<x-m>4.60</x-m>
@@ -2296,7 +2293,7 @@ livery_update.stop();
 		</condition>
 	</animation>
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_floor.xml</path>
+		<path>Models/Humans/para_assis_floor.xml</path>
 		<name>para_3_floor</name>
 		<offsets> 
 			<x-m>5.10</x-m>
@@ -2317,7 +2314,7 @@ livery_update.stop();
 	</animation>
 
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_chaise.xml</path>
+		<path>Models/Humans/para_assis_chaise.xml</path>
 		<name>para_video</name>
 		<offsets> 
 			<x-m>5.88</x-m>
@@ -2344,7 +2341,7 @@ livery_update.stop();
 		</condition>
 	</animation>
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_chaise.xml</path>
+		<path>Models/Humans/para_assis_chaise.xml</path>
 		<name>para_1_bench</name>
 		<offsets> 
 			<x-m>4.12</x-m>
@@ -2364,7 +2361,7 @@ livery_update.stop();
 		</condition>
 	</animation>
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_chaise.xml</path>
+		<path>Models/Humans/para_assis_chaise.xml</path>
 		<name>para_2_bench</name>
 		<offsets> 
 			<x-m>4.56</x-m>
@@ -2384,7 +2381,7 @@ livery_update.stop();
 		</condition>
 	</animation>
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_chaise.xml</path>
+		<path>Models/Humans/para_assis_chaise.xml</path>
 		<name>para_3_bench</name>
 		<offsets> 
 			<x-m>5.00</x-m>
@@ -2412,7 +2409,7 @@ livery_update.stop();
 		</condition>
 	</animation>
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_chaise.xml</path>
+		<path>Models/Humans/para_assis_chaise.xml</path>
 		<name>para_4_bench</name>
 		<offsets> 
 			<x-m>5.46</x-m>
@@ -2432,7 +2429,7 @@ livery_update.stop();
 		</condition>
 	</animation>
 	<model> 
-		<path>Aircraft/PC-6/Models/Humans/para_assis_chaise.xml</path>
+		<path>Models/Humans/para_assis_chaise.xml</path>
 		<name>para_5_bench</name>
 		<offsets> 
 			<x-m>5.91</x-m>
@@ -3268,49 +3265,6 @@ livery_update.stop();
 		</condition>
 	</animation>
 	
-	
-	<!--deplacement placement instrument-->
-	<!--<animation>
-		<type>translate</type>
-		<object-name>mygauge</object-name>
-		<property>mymodel/x</property>
-		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
-		</axis>
-	</animation>
-	<animation>
-		<type>translate</type>
-		<object-name>mygauge</object-name>
-		<property>mymodel/y</property>
-		<axis>
-			<x>0.0</x>
-			<y>1.0</y>
-			<z>0.0</z>
-		</axis>
-	</animation>
-	<animation>
-		<type>translate</type>
-		<object-name>mygauge</object-name>
-		<property>mymodel/z</property>
-		<axis>
-			<x>0.0</x>
-			<y>0.0</y>
-			<z>1.0</z>
-		</axis>
-	</animation>-->
-	<!--deplacement placement instrument-->
-	
-	<nasal>
-		<load>
-			var livery_update = aircraft.livery_update.new("Aircraft/PC-6/Models/Liveries", 10);
-		</load>
-	
-		<unload>
-			livery_update.stop();
-		</unload>
-	</nasal>
 	<animation>
 		<name>Exterior</name>
 		<property-base>sim/model/livery</property-base>
@@ -3357,7 +3311,7 @@ livery_update.stop();
 
 	<!-- Registration (left) -->
 	<model>
-		<path>Aircraft/PC-6/Models/registration.xml</path>
+		<path>Models/registration.xml</path>
 		<offsets>
 			<x-m>7.66</x-m>
 			<y-m>-0.45</y-m>
@@ -3376,7 +3330,7 @@ livery_update.stop();
 
 	<!-- Registration (right) -->
 	<model>
-		<path>Aircraft/PC-6/Models/registration.xml</path>
+		<path>Models/registration.xml</path>
 		<offsets>
 			<x-m>7.66</x-m>
 			<y-m>0.45</y-m>
@@ -3395,7 +3349,7 @@ livery_update.stop();
 
 	<!-- Registration (wing) -->
 	<model>
-		<path>Aircraft/PC-6/Models/registration.xml</path>
+		<path>Models/registration.xml</path>
 		<offsets>
 			<x-m>4.25</x-m>
 			<y-m>-5.3</y-m>
@@ -3414,7 +3368,7 @@ livery_update.stop();
 
 	<!-- Registration (cockpit panel) Left -->
 	<model>
-		<path>Aircraft/PC-6/Models/registration.xml</path>
+		<path>Models/registration.xml</path>
 		<offsets>
 			<x-m>2.994</x-m>
 			<y-m>-0.487</y-m>
@@ -3435,7 +3389,7 @@ livery_update.stop();
 	
 	<!-- Registration (cockpit panel) Right -->
 	<model>
-		<path>Aircraft/PC-6/Models/registration.xml</path>
+		<path>Models/registration.xml</path>
 		<offsets>
 			<x-m>2.9915</x-m>
 			<y-m>0.428</y-m>
@@ -3456,7 +3410,7 @@ livery_update.stop();
 	
 	<!-- Left Nav Light-->
 	<model>
-		<path>Aircraft/PC-6/Models/Lights/RedNavLight.xml</path>
+		<path>Models/Lights/RedNavLight.xml</path>
 		<name>Left Nav Light</name>
 		<offsets>
 			<x-m>4.37</x-m>
@@ -3467,7 +3421,7 @@ livery_update.stop();
 
 	<!-- Right Nav Light-->
 	<model>
-		<path>Aircraft/PC-6/Models/Lights/GreenNavLight.xml</path>
+		<path>Models/Lights/GreenNavLight.xml</path>
 		<name>Right Nav Light</name>
 		<offsets>
 			<x-m>4.37</x-m>
@@ -3478,7 +3432,7 @@ livery_update.stop();
 
 	<!-- Rear Nav Light-->
 	<model>
-		<path>Aircraft/PC-6/Models/Lights/WhiteLight.xml</path>
+		<path>Models/Lights/WhiteLight.xml</path>
 		<name>Rear Nav Light</name>
 		<offsets>
 			<x-m>10.67</x-m>
@@ -3489,7 +3443,7 @@ livery_update.stop();
 
 	<!-- White Strobe -->
 	<model>
-		<path>Aircraft/PC-6/Models/Lights/StrobeLight.xml</path>
+		<path>Models/Lights/StrobeLight.xml</path>
 		<name>StrobeLight</name>
 		<offsets>
 			<x-m>5.546</x-m>
@@ -3510,7 +3464,7 @@ livery_update.stop();
 	
 	<!-- Left landing light -->
 	<model>
-		<path>Aircraft/PC-6/Models/Lights/LandingLight.xml</path>
+		<path>Models/Lights/LandingLight.xml</path>
 		<name>LeftLandingLight</name>
 		<offsets>
 			<x-m>4.26</x-m>
@@ -3520,7 +3474,7 @@ livery_update.stop();
 	</model>
 	<!-- Left landing cone -->
 	<model>
-		<path>Aircraft/PC-6/Models/Lights/light-cone.xml</path>
+		<path>Models/Lights/light-cone.xml</path>
 		<name>LeftLandingCone</name>
 		<offsets>
 			<x-m>4.26</x-m>
@@ -3531,7 +3485,7 @@ livery_update.stop();
 
 	<!-- Right landing light -->
 	<model>
-		<path>Aircraft/PC-6/Models/Lights/LandingLight.xml</path>
+		<path>Models/Lights/LandingLight.xml</path>
 		<name>RightLandingLight</name>
 		<offsets>
 			<x-m>4.26</x-m>
@@ -3541,7 +3495,7 @@ livery_update.stop();
 	</model>
 	<!-- Right landing cone -->
 	<model>
-		<path>Aircraft/PC-6/Models/Lights/light-cone.xml</path>
+		<path>Models/Lights/light-cone.xml</path>
 		<name>RightLandingCone</name>
 		<offsets>
 			<x-m>4.26</x-m>
@@ -3566,7 +3520,7 @@ livery_update.stop();
 	<!-- Particles smoke effect (from C130 ...) -->
 	<!-- Left wheel -->
 	<model>
-		<path>Aircraft/PC-6/Models/Effects/ground_left_wheel.xml</path>
+		<path>Models/Effects/ground_left_wheel.xml</path>
 		<offsets>
 			<x-m>3.195</x-m>
 			<y-m>1.473</y-m>
@@ -3576,7 +3530,7 @@ livery_update.stop();
 	
 	<!-- Right wheel -->
 	<model>
-		<path>Aircraft/PC-6/Models/Effects/ground_right_wheel.xml</path>
+		<path>Models/Effects/ground_right_wheel.xml</path>
 		<offsets>
 			<x-m>3.195</x-m>
 			<y-m>-1.473</y-m>
@@ -3586,7 +3540,7 @@ livery_update.stop();
 	
 	<!-- Tail wheel -->
 	<model>
-		<path>Aircraft/PC-6/Models/Effects/ground_tail_wheel.xml</path>
+		<path>Models/Effects/ground_tail_wheel.xml</path>
 		<offsets>
 			<x-m>10.75</x-m>
 			<y-m>0</y-m>
@@ -3596,7 +3550,7 @@ livery_update.stop();
 	
 	<!-- Left engine in fire ... -->
 	<model>
-		<path>Aircraft/PC-6/Models/Effects/leftengine.xml</path>
+		<path>Models/Effects/leftengine.xml</path>
 		<offsets>
 			<x-m>0.85</x-m>
 			<y-m>-0.55</y-m>
@@ -3606,7 +3560,7 @@ livery_update.stop();
 	
 	<!-- Right engine in fire ... -->
 	<model>
-		<path>Aircraft/PC-6/Models/Effects/rightengine.xml</path>
+		<path>Models/Effects/rightengine.xml</path>
 		<offsets>
 			<x-m>0.85</x-m>
 			<y-m>0.55</y-m>
@@ -3636,5 +3590,4 @@ livery_update.stop();
 			</equals>
 		</condition>
 	</animation>
-	
 </PropertyList>

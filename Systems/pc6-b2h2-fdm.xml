@@ -134,7 +134,7 @@
 		<tank type="FUEL" number="0">
 			<location unit="IN">
 				<x>212.07</x>
-				<y>0</y>
+				<y>100</y>
 				<z>-10.8</z>
 			</location>
 			
@@ -145,7 +145,7 @@
 		<tank type="FUEL" number="1">
 			<location unit="IN">
 				<x>212.07</x>
-				<y>0</y>
+				<y>-100</y>
 				<z>-10.8</z>
 			</location>
 			
@@ -818,7 +818,6 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>aero/alpha-rad</property>
-					<property>fcs/gear-no-wow</property>
 					<table>
 						<independentVar lookup="row">aero/beta-rad</independentVar>
 						<independentVar lookup="column">aero/Re</independentVar>

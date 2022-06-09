@@ -9,7 +9,7 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 -->
 <PropertyList>
 	<sim>
-		<description>Pilatus PC-6 Turbo Porter B2H4</description>
+		<description>Pilatus PC-6 "Turbo Porter"</description>
 		<long-description>
 			This aircraft may be ugly but it is perhaps the most capable STOL utility plane in existence.
 			It is the only fixed-wing aircraft that can land at the Mount Everest base camp at an altitude of 17500 ft.
@@ -32,7 +32,7 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 		</authors>
 		<aircraft-version>V 1.0 30/03/2011</aircraft-version>
 		<flight-model>jsb</flight-model>
-		<aero>Systems/pc6-b2h4-fdm</aero>
+		<aero>Systems/pc6-b2h2-fdm</aero>
 		<status>early production</status>
 		<rating>
 			<FDM type="int">3</FDM>
@@ -67,23 +67,23 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 			<tag>variable-pitch</tag>
 		</tags>
 		<startup>
-			<splash-texture>Aircraft/PC-6/splash.png</splash-texture>
-			<splash-title>Pilatus PC6-B2H4 "Turbo Porter"</splash-title>
+			<splash-texture>splash.png</splash-texture>
+			<splash-title>Pilatus PC6 "Turbo Porter"</splash-title>
 		</startup>
 		<systems>
 			<electrical>
-				<path>Aircraft/PC-6/Systems/electrical.xml</path>
+				<path>Systems/electrical.xml</path>
 				<!--see electrical.nas ... -->
 			</electrical>
-			<path>Aircraft/PC-6/Systems/systems.xml</path>
+			<path>Systems/systems.xml</path>
 		</systems>
 		<instrumentation>
-			<path>Aircraft/PC-6/Systems/instrumentation.xml</path>
+			<path>Systems/instrumentation.xml</path>
 		</instrumentation>
 		<virtual-cockpit archive="y">true</virtual-cockpit>
 		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
 		<sound>
-			<path>Aircraft/PC-6/Sounds/PC6-B2H4-sound.xml</path>
+			<path>Aircraft/pilatus-pc6-family/Sounds/sound.xml</path>
 		</sound>
 		<tutorials>
 			<tutorial include="Tutorials/description_cockpit.xml"/>
@@ -91,7 +91,7 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 			<tutorial include="Tutorials/shutdown.xml"/>
 		</tutorials>
 		<model>
-			<path>Aircraft/PC-6/Models/PC6-B2H4.xml</path>
+			<path>Aircraft/pilatus-pc6-family/Models/pc6-b2h2.xml</path>
 			<livery>
 				<file type="string">shark</file>
 			</livery>
@@ -118,11 +118,11 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 			</generic>
 		</multiplay>
 		<view n="0">
-			<internal archive="y">true</internal>
+			<internal>true</internal>
 			<config>
-				<x-offset-m archive="y" type="double">-0.265</x-offset-m>
-				<y-offset-m archive="y" type="double">0.688</y-offset-m>
-				<z-offset-m archive="y" type="double">3.7</z-offset-m>
+				<x-offset-m type="double">-0.265</x-offset-m>
+				<y-offset-m type="double">0.688</y-offset-m>
+				<z-offset-m type="double">3.7</z-offset-m>
 				<pitch-offset-deg>-7.5</pitch-offset-deg>
 				<default-field-of-view-deg>71</default-field-of-view-deg>
 			</config>
@@ -258,7 +258,7 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 		<menubar>
 			<default>
 				<menu n="10">
-					<label>PC6 B2H4</label>
+					<label>Pilatus PC6</label>
 					<enabled type="bool">true</enabled>
 					<item>
 						<label>remove Pilot door</label>
@@ -642,7 +642,7 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<zero_v_test-click type="bool">false</zero_v_test-click>
 			<ignition-lock-click type="bool">false</ignition-lock-click>
 			<starter-lock-click type="bool">false</starter-lock-click>
-			<light_landing_R-click type="bool">"&gt;false</light_landing_R-click>
+			<light_landing_R-click type="bool">false</light_landing_R-click>
 			<pos_landing_R-click type="int">0</pos_landing_R-click>
 			<pos_landing_L-click type="int">0</pos_landing_L-click>
 			<light_landing_L-click type="bool">false</light_landing_L-click>
@@ -673,19 +673,19 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 	<!-- Nasal files/scripts -->
 	<nasal>
 		<pc6>
-			<file>Aircraft/PC-6/Nasal/pc6.nas</file>
-			<file>Aircraft/PC-6/Nasal/doors.nas</file>
-			<!--<file>Aircraft/PC-6/Nasal/tools.nas</file>-->
-			<file>Aircraft/PC-6/Nasal/liveries.nas</file>
-			<file>Aircraft/PC-6/Nasal/registration.nas</file>
-			<file>Aircraft/PC-6/Nasal/electrical.nas</file>
-			<file>Aircraft/PC-6/Nasal/radio.nas</file>
-			<!--<file>Aircraft/PC-6/Nasal/instruments.nas</file>-->
-			<file>Aircraft/PC-6/Nasal/annunciators.nas</file>
-			<!--<file>Aircraft/PC-6/Nasal/engine.nas</file>-->
+			<file>Nasal/pc6.nas</file>
+			<file>Nasal/doors.nas</file>
+			<!--<file>Nasal/tools.nas</file>-->
+			<file>Nasal/liveries.nas</file>
+			<file>Nasal/registration.nas</file>
+			<file>Nasal/electrical.nas</file>
+			<file>Nasal/radio.nas</file>
+			<!--<file>Nasal/instruments.nas</file>-->
+			<file>Nasal/annunciators.nas</file>
+			<!--<file>Nasal/engine.nas</file>-->
 		</pc6>
 		<systems>
-			<file>Aircraft/PC-6/Models/Instruments/KLN90B/kln90b.nas</file>
+			<file>Models/Instruments/KLN90B/kln90b.nas</file>
 		</systems>
 	</nasal>
 	<!-- Map Keys -->

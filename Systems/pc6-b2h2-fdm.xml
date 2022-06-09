@@ -58,15 +58,15 @@
 		<vtailarm unit="FT">18</vtailarm>
 		
 		<location name="AERORP" unit="IN">
-			<x>207.36</x>
+			<x>161.5</x>
 			<y>0</y>
-			<z>0</z>
+			<z>32.5</z>
 		</location>
 		
 		<location name="EYEPOINT" unit="IN">
-			<x>56</x>
-			<y>-18</y>
-			<z>45</z>
+			<x>139.8</x>
+			<y>-10.7</y>
+			<z>23.8</z>
 		</location>
 		
 		<location name="VRP" unit="IN">
@@ -89,7 +89,7 @@
 		</location>
 		
 		<pointmass name="Payload">
-			<weight unit="LBS">666.10</weight>
+			<weight unit="LBS">0</weight>
 			<location name="POINTMASS" unit="IN">
 				<x>212.07</x>
 				<y>0</y>
@@ -101,30 +101,28 @@
 	<propulsion>
 		<engine file="Pratt-Whitney-PT6A-20">
 			<location unit="IN">
-				<x>36</x>
+				<x>85.1</x>
 				<y>0</y>
 				<z>0</z>
 			</location>
-			
 			<orient unit="DEG">
-				<pitch>0</pitch>
+				<pitch>-2.8</pitch>
 				<roll>0</roll>
 				<yaw>0</yaw>
 			</orient>
 			
 			<feed>0</feed>
+			<feed>1</feed>
 			
 			<thruster file="Hartzell-HC-B3TN-3C">
 				<sense>1</sense>
-				
 				<location unit="IN">
-					<x>36</x>
+					<x>11.7</x>
 					<y>0</y>
 					<z>0</z>
 				</location>
-				
 				<orient unit="DEG">
-					<pitch>0</pitch>
+					<pitch>-2.8</pitch>
 					<roll>0</roll>
 					<yaw>0</yaw>
 				</orient>
@@ -133,103 +131,259 @@
 		
 		<tank type="FUEL" number="0">
 			<location unit="IN">
-				<x>212.07</x>
-				<y>100</y>
-				<z>-10.8</z>
+				<x>168.4</x>
+				<y>50</y>
+				<z>32.1</z>
 			</location>
-			
-			<capacity unit="LBS">358.9</capacity>
-			<contents unit="LBS">179.45</contents>
+			<type>JET-A</type>
+			<capacity unit="LBS">561</capacity>
+			<contents unit="LBS">280</contents>
 		</tank>
 		
 		<tank type="FUEL" number="1">
 			<location unit="IN">
-				<x>212.07</x>
-				<y>-100</y>
-				<z>-10.8</z>
+				<x>168.4</x>
+				<y>50</y>
+				<z>32.1</z>
 			</location>
-			
-			<capacity unit="LBS">358.9</capacity>
-			<contents unit="LBS">179.45</contents>
+			<type>JET-A</type>
+			<capacity unit="LBS">561</capacity>
+			<contents unit="LBS">280</contents>
 		</tank>
 	</propulsion>
 	
 	<ground_reactions>
-		<contact type="BOGEY" name="TAIL">
+		<contact type="BOGEY" name="Left main gear">
 			<location unit="IN">
-				<x>393.12</x>
-				<y>0</y>
-				<z>-25.92</z>
+				<x>125.8</x>
+				<y>-59</y>
+				<z>-60.8</z>
 			</location>
 			
 			<static_friction>0.8</static_friction>
 			<dynamic_friction>0.5</dynamic_friction>
 			<rolling_friction>0.02</rolling_friction>
-			<spring_coeff unit="LBS/FT">4850</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2425</damping_coeff>
-			<max_steer unit="DEG">25</max_steer>
-			<brake_group>NONE</brake_group>
-			<retractable>0</retractable>
-		</contact>
-		
-		<contact type="BOGEY" name="LEFT_MAIN">
-			<location unit="IN">
-				<x>192.98</x>
-				<y>-53.86</y>
-				<z>-86.4</z>
-			</location>
-			
-			<static_friction>0.8</static_friction>
-			<dynamic_friction>0.5</dynamic_friction>
-			<rolling_friction>0.02</rolling_friction>
-			<spring_coeff unit="LBS/FT">4850</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2425</damping_coeff>
+			<spring_coeff unit="LBS/FT">4000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group>LEFT</brake_group>
 			<retractable>0</retractable>
 		</contact>
 		
-		<contact type="BOGEY" name="RIGHT_MAIN">
+		<contact type="BOGEY" name="Right main gear">
 			<location unit="IN">
-				<x>192.98</x>
-				<y>53.86</y>
-				<z>-86.40</z>
+				<x>125.8</x>
+				<y>59</y>
+				<z>-60.8</z>
 			</location>
 			
 			<static_friction>0.8</static_friction>
 			<dynamic_friction>0.5</dynamic_friction>
 			<rolling_friction>0.02</rolling_friction>
-			<spring_coeff unit="LBS/FT">4850</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2425</damping_coeff>
+			<spring_coeff unit="LBS/FT">4000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group>RIGHT</brake_group>
 			<retractable>0</retractable>
 		</contact>
 		
-		<contact type="STRUCTURE" name="LEFT_WING">
+		<contact type="BOGEY" name="Tail wheel">
 			<location unit="IN">
-				<x>212.07</x>
-				<y>-299.25</y>
-				<z>-10.8</z>
+				<x>423.3</x>
+				<y>0</y>
+				<z>-19.7</z>
 			</location>
 			
-			<static_friction>1</static_friction>
-			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">4850</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">4850</damping_coeff>
+			<static_friction>0.8</static_friction>
+			<dynamic_friction>0.5</dynamic_friction>
+			<rolling_friction>0.02</rolling_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">800</damping_coeff>
+			<max_steer unit="DEG">25</max_steer>
+			<brake_group>NONE</brake_group>
+			<retractable>0</retractable>
 		</contact>
 		
-		<contact type="STRUCTURE" name="RIGHT_WING">
+		<contact type="STRUCTURE" name="Left forward wingtip">
 			<location unit="IN">
-				<x>212.07</x>
-				<y>299.25</y>
-				<z>-10.80</z>
+				<x>142.5</x>
+				<y>-319.8</y>
+				<z>37.6</z>
 			</location>
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">4850</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">4850</damping_coeff>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Right forward wingtip">
+			<location unit="IN">
+				<x>142.5</x>
+				<y>319.8</y>
+				<z>37</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Left rear wingtip">
+			<location unit="IN">
+				<x>213.6</x>
+				<y>-331.3</y>
+				<z>40.8</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Right rear wingtip">
+			<location unit="IN">
+				<x>213.6</x>
+				<y>331.3</y>
+				<z>40.8</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Propeller spinner tip">
+			<location unit="IN">
+				<x>-0.8</x>
+				<y>0</y>
+				<z>-0.5</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Vertical stabilizer">
+			<location unit="IN">
+				<x>357.1</x>
+				<y>-319.8</y>
+				<z>96</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Rudder">
+			<location unit="IN">
+				<x>404.1</x>
+				<y>0</y>
+				<z>101.2</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Left horizontal stabilizer">
+			<location unit="IN">
+				<x>373.5</x>
+				<y>-88.1</y>
+				<z>22</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Right horizontal stabilizer">
+			<location unit="IN">
+				<x>373.5</x>
+				<y>88.1</y>
+				<z>22</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Left elevator">
+			<location unit="IN">
+				<x>423</x>
+				<y>-94.9</y>
+				<z>19.7</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Right elevator">
+			<location unit="IN">
+				<x>423</x>
+				<y>94.9</y>
+				<z>19.7</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Tail tip">
+			<location unit="IN">
+				<x>420.4</x>
+				<y>0</y>
+				<z>19.7</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Left upper windshield">
+			<location unit="IN">
+				<x>148.1</x>
+				<y>-24.3</y>
+				<z>36.9</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+		</contact>
+		
+		<contact type="STRUCTURE" name="Right upper windshield">
+			<location unit="IN">
+				<x>148.1</x>
+				<y>24.3</y>
+				<z>36.9</z>
+			</location>
+			
+			<static_friction>1</static_friction>
+			<dynamic_friction>1</dynamic_friction>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
 		</contact>
 	</ground_reactions>
 	

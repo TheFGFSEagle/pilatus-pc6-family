@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- prop percent rpm
+Syd Adams
+-->
+<PropertyList>
+
+    <path>prop-rpm.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>PropRPM.face</object-name>
+        <object-name>Prop.ind</object-name>
+        <object-name>PropRPMneedle</object-name>
+        <emission>
+            <red>0.28</red>
+            <green>0.14</green>
+            <blue>0.07</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>PropRPMneedle</object-name>
+        <property>instrumentation/rpm-indicator/valeur</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>3000</ind><dep>324</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+</PropertyList>

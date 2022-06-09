@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!-- circuit breakers panel
+-->
+<PropertyList>
+
+	<path>right_cb_panel.ac</path>
+<!--
+	<animation>
+		<type>noshadow</type>
+		</animation>
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>10</max-m>
+	</animation>
+-->
+
+	<animation>
+		<type>pick</type>
+		<object-name>circuit_breakers.cbr.1_1</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/circuitbreaker/cbr_1_1</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>circuit_breakers.cbr.1_1</object-name>
+		<property>controls/electric/circuitbreaker/cbr_1_1</property>
+		<factor>0.007</factor>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>circuit_breakers.cbr.1_2</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/circuitbreaker/cbr_1_2</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>circuit_breakers.cbr.1_2</object-name>
+		<property>controls/electric/circuitbreaker/cbr_1_2</property>
+		<factor>0.007</factor>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>circuit_breakers.cbr.1_3</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/circuitbreaker/cbr_1_3</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>circuit_breakers.cbr.1_3</object-name>
+		<property>controls/electric/circuitbreaker/cbr_1_3</property>
+		<factor>0.007</factor>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>circuit_breakers.cbr.1_4</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/circuitbreaker/cbr_1_4</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>circuit_breakers.cbr.1_4</object-name>
+		<property>controls/electric/circuitbreaker/cbr_1_4</property>
+		<factor>0.007</factor>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>circuit_breakers.cbr.1_8</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/circuitbreaker/cbr_1_8</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>circuit_breakers.cbr.1_8</object-name>
+		<property>controls/electric/circuitbreaker/cbr_1_8</property>
+		<factor>0.007</factor>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>circuit_breakers.cbr.2_5</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/circuitbreaker/cbr_2_5</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>circuit_breakers.cbr.2_5</object-name>
+		<property>controls/electric/circuitbreaker/cbr_2_5</property>
+		<factor>0.007</factor>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	
+
+</PropertyList>

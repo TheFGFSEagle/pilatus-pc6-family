@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- fuel flow 
+Syd Adams
+-->
+<PropertyList>
+
+    <path>fuelflow.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>FFface</object-name>
+        <object-name>FFneedle</object-name>
+        <emission>
+            <red>0.28</red>
+            <green>0.14</green>
+            <blue>0.07</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FFneedle</object-name>
+        <property>instrumentation/fuelflow-indicator/valeur</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>700</ind><dep>215.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

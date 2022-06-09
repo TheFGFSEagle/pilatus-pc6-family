@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Original PC-6 livery</name>
+				<texture>Liveries/porter-1.png</texture>
+			</livery>
+		</model>
+		<multiplay>
+			<generic>
+				<string n="0">D-FABER</string>
+			</generic>
+		</multiplay>
+	</sim>
+</PropertyList>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Blank Texture</name>
+				<texture>Liveries/porter-0.png</texture>
+			</livery>
+		</model>
+		<multiplay>
+			<generic>
+				<string n="0">F-JEEP</string>
+			</generic>
+		</multiplay>
+
+	</sim>
+</PropertyList>

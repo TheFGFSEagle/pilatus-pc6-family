@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+	<battery>
+		<serviceable type="bool">true</serviceable>
+	</battery>
+	<alternator>
+		<serviceable type="bool">true</serviceable>
+	</alternator>
+</PropertyList>

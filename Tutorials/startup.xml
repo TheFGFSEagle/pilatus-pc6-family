@@ -1,0 +1,511 @@
+<PropertyList>
+	<name>Startup  tutorial</name>
+	<description>
+	This tutorial describe the startup procedure of the turbine.
+	</description>
+	<timeofday>noon</timeofday>
+
+	<init>
+		<set>
+			<property>/controls/switches/battery_generator-lock-click</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/controls/switches/battery-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/generator-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/gen-reset-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/aux_fuel_pump-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/ignition-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/starter-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/zero_v_test-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/ignition-lock-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/starter-lock-click</property>
+			<value>0</value>
+		</set>
+		
+		<set>
+			<property>/controls/switches/light_landing_R-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/light_landing_L-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/light_beacon-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/light_position-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/light_strobe-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/light_cabin-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/light_instr-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/deice-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/cabin_fan-click</property>
+			<value>0</value>
+		</set>
+		
+		<set>
+			<property>/controls/switches/gen_bus-click</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/switches/bat_bus-click</property>
+			<value>0</value>
+		</set>
+	</init>
+
+	<step>
+		<message>In this lesson we'll cover the startup procedure of the turbine.</message>
+	</step>
+	
+	<step>
+		<message>Set the parking brake, the red lever must be up.</message>
+		<view>
+			<field-of-view>10.38</field-of-view>
+			<heading-offset-deg>334.35</heading-offset-deg>
+			<pitch-offset-deg>-30.3</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/gear/brake-parking</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>The power lever must be at idle position.</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>340.55</heading-offset-deg>
+			<pitch-offset-deg>-29</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<and>
+					<greater-than>
+						<property>/controls/engines/engine[0]/throttle</property>
+						<value>0.3</value>
+					</greater-than>
+					<less-than>
+						<property>/controls/engines/engine[0]/throttle</property>
+						<value>0.45</value>
+					</less-than>
+				</and>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>The condition lever must be cut off.</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/engines/pt6a/condition</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>The propeller control must be in feather position.</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/engines/pt6a/propeller-pitch</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Open the fuel valve.</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>27.95</heading-offset-deg>
+			<pitch-offset-deg>-48.78</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/consumables/fuel/switch-position</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Switch on the battery (you have to unlock the black lever).</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>26.54</heading-offset-deg>
+			<pitch-offset-deg>-29.55</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/switches/battery-click</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Check volts on the voltmeter, you must see 24V.</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>318.83</heading-offset-deg>
+			<pitch-offset-deg>-16.1</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>Check fuel quantity...</message>
+	</step>
+	
+	<step>
+		<message>Switch on strobe light (to warn all the man that could be near the plane).</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>24</heading-offset-deg>
+			<pitch-offset-deg>-26.19</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/switches/light_strobe-click</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Switch on the auxiliary fuel pump.</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/switches/aux_fuel_pump-click</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Check that the fuel pressure is ok (the annunciator "fuel press" must light off).</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>344.22</heading-offset-deg>
+			<pitch-offset-deg>-28.62</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>Switch on the starter (you have to unlock it).</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>25.41</heading-offset-deg>
+			<pitch-offset-deg>-29.17</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/switches/starter-click</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Switch on the ignition (you have to unlock it).</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/switches/ignition-click</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Check the oil pressure (it must be more than 40 psi).</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>343.94</heading-offset-deg>
+			<pitch-offset-deg>-25.81</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>When the turbine RPM percent rise to 15%, engage condition to low idle.</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/engines/pt6a/condition</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>The turbine must start un 5 seconds. If it don't in 10 seconds, cut off the ignition, the fuel,
+let the starter turn for 10 seconds to evacuate the fuel and try again...</message>
+	</step>
+	
+	<step>
+		<message>Check the ITT. It must not exceed 1090 C. If it exceed the temperature, cut of the fuel immediately !!!</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>343.94</heading-offset-deg>
+			<pitch-offset-deg>-19.47</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>The turbine RPM percent will stabilize at 50-60 %</message>
+		<exit>
+			<condition>
+				<greater-than>
+					<property>/engines/pt6a/turbine_percent_rpm</property>
+					<value>55</value>
+				</greater-than>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>The turbine is started and autonomous. You can switch off fuel pump, starter and ignition and lock it.</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>24.57</heading-offset-deg>
+			<pitch-offset-deg>-27.5</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<and>
+					<equals>
+						<property>/controls/switches/aux_fuel_pump-click</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/controls/switches/ignition-lock-click</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/controls/switches/starter-lock-click</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Push the propeller control to unfeather the propeller</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>341.68</heading-offset-deg>
+			<pitch-offset-deg>-31.05</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/engines/pt6a/propeller-pitch</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>You can engage condition to high idle.</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/engines/pt6a/condition</property>
+					<value>2</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Switch on the generator and lock it</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>25.98</heading-offset-deg>
+			<pitch-offset-deg>-27.5</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<and>
+					<equals>
+						<property>/controls/switches/generator-click</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/controls/switches/battery-click</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/controls/switches/battery_generator-lock-click</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>The volt must be at 28 V</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>318.83</heading-offset-deg>
+			<pitch-offset-deg>-14.98</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>Switch on lights as required.</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>25.98</heading-offset-deg>
+			<pitch-offset-deg>-27.5</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>Switch on radio bus.</message>
+		<view>
+			<field-of-view>26.89</field-of-view>
+			<heading-offset-deg>322.5</heading-offset-deg>
+			<pitch-offset-deg>-23.58</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<and>
+					<equals>
+						<property>/controls/switches/gen_bus-click</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/controls/switches/bat_bus-click</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Congratulations, you are ready to taxy and take off.</message>
+		<view>
+			<field-of-view>71</field-of-view>
+			<heading-offset-deg>0</heading-offset-deg>
+			<pitch-offset-deg>-7.5</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+
+  
+</PropertyList>

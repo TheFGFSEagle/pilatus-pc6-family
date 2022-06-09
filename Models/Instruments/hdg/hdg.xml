@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>hdg.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>HDGneedle</object-name>
+		<object-name>HDGpointer</object-name>
+		<emission>
+			<red>0.28</red>
+			<green>0.14</green>
+			<blue>0.07</blue>
+			<factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+		</emission>
+	</animation>
+
+	<animation>
+        <type>rotate</type>
+        <object-name>HDGneedle</object-name>
+        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+	<animation>
+        <type>rotate</type>
+        <object-name>HDGKnob</object-name>
+        <property>instrumentation/heading-indicator/offset-deg</property>
+		<factor>5</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.037</y-m>
+			<z-m>-0.037</z-m>
+		</center>
+    </animation>
+	
+ 	<animation>
+        <type>pick</type>
+        <object-name>HDGKnob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+			<interval-sec>0.1</interval-sec>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator/offset-deg</property>
+				<step>5</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>1</wrap>
+			</binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDGKnob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+			<interval-sec>0.1</interval-sec>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator/offset-deg</property>
+				<step>-5</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>1</wrap>
+			</binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDGKnob</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator/offset-deg</property>
+				<step>1</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>1</wrap>
+			</binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDGKnob</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator/offset-deg</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>1</wrap>
+			</binding>
+        </action>
+    </animation>
+</PropertyList>

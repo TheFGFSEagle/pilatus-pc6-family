@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>OAT.ac</path>
+
+    <animation>
+        <type>noshadow</type>
+    </animation>
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>30</max-m>
+    </animation>
+    <animation>
+		<type>material</type>
+		<object-name>Face</object-name>
+		<object-name>Needle</object-name>
+		<emission>
+			<red>0.5</red>
+			<green>0.5</green>
+			<blue>0.5</blue>
+		</emission>
+	</animation>
+	
+    <animation>
+        <type>rotate</type>
+        <object-name>Needle</object-name>
+        <property>environment/temperature-degc</property>
+        <factor>2.7</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+<!--
+    <animation>
+        <type>scale</type>
+        <object-name>Ice</object-name>
+        <property>fdm/jsbsim/ice/fuselage</property>
+        <x-factor>0</x-factor>
+        <x-offset>1.0</x-offset>
+        <y-factor>0</y-factor>
+        <y-offset>1.0</y-offset>
+        <z-factor>8.3</z-factor>
+        <z-offset>1.0</z-offset>
+        <z-max>20</z-max>
+    </animation>
+-->
+</PropertyList>

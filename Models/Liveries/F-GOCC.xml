@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Bouloc Charlie (F-GOCC)</name>
+				<texture>Liveries/porter-4.png</texture>
+			</livery>
+		</model>
+		<multiplay>
+			<generic>
+				<string n="0">F-GOCC</string>
+			</generic>
+		</multiplay>
+	</sim>
+</PropertyList>

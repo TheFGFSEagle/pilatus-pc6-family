@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!-- ELT
+-->
+<PropertyList>
+
+    <path>elt.ac</path>
+    
+	<animation>
+		<type>rotate</type>
+		<object-name>ELT.switchUp</object-name>
+		<object-name>ELT.switchDn</object-name>
+		<property>controls/switches/elt-click</property>
+		<factor>30</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>ELT.switchUp</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/switches/elt-click</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/lighting/elt-diod</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/switch</property>
+			</binding>
+		</action>
+	</animation>	
+	<animation>
+		<type>pick</type>
+		<object-name>ELT.switchDn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/switches/elt-click</property>
+				<value>-1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/lighting/elt-diod</property>
+				<value>1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/switches/elt-click</property>
+					<value>0</value>
+				</binding>
+				<binding>
+				<command>property-assign</command>
+				<property>controls/lighting/elt-diod</property>
+				<value>0</value>
+			</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/sound/switch</property>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>ELT.led</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.0</green>
+			<blue>0.0</blue>
+			<factor-prop>controls/lighting/elt-diod</factor-prop>
+		</emission>
+	</animation>
+
+</PropertyList>

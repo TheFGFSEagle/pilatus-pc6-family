@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+************************************************************************
+Pilatus PC-6 Turbo Porter simulation config.
+
+February 2008,  Detlef Faber
+Decembre 2010 - Mars 2011	Cheney Jean-Pierre
+************************************************************************
+-->
+<PropertyList>
+	<sim>
+		<description>Pilatus PC-6 Turbo Porter B2H4</description>
+		<long-description>
+			This aircraft may be ugly but it is perhaps the most capable STOL utility plane in existence.
+			It is the only fixed-wing aircraft that can land at the Mount Everest base camp at an altitude of 17500 ft.
+			Take off from Lukla (VNLK) or Syangboche (VNSB) and fly north up the valley to find this base camp.
+			This aircraft is also a favorite parachutist hauler, thanks to its exceptional rate of climb.
+			Be careful however to show some respect to this aircraft or you might tear a wing, or propeller blades, off.
+		</long-description>
+		<authors>
+			<author>
+				<nick>Detlef Faber</nick>
+			</author>
+			<author>
+				<nick>JeeP Cheney</nick>
+			</author>
+			<author>
+				<description>FDM</description>
+				<nick>TheEagle</nick>
+				<email>thefgfseagle@gmail.com</email>
+			</author>
+		</authors>
+		<aircraft-version>V 1.0 30/03/2011</aircraft-version>
+		<flight-model>jsb</flight-model>
+		<aero>Systems/pc6-b2h4-fdm</aero>
+		<status>early production</status>
+		<rating>
+			<FDM type="int">3</FDM>
+			<systems type="int">4</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">3</model>
+		</rating>
+		<tags>
+			<tag>bush-plane</tag>
+			<tag>pilatus</tag>
+			<tag>1950s</tag>
+			<!-- first flight in 1959 -->
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>1980s</tag>
+			<tag>1990s</tag>
+			<tag>2000s</tag>
+			<tag>2010s</tag>
+			<!-- still in production -->
+			<tag>castering-wheel</tag>
+			<tag>fixed-gear</tag>
+			<!-- tag>floats</tag -->
+			<!-- possible future improvement to the model -->
+			<tag>high-wing</tag>
+			<tag>stol</tag>
+			<!-- tag>skis</tag -->
+			<!-- possible future improvement to the model -->
+			<tag>tail-dragger</tag>
+			<tag>propeller</tag>
+			<tag>single-engine</tag>
+			<tag>turboprop</tag>
+			<tag>variable-pitch</tag>
+		</tags>
+		<startup>
+			<splash-texture>Aircraft/PC-6/splash.png</splash-texture>
+			<splash-title>Pilatus PC6-B2H4 "Turbo Porter"</splash-title>
+		</startup>
+		<systems>
+			<electrical>
+				<path>Aircraft/PC-6/Systems/electrical.xml</path>
+				<!--see electrical.nas ... -->
+			</electrical>
+			<path>Aircraft/PC-6/Systems/systems.xml</path>
+		</systems>
+		<instrumentation>
+			<path>Aircraft/PC-6/Systems/instrumentation.xml</path>
+		</instrumentation>
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+		<sound>
+			<path>Aircraft/PC-6/Sounds/PC6-B2H4-sound.xml</path>
+		</sound>
+		<tutorials>
+			<tutorial include="Tutorials/description_cockpit.xml"/>
+			<tutorial include="Tutorials/startup.xml"/>
+			<tutorial include="Tutorials/shutdown.xml"/>
+		</tutorials>
+		<model>
+			<path>Aircraft/PC-6/Models/PC6-B2H4.xml</path>
+			<livery>
+				<file type="string">shark</file>
+			</livery>
+		</model>
+		<multiplay>
+			<generic>
+				<!-- these must be kept in sync with the nasal loading code in Models/PC6-B2H4.xml -->
+				<bool type="bool" n="0" alias="/controls/doors/door0/enabled"/>
+				<bool type="bool" n="1" alias="/controls/doors/door1/enabled"/>
+				<bool type="bool" n="2" alias="/controls/doors/door2/enabled"/>
+				<bool type="bool" n="3" alias="/controls/doors/door3/enabled"/>
+				<bool type="bool" n="4" alias="/controls/doors/door4/enabled"/>
+				<bool type="bool" n="5" alias="/controls/doors/door5/enabled"/>
+				<bool type="bool" n="6" alias="/controls/flight/wing_destroyed"/>
+				<bool type="bool" n="7" alias="/engines/pt6a/failure/propeller-blade"/>
+				<bool type="bool" n="8" alias="/engines/pt6a/failure/turbine"/>
+				<float n="0" alias="/controls/doors/door0/position-norm"/>
+				<float n="1" alias="/controls/doors/door1/position-norm"/>
+				<float n="2" alias="/controls/doors/door2/position-norm"/>
+				<float n="3" alias="/controls/doors/door3/position-norm"/>
+				<float n="4" alias="/controls/doors/door4/position-norm"/>
+				<float n="5" alias="/controls/doors/door5/position-norm"/>
+				<float n="6" alias="/engines/pt6a/prop_rpm"/>
+			</generic>
+		</multiplay>
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y" type="double">-0.265</x-offset-m>
+				<y-offset-m archive="y" type="double">0.688</y-offset-m>
+				<z-offset-m archive="y" type="double">3.7</z-offset-m>
+				<pitch-offset-deg>-7.5</pitch-offset-deg>
+				<default-field-of-view-deg>71</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="1">
+			<config>
+				<target-z-offset-m archive="y" type="double">4.5</target-z-offset-m>
+			</config>
+		</view>
+		<view n="2">
+			<config>
+				<target-z-offset-m archive="y" type="double">4.5</target-z-offset-m>
+			</config>
+		</view>
+		<view n="3">
+			<config>
+				<target-z-offset-m archive="y" type="double">4.5</target-z-offset-m>
+			</config>
+		</view>
+		<view n="4">
+			<config>
+				<target-z-offset-m archive="y" type="double">4.5</target-z-offset-m>
+			</config>
+		</view>
+		<view n="5">
+			<config>
+				<target-z-offset-m archive="y" type="double">4.5</target-z-offset-m>
+			</config>
+		</view>
+		<view n="6">
+			<config>
+				<target-z-offset-m archive="y" type="double">4.5</target-z-offset-m>
+			</config>
+		</view>
+		<view n="100">
+			<name>Copilot View</name>
+			<enabled type="bool">true</enabled>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">0.316</x-offset-m>
+				<y-offset-m archive="y">0.396</y-offset-m>
+				<z-offset-m archive="y">3.3</z-offset-m>
+				<pitch-offset-deg>-24</pitch-offset-deg>
+				<heading-offset-deg>180</heading-offset-deg>
+				<ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">85.0</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Siege Video View</name>
+			<enabled type="bool">true</enabled>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">0.291</x-offset-m>
+				<y-offset-m archive="y">0.599</y-offset-m>
+				<z-offset-m archive="y">5.9</z-offset-m>
+				<pitch-offset-deg>-19.6</pitch-offset-deg>
+				<heading-offset-deg>20.7</heading-offset-deg>
+				<ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">92.5</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>"La cave" View</name>
+			<enabled type="bool">true</enabled>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">-0.374</x-offset-m>
+				<y-offset-m archive="y">0.380</y-offset-m>
+				<z-offset-m archive="y">5.9</z-offset-m>
+				<pitch-offset-deg>-9.07</pitch-offset-deg>
+				<heading-offset-deg>319.15</heading-offset-deg>
+				<ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">96.5</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="103">
+			<name>Milieu de banquette View</name>
+			<enabled type="bool">true</enabled>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">-0.290</x-offset-m>
+				<y-offset-m archive="y">0.754</y-offset-m>
+				<z-offset-m archive="y">4.9</z-offset-m>
+				<pitch-offset-deg>-40.2</pitch-offset-deg>
+				<heading-offset-deg>278.8</heading-offset-deg>
+				<ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">96.5</default-field-of-view-deg>
+			</config>
+		</view>
+		<flaps>
+			<setting>0.0</setting>
+			<setting>0.084</setting>
+			<setting>0.167</setting>
+			<setting>0.25</setting>
+			<setting>0.333</setting>
+			<setting>0.417</setting>
+			<setting>0.5</setting>
+			<setting>0.583</setting>
+			<setting>0.667</setting>
+			<setting>0.75</setting>
+			<setting>0.834</setting>
+			<setting>0.917</setting>
+			<setting>1.0</setting>
+		</flaps>
+		<help>
+			<key>
+				<name>Ctrl-l</name>
+				<desc>toggle Tailwheel Lock</desc>
+			</key>
+			<text>Watch the tutorials to know how to start and stop the engine.
+Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT (it can damage the turbine), 2700 RPM for the propeller...
+			</text>
+			<!-- <text>Take Off
+			Flaps down 10 degrees. Apply 100% Engine RPM While accelerating raise the tail. Be prepared to use Rudder to counteract Swing. The plane picks up speed fast so be sure to raise Flaps below 80 kts. The best climb speed is 80-90 kts. Cruise Power is at 90% Engine RPM.
+
+			Landing
+			Lower Flaps under 80 kts and set Prop to Max RPM. Approach Speed is 60-70 kts. Approach the threshold with 60 kts. Don't reduce power too early as the  idle prop acts as effective speed brake.</text>
+			-->
+		</help>
+		<menubar>
+			<default>
+				<menu n="10">
+					<label>PC6 B2H4</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>remove Pilot door</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/doors/door0/enabled</property>
+						</binding>
+					</item>
+					<item>
+						<label>remove Copilot door</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/doors/door1/enabled</property>
+						</binding>
+					</item>
+					<item>
+						<label>remove Swing doors</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/doors/door2/enabled</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/doors/door3/enabled</property>
+						</binding>
+					</item>
+					<item>
+						<label>remove Sliding door</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/doors/door4/enabled</property>
+						</binding>
+					</item>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle()</script>
+						</binding>
+					</item>
+					<item>
+						<label>A/C Registration</label>
+						<binding>
+							<command>nasal</command>
+							<script>pc6.registrationDialog.toggle();</script>
+						</binding>
+					</item>
+					<item>
+						<label>Autostart</label>
+						<binding>
+							<command>nasal</command>
+							<script>pc6.engine.autostart();</script>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+		<alarms>
+			<stall-warning type="double">0</stall-warning>
+			<caution-warning type="double">0</caution-warning>
+			<warning-warning type="double">0</warning-warning>
+			<annunciator.light_1_1 type="double">0</annunciator.light_1_1>
+			<annunciator.light_1_2 type="double">0</annunciator.light_1_2>
+			<annunciator.light_1_3 type="double">0</annunciator.light_1_3>
+			<annunciator.light_1_4 type="double">0</annunciator.light_1_4>
+			<annunciator.light_1_5 type="double">0</annunciator.light_1_5>
+			<annunciator.light_2_1 type="double">0</annunciator.light_2_1>
+			<annunciator.light_2_2 type="double">0</annunciator.light_2_2>
+			<annunciator.light_2_3 type="double">0</annunciator.light_2_3>
+			<annunciator.light_2_4 type="double">0</annunciator.light_2_4>
+			<annunciator.light_2_5 type="double">0</annunciator.light_2_5>
+			<annunciator.light_3_1 type="double">0</annunciator.light_3_1>
+			<annunciator.light_3_2 type="double">0</annunciator.light_3_2>
+			<annunciator.light_3_3 type="double">0</annunciator.light_3_3>
+			<annunciator.light_3_4 type="double">0</annunciator.light_3_4>
+			<annunciator.light_3_5 type="double">0</annunciator.light_3_5>
+			<annunciator.light_4_1 type="double">0</annunciator.light_4_1>
+			<annunciator.light_4_2 type="double">0</annunciator.light_4_2>
+			<annunciator.light_4_3 type="double">0</annunciator.light_4_3>
+			<annunciator.light_4_4 type="double">0</annunciator.light_4_4>
+			<annunciator.light_4_5 type="double">0</annunciator.light_4_5>
+			<annunciator.test type="double">0</annunciator.test>
+		</alarms>
+		<weight n="0">
+			<name type="string">Pilot</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>200</weight-lb>
+		</weight>
+		<weight n="1">
+			<name type="string">Co Pilot</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="2">
+			<name type="string">1 on bench</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="3">
+			<name type="string">2 on bench</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="4">
+			<name type="string">Mid bench</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="5">
+			<name type="string">Before "cave"</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="6">
+			<name type="string">"Cave"</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="7">
+			<name type="string">Largueur</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="8">
+			<name type="string">Mid on floor</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="9">
+			<name type="string">Last on floor</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+		<weight n="10">
+			<name type="string">Video</name>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">300.0</max-lb>
+			<weight-lb>0</weight-lb>
+		</weight>
+	</sim>
+	<engines>
+		<pt6a>
+			<fuel_press type="double">0.0</fuel_press>
+			<fuel_flow type="double">0.0</fuel_flow>
+			<fuel_in_chamber type="double">0.0</fuel_in_chamber>
+			<fuel_in_chamber_liquid type="double">0.0</fuel_in_chamber_liquid>
+			<condition type="double">0.0</condition>
+			<prop_rpm type="double">0.0</prop_rpm>
+			<prop_torque type="double">0.0</prop_torque>
+			<turbine_rpm type="double">0.0</turbine_rpm>
+			<turbine_percent_rpm type="double">0.0</turbine_percent_rpm>
+			<turbine_itt type="double">0.0</turbine_itt>
+			<oil_psi type="double">0.0</oil_psi>
+			<oil_temp type="double">0.0</oil_temp>
+			<propeller-pitch>0.0</propeller-pitch>
+			<propeller-pitch-lever>0.0</propeller-pitch-lever>
+			<chip type="double">0.0</chip>
+			<running type="bool">false</running>
+			<starting type="bool">false</starting>
+			<ignition type="bool">false</ignition>
+			<failure>
+				<turbine type="bool">0</turbine>
+				<turbine_thermal_shock type="bool">0</turbine_thermal_shock>
+				<propeller type="bool">0</propeller>
+				<propeller-blade type="bool">0</propeller-blade>
+			</failure>
+		</pt6a>
+	</engines>
+	<consumables>
+		<fuel>
+			<switch-position type="int">0</switch-position>
+			<tank n="0">
+				<name>left wing</name>
+				<selected type="bool">true</selected>
+			</tank>
+			<tank n="1">
+				<name>right wing</name>
+				<selected type="bool">true</selected>
+			</tank>
+		</fuel>
+	</consumables>
+	<!--<payload></payload>-->
+	<instrumentation>
+		<altimeter n="1">
+			<serviceable type="bool">true</serviceable>
+		</altimeter>
+		<comm n="0">
+			<serviceable type="bool">false</serviceable>
+		</comm>
+		<comm n="1">
+			<serviceable type="bool">false</serviceable>
+		</comm>
+		<transponder>
+			<digit1 type="int">7</digit1>
+			<digit2 type="int">0</digit2>
+			<digit3 type="int">1</digit3>
+			<digit4 type="int">6</digit4>
+			<id-code type="string">7016</id-code>
+			<mode type="int">0</mode>
+			<serviceable type="bool">false</serviceable>
+		</transponder>
+		<annunciators>
+			<stall-warning>
+				<serviceable type="bool">true</serviceable>
+			</stall-warning>
+			<general>
+				<serviceable type="bool">true</serviceable>
+			</general>
+		</annunciators>
+		<bus_radio>
+			<serviceable type="bool">false</serviceable>
+		</bus_radio>
+		<turn-indicator>
+			<serviceable type="bool">true</serviceable>
+		</turn-indicator>
+		<rpm-indicator>
+			<serviceable type="bool">true</serviceable>
+		</rpm-indicator>
+		<rpm-percent-indicator>
+			<serviceable type="bool">true</serviceable>
+		</rpm-percent-indicator>
+		<itt-indicator>
+			<serviceable type="bool">true</serviceable>
+		</itt-indicator>
+		<torque-indicator>
+			<serviceable type="bool">true</serviceable>
+		</torque-indicator>
+		<fuelflow-indicator>
+			<serviceable type="bool">true</serviceable>
+		</fuelflow-indicator>
+		<fuel-used-indicator>
+			<serviceable type="bool">true</serviceable>
+		</fuel-used-indicator>
+		<fuel-qty-indicator>
+			<serviceable type="bool">true</serviceable>
+		</fuel-qty-indicator>
+		<oil-indicator>
+			<serviceable type="bool">true</serviceable>
+		</oil-indicator>
+		<starter>
+			<serviceable type="bool">false</serviceable>
+		</starter>
+		<ignition>
+			<serviceable type="bool">false</serviceable>
+		</ignition>
+		<aux_fuel_pump>
+			<serviceable type="bool">false</serviceable>
+		</aux_fuel_pump>
+		<deice>
+			<serviceable type="bool">false</serviceable>
+		</deice>
+	</instrumentation>
+	<limits>
+		<!-- source: http://pilatus-aircraft.com/00-def/main/scripts/ckfinder/userfiles/files/Downloads/Brochures/Pilatus%20Aircraft%20Ltd%20-%20PC-6.pdf -->
+		<mass-and-balance>
+			<maximum-takeoff-mass-lbs>6173</maximum-takeoff-mass-lbs>
+			<maximum-takeoff-mass-lbs>5863</maximum-takeoff-mass-lbs>
+		</mass-and-balance>
+		<max-flap-extension-speed>
+			<flaps type="double">0.99</flaps>
+			<speed type="double">95</speed>
+		</max-flap-extension-speed>
+		<max-negative-g type="double">-1.43</max-negative-g>
+		<!-- 0.0 if flaps down -->
+		<max-positive-g type="double">3.58</max-positive-g>
+		<!-- 2.0 if flaps down -->
+		<vne type="double">167</vne>
+		<!-- indicated airspeed in knots; max diving speed -->
+	</limits>
+	<systems>
+		<electrical>
+			<battery>
+				<serviceable type="bool">true</serviceable>
+			</battery>
+			<alternator>
+				<serviceable type="bool">true</serviceable>
+			</alternator>
+		</electrical>
+	</systems>
+	<!-- set up control -->
+	<controls>
+		<engines>
+			<engine n="0">
+				<throttle>0.4</throttle>
+			</engine>
+		</engines>
+		<gear>
+			<tailwheel-lock>true</tailwheel-lock>
+			<brake-parking>1</brake-parking>
+		</gear>
+		<doors>
+			<door0>
+				<enabled type="bool">true</enabled>
+			</door0>
+			<door1>
+				<enabled type="bool">true</enabled>
+			</door1>
+			<door2>
+				<enabled type="bool">true</enabled>
+			</door2>
+			<door3>
+				<enabled type="bool">true</enabled>
+			</door3>
+			<door4>
+				<enabled type="bool">true</enabled>
+			</door4>
+			<door5>
+				<enabled type="bool">true</enabled>
+			</door5>
+		</doors>
+		<lighting>
+			<strobe type="bool">false</strobe>
+			<beacon type="bool">false</beacon>
+			<nav-lights type="bool">false</nav-lights>
+			<landing-lights-R type="bool">false</landing-lights-R>
+			<landing-lights-L type="bool">false</landing-lights-L>
+			<landing-lights-pos-R type="double">0</landing-lights-pos-R>
+			<landing-lights-pos-L type="double">0</landing-lights-pos-L>
+			<light_instr type="bool">false</light_instr>
+			<light_cabin type="bool">false</light_cabin>
+			<elt_diod type="double">0</elt_diod>
+		</lighting>
+		<electric>
+			<circuitbreaker>
+				<cb_1_1 type="bool">true</cb_1_1>
+				<cb_1_2 type="bool">true</cb_1_2>
+				<cb_1_3 type="bool">true</cb_1_3>
+				<cb_1_6 type="bool">true</cb_1_6>
+				<cb_1_7 type="bool">true</cb_1_7>
+				<cb_1_8 type="bool">true</cb_1_8>
+				<cb_2_1 type="bool">true</cb_2_1>
+				<cb_2_4 type="bool">true</cb_2_4>
+				<cb_3_1 type="bool">true</cb_3_1>
+				<cb_3_2 type="bool">true</cb_3_2>
+				<cb_3_3 type="bool">true</cb_3_3>
+				<cb_3_4 type="bool">true</cb_3_4>
+				<cb_3_5 type="bool">true</cb_3_5>
+				<cb_3_6 type="bool">true</cb_3_6>
+				<cb_3_7 type="bool">true</cb_3_7>
+				<cb_3_8 type="bool">true</cb_3_8>
+				<cb_4_1 type="bool">true</cb_4_1>
+				<cb_4_3 type="bool">true</cb_4_3>
+				<cb_4_4 type="bool">true</cb_4_4>
+				<cb_4_5 type="bool">true</cb_4_5>
+				<cb_4_6 type="bool">true</cb_4_6>
+				<cb_4_8 type="bool">true</cb_4_8>
+				<cb_5_1 type="bool">true</cb_5_1>
+				<cb_5_2 type="bool">true</cb_5_2>
+				<cb_5_3 type="bool">true</cb_5_3>
+				<cb_5_6 type="bool">true</cb_5_6>
+				<cb_5_7 type="bool">true</cb_5_7>
+				<cbr_1_1 type="bool">true</cbr_1_1>
+				<cbr_1_2 type="bool">true</cbr_1_2>
+				<cbr_1_3 type="bool">true</cbr_1_3>
+				<cbr_1_4 type="bool">true</cbr_1_4>
+				<cbr_1_8 type="bool">true</cbr_1_8>
+				<cbr_2_5 type="bool">true</cbr_2_5>
+				<bus_breaker type="bool">true</bus_breaker>
+			</circuitbreaker>
+		</electric>
+		<switches>
+			<elevator-trim-interrupt-click type="bool">false</elevator-trim-interrupt-click>
+			<elevator-trim-interrupt-lock-click type="bool">false</elevator-trim-interrupt-lock-click>
+			<battery_generator-lock-click type="bool">true</battery_generator-lock-click>
+			<battery-click type="bool">false</battery-click>
+			<generator-click type="bool">false</generator-click>
+			<gen-reset-click type="bool">false</gen-reset-click>
+			<aux_fuel_pump-click type="bool">false</aux_fuel_pump-click>
+			<ignition-click type="bool">false</ignition-click>
+			<starter-click type="bool">false</starter-click>
+			<zero_v_test-click type="bool">false</zero_v_test-click>
+			<ignition-lock-click type="bool">false</ignition-lock-click>
+			<starter-lock-click type="bool">false</starter-lock-click>
+			<light_landing_R-click type="bool">"&gt;false</light_landing_R-click>
+			<pos_landing_R-click type="int">0</pos_landing_R-click>
+			<pos_landing_L-click type="int">0</pos_landing_L-click>
+			<light_landing_L-click type="bool">false</light_landing_L-click>
+			<light_beacon-click type="bool">false</light_beacon-click>
+			<light_position-click type="bool">false</light_position-click>
+			<light_strobe-click type="bool">false</light_strobe-click>
+			<light_cabin-click type="bool">false</light_cabin-click>
+			<light_instr-click type="bool">false</light_instr-click>
+			<instrument-lights-norm type="double">0.0</instrument-lights-norm>
+			<deice-click type="bool">false</deice-click>
+			<cabin_fan-click type="bool">false</cabin_fan-click>
+			<gen_bus-click type="bool">false</gen_bus-click>
+			<bat_bus-click type="bool">false</bat_bus-click>
+			<ics-click type="double">1</ics-click>
+			<stall_annunciator-click type="double">1</stall_annunciator-click>
+			<caution_annunciator-click type="double">1</caution_annunciator-click>
+			<warning_annunciator-click type="double">1</warning_annunciator-click>
+			<fuel_used_reset-click type="double">0</fuel_used_reset-click>
+			<elt-click type="double">0</elt-click>
+			<tirette.1 type="double">1</tirette.1>
+			<tirette.2 type="double">1</tirette.2>
+			<tirette.3 type="double">1</tirette.3>
+		</switches>
+		<flight>
+			<wing_destroyed type="double">0</wing_destroyed>
+		</flight>
+	</controls>
+	<!-- Nasal files/scripts -->
+	<nasal>
+		<pc6>
+			<file>Aircraft/PC-6/Nasal/pc6-b2h4.nas</file>
+			<file>Aircraft/PC-6/Nasal/doors.nas</file>
+			<file>Aircraft/PC-6/Nasal/tools.nas</file>
+			<file>Aircraft/PC-6/Nasal/liveries.nas</file>
+			<file>Aircraft/PC-6/Nasal/registration.nas</file>
+			<file>Aircraft/PC-6/Nasal/electrical.nas</file>
+			<file>Aircraft/PC-6/Nasal/radio.nas</file>
+			<file>Aircraft/PC-6/Nasal/instruments.nas</file>
+			<file>Aircraft/PC-6/Nasal/annunciators.nas</file>
+			<file>Aircraft/PC-6/Nasal/engine.nas</file>
+		</pc6>
+		<systems>
+			<file>Aircraft/PC-6/Models/Instruments/KLN90B/kln90b.nas</file>
+		</systems>
+	</nasal>
+	<!-- Map Keys -->
+	<input>
+		<keyboard>
+			<key n="12">
+				<name>Ctrl-L</name>
+				<desc>Toggle Tailwheel Lock.</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/gear/tailwheel-lock</property>
+				</binding>
+			</key>
+			<!--tip placement instruments-->
+			<!--<key n="357">
+				<name>up</name>
+				<binding n="0">
+					<command>property-adjust</command>
+					<property>/mymodel/z</property>
+					<step>0.001</step>
+				</binding>
+				</key>
+				<key n="359">
+				<name>down</name>
+				<binding n="0">
+					<command>property-adjust</command>
+					<property>/mymodel/z</property>
+					<step>-0.001</step>
+				</binding>
+			</key>
+
+			<key n="356">
+				<name>left</name>
+				<binding n="0">
+					<command>property-adjust</command>
+					<property>/mymodel/y</property>
+					<step>-0.001</step>
+				</binding>
+				</key>
+				<key n="358">
+				<name>right</name>
+				<binding n="0">
+					<command>property-adjust</command>
+					<property>/mymodel/y</property>
+					<step>0.001</step>
+				</binding>
+			</key>
+
+			<key n="360">
+				<name>fwd</name>
+				<binding n="0">
+					<command>property-adjust</command>
+					<property>/mymodel/x</property>
+					<step>-0.001</step>
+				</binding>
+				</key>
+				<key n="361">
+				<name>backwd</name>
+				<binding n="0">
+					<command>property-adjust</command>
+					<property>/mymodel/x</property>
+					<step>0.001</step>
+				</binding>
+			</key>-->
+			<!--tip placement instruments-->
+		</keyboard>
+	</input>
+	<!--placement instruments -->
+	<!--<mymodel>
+		<x>2.852</x>
+		<y>0.276</y>
+		<z>-0.26</z>
+	</mymodel>-->
+	<!--placement instruments -->
+</PropertyList>

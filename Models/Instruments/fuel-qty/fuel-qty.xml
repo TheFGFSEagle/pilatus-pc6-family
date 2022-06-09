@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!-- fuel flow 
+Syd Adams
+-->
+<PropertyList>
+
+    <path>fuel-qty.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>FQTYface</object-name>
+        <object-name>FQTYneedleL</object-name>
+        <object-name>FQTYneedleR</object-name>
+        <emission>
+            <red>0.28</red>
+            <green>0.14</green>
+            <blue>0.07</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FQTYneedleL</object-name>
+        <property>instrumentation/fuel-qty-indicator[0]/valeur</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>22.25</ind><dep>22.0</dep></entry>
+            <entry><ind>44.5</ind><dep>65.0</dep></entry>
+            <entry><ind>65.75</ind><dep>110.0</dep></entry>
+            <entry><ind>85</ind><dep>134.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FQTYneedleR</object-name>
+        <property>instrumentation/fuel-qty-indicator[1]/valeur</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>22.25</ind><dep>22.0</dep></entry>
+            <entry><ind>44.5</ind><dep>65.0</dep></entry>
+            <entry><ind>65.75</ind><dep>110.0</dep></entry>
+            <entry><ind>85</ind><dep>134.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

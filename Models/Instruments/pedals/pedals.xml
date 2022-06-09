@@ -1,0 +1,79 @@
+<?xml version="1.0" ?> 
+<PropertyList> 
+	<path>pedals.ac</path> 
+ 
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder.bar</object-name>
+		<object-name>rudder.brake.R</object-name>
+		<object-name>rudder.brake.L</object-name>
+		<object-name>rudder.cylinder.L</object-name>
+		<object-name>rudder.cylinder.R</object-name>
+		<property>controls/flight/rudder</property>
+		<factor>25</factor>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+		<center>
+			<x-m>-0.035</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder.brake.L</object-name>
+		<property>controls/gear/brake-left</property>
+		<factor>-40</factor>
+		<axis>
+			<x1-m>0.0</x1-m>
+			<y1-m>-0.145</y1-m>
+			<z1-m>-0.034</z1-m>
+			<x2-m>-0.010</x2-m>
+			<y2-m>-0.053</y2-m>
+			<z2-m>-0.033</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>rudder.cylinder.L</object-name>
+		<property>controls/gear/brake-left</property>
+		<factor>0.01</factor>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder.brake.R</object-name>
+		<property>controls/gear/brake-right</property>
+		<factor>40</factor>
+		<axis>
+			<x1-m>0.0</x1-m>
+			<y1-m>0.145</y1-m>
+			<z1-m>-0.034</z1-m>
+			<x2-m>-0.010</x2-m>
+			<y2-m>0.053</y2-m>
+			<z2-m>-0.033</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>rudder.cylinder.R</object-name>
+		<property>controls/gear/brake-right</property>
+		<factor>0.01</factor>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+</PropertyList>

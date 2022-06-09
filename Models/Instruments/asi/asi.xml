@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>asi-gauge.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>ASIface</object-name>
+        <object-name>ASIneedle</object-name>
+        <emission>
+            <red>0.30</red>
+            <green>0.15</green>
+            <blue>0.05</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ASIneedle</object-name>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>10</ind><dep>9.0</dep></entry>   
+            <entry><ind>20</ind><dep>18.0</dep></entry>
+            <entry><ind>40</ind><dep>36.0</dep></entry>
+            <entry><ind>60</ind><dep>70.0</dep></entry>
+            <entry><ind>80</ind><dep>108.0</dep></entry>
+            <entry><ind>100</ind><dep>144.0</dep></entry>
+            <entry><ind>120</ind><dep>180</dep></entry>
+            <entry><ind>140</ind><dep>217.0</dep></entry>
+            <entry><ind>150</ind><dep>235.0</dep></entry>
+            <entry><ind>160</ind><dep>252.0</dep></entry>
+            <entry><ind>180</ind><dep>288.0</dep></entry>
+            <entry><ind>200</ind><dep>307.0</dep></entry>
+            <entry><ind>220</ind><dep>326.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,9 @@
+Hi Georg,
+
+the flight idle low pitch stop is in fact a real system in the B1900 (and all KingAirs). It will prevent the prop blades from going into flat pitch at low power / low airspeed conditons, which will cause a lot of drag in a situation where you really do not want it (mostly in the flare). You will know the blades are at the idle stops when the prop rpm starts to decrease, which measn the prop governor is not able to reduce blade pitch further and can not maintain selected prop speed anymore.
+
+After touchdown, the flight idle low pitch stop is removed and the prop blades are able to go into the much flatter ground idle pitch, which helps to brake the plane.
+
+The system will not affect the airbrake effect of the props at higher speeds, because the blade pitch will be well above the low pitch stop then.
+
+Jan 

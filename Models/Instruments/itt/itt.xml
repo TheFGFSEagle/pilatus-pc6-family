@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>itt.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>ITTface</object-name>
+        <object-name>ITTneedle</object-name>
+		<object-name>ITT.ind1</object-name>
+        <emission>
+            <red>0.28</red>
+            <green>0.14</green>
+            <blue>0.07</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ITTneedle</object-name>
+        <property>instrumentation/itt-indicator/valeur</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>200.0</ind><dep>15.0</dep></entry>
+            <entry><ind>1200</ind><dep>240</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>ITT.101</object-name>
+        <property>engines/engine/itt-degc</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>ITT.102</object-name>
+        <property>engines/engine/itt-degc</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>ITT.103</object-name>
+        <property>engines/engine/itt-degc</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+	<animation>
+        <type>textranslate</type>
+        <object-name>ITT.104</object-name>
+        <property>engines/engine/itt-degc</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>ITT.101</object-name>
+		<object-name>ITT.102</object-name>
+		<object-name>ITT.103</object-name>
+		<object-name>ITT.104</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/itt-indicator/serviceable</property>
+				<value>true</value>
+			</equals>
+		</condition>
+	</animation>
+</PropertyList>

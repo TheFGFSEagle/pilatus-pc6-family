@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!-- torque pressure
+Syd Adams
+-->
+<PropertyList>
+
+    <path>torque.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>TQface</object-name>
+        <object-name>TQneedle</object-name>
+        <object-name>TQneedle.001</object-name>
+        <emission>
+            <red>0.28</red>
+            <green>0.14</green>
+            <blue>0.07</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>TQneedle</object-name>
+        <property>instrumentation/torque-indicator/valeur</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>60</ind><dep>270.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+	<animation>
+        <type>textranslate</type>
+        <object-name>TQ.101</object-name>
+        <property>engines/pt6a/prop_torque</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>TQ.102</object-name>
+        <property>engines/pt6a/prop_torque</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>TQ.103</object-name>
+        <property>engines/pt6a/prop_torque</property>
+        <factor>1</factor>
+        <step>.1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>TQ.101</object-name>
+		<object-name>TQ.102</object-name>
+		<object-name>TQ.103</object-name>
+		<object-name>TQdec</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/torque-indicator/serviceable</property>
+				<value>true</value>
+			</equals>
+		</condition>
+	</animation>
+</PropertyList>

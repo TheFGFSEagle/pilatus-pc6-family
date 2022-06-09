@@ -1,0 +1,419 @@
+<PropertyList>
+	<name>Instruments description</name>
+	<description>
+This tutorial describes the differents instruments
+	</description>
+
+	<timeofday>noon</timeofday>
+  
+	<init>
+		<set>
+			<property>/controls/gear/brake-parking</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/controls/flight/flaps</property>
+			<value>0.0</value>
+		</set>
+		<set>
+			<property>/controls/switches/battery-click</property>
+			<value>1.0</value>
+		</set>
+		<set>
+			<property>/controls/switches/light_cabin-click</property>
+			<value>1.0</value>
+		</set>
+		<set>
+			<property>/sim/panel-hotspots</property>
+			<value>0</value>
+		</set>
+	</init>
+  
+	<step>
+		<message>In this lesson, you will learn the position and the functionnement of the instruments.</message>
+	</step>
+	
+	<step>
+		<message>At all moment, you can see the hotspots with the Ctrl-C shortcut, do it now !!!</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/sim/panel-hotspots</property>
+					<value>true</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>On the left of the pilot chair, you can see two commands, one is the rudder trim.
+It's activable by joystick or by clicking on it.</message>
+		<view>
+			<heading-offset-deg>90.45</heading-offset-deg>
+			<pitch-offset-deg>-77.1</pitch-offset-deg>
+			<x-offset-m>-0.3159</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+			<field-of-view>10.38</field-of-view>
+		</view>
+	</step>
+	
+	<step>
+		<message>Near the rudder trim, you can see the tail wheel lock. Click on it to unlock the tail wheel.</message>
+		<view>
+			<heading-offset-deg>69.3</heading-offset-deg>
+			<pitch-offset-deg>-73.8</pitch-offset-deg>
+			<x-offset-m>-0.2736</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+			<field-of-view>12.25</field-of-view>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/gear/tailwheel-lock</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Here, you can see the main fuel valve.
+You can see the left circuit breakers panel, all the breakers are clickable...</message>
+		<view>
+			<heading-offset-deg>25.2</heading-offset-deg>
+			<pitch-offset-deg>-50.4</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+			<field-of-view>27.9</field-of-view>
+		</view>
+	</step>
+	
+	<step>
+		<message>Here is the annunciators test, click on it</message>
+		<view>
+			<heading-offset-deg>28.8</heading-offset-deg>
+			<pitch-offset-deg>-55.8</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+			<field-of-view>16.11</field-of-view>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/sim/alarms/annunciator.test</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>This action light up the annunciator panel for 5 seconds</message>
+		<view>
+			<heading-offset-deg>349.2</heading-offset-deg>
+			<pitch-offset-deg>-20.7</pitch-offset-deg>
+
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+			<field-of-view>28.41</field-of-view>
+		</view>
+	</step>
+	
+	<step>
+		<message>On the left side, you can see the electrical panel switches.</message>
+		<view>
+			<heading-offset-deg>23.4</heading-offset-deg>
+			<pitch-offset-deg>-28.8</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+			<field-of-view>15.25</field-of-view>
+		</view>
+	</step>
+
+	<step>
+		<message>On the first line, you have :
+The battery switch
+The alternator switch
+The alternator reset switch
+The auxiliary fuel pump switch
+The ignition  switch
+The starter switch
+The 0V test switch
+</message>
+	</step>
+	
+	<step>
+		<message>On the second line, you have :
+The strobe light switch
+The position light switch
+The beacon light switch
+The left landing light switch
+The left landing position light switch
+The right landing position light switch
+The right landing light switch
+</message>
+	</step>
+	
+	<step>
+		 <message>Click on the beacon switch.</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/switches/light_beacon-click</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>On the third line, you have :
+The instrument lights knob
+The instrument lights switch
+The cabin light switch</message>
+	</step>
+
+	<step>
+		<message>You can see and change the radio call.
+You can see the stall warning, click on it to test it</message>
+		<view>
+			<heading-offset-deg>15.3</heading-offset-deg>
+			<pitch-offset-deg>-19.5</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+			<field-of-view>15.25</field-of-view>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/sim/alarms/stall-warning</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Here, you can see the elevator trim indicator.</message>
+		<view>
+			<field-of-view>9.5</field-of-view>
+			<heading-offset-deg>17</heading-offset-deg>
+			<pitch-offset-deg>-22.28</pitch-offset-deg>
+
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>From left to right, you can see :
+The airspeed indicator
+The attitude indicator
+The altimeter (in ft)</message>
+		<view>
+			<field-of-view>27.95</field-of-view>
+			<heading-offset-deg>1.48</heading-offset-deg>
+			<pitch-offset-deg>-14.68</pitch-offset-deg>
+
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>On top of it, you have the warning and the caution warning light.
+Click on the caution light to switch off it.</message>
+		<exit>
+			<condition>
+				<equals>
+					<property>/sim/alarms/caution-warning</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>From left to right, you can see :
+The turn and bank indicator
+The gyro-compas indicator
+The vertical speed indicator</message>
+		<view>
+			<field-of-view>27.95</field-of-view>
+			<heading-offset-deg>1.76</heading-offset-deg>
+			<pitch-offset-deg>-30.07</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>And below it, 
+A gps
+An altimeter in meter (a skydiver altimeter)</message>
+	</step>
+  
+	<step>
+		<message>Here is the magnetic compass</message>
+		<view>
+			<field-of-view>27.95</field-of-view>
+			<heading-offset-deg>335.8</heading-offset-deg>
+			<pitch-offset-deg>-7.08</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>Here is the engine indicators :
+The torque indicator
+The ITT (Inter turbine Temperature) indicator
+The propeller RPM indicator
+The turbine RPM indicator (in %)
+The fuel flow indicator
+The oil temperature and pressure indicator	</message>
+		<view>
+			<field-of-view>21.15</field-of-view>
+			<heading-offset-deg>345.04</heading-offset-deg>
+			<pitch-offset-deg>-19</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>There, you can see the annunciators panel
+and at the first plan, the levers, from left to right
+the feather lever
+the power lever
+the condition (fuel control) lever</message>
+		<view>
+			<field-of-view>18.93</field-of-view>
+			<heading-offset-deg>342.85</heading-offset-deg>
+			<pitch-offset-deg>-31.73</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>	
+	
+	<step>
+		<message>On the right, you have an ELT
+and on the bottom, the parking brake, click on it</message>
+		<view>
+			<field-of-view>11.76</field-of-view>
+			<heading-offset-deg>333.82</heading-offset-deg>
+			<pitch-offset-deg>-27.1</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/gear/brake-parking</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>	
+	
+	<step>
+		<message>There is 3 knob, the first on the left controls the oil temperature.
+The 2 others control the cabin temperature</message>
+		<view>
+			<field-of-view>13.98</field-of-view>
+			<heading-offset-deg>321.98</heading-offset-deg>
+			<pitch-offset-deg>-13.01</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>	
+	
+	<step>
+		<message>In the middle, you can see
+The fuel used indicator
+The fuel quantity in the to tanks
+The ammeter and the voltemeter</message>
+	</step>	
+	
+	<step>
+		<message>Here is some switches, two control the electricity alimentation of the radio stack.
+The ICS button is used by the copilot to speak with the pilot...</message>
+		<view>
+			<field-of-view>13.39</field-of-view>
+			<heading-offset-deg>319.15</heading-offset-deg>
+			<pitch-offset-deg>-22.65</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>Here is the alternate elevator trim command. The primary command is bound on the joystick</message>
+		<view>
+			<field-of-view>13.39</field-of-view>
+			<heading-offset-deg>326.36</heading-offset-deg>
+			<pitch-offset-deg>-30.25</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>Here is the right circuit breakers panel, which controls radio instruments.</message>
+		<view>
+			<field-of-view>15.92</field-of-view>
+			<heading-offset-deg>306.46</heading-offset-deg>
+			<pitch-offset-deg>-36.74</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>This knob controls the ailerons trim.</message>
+		<view>
+			<field-of-view>27.41</field-of-view>
+			<heading-offset-deg>253.92</heading-offset-deg>
+			<pitch-offset-deg>28.65</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+	<step>
+		<message>And this controls the flaps : 4 turn for take off and 11 for landing.</message>
+		<view>
+			<field-of-view>62.35</field-of-view>
+			<heading-offset-deg>249.12</heading-offset-deg>
+			<pitch-offset-deg>50.15</pitch-offset-deg>
+			<x-offset-m>-0.265</x-offset-m>
+			<y-offset-m>0.688</y-offset-m>
+			<z-offset-m>3.7</z-offset-m>
+		</view>
+	</step>
+	
+
+	
+	<end>
+		<message>You now know the instruments functions, you're ready to fly.</message>
+	</end>
+</PropertyList>

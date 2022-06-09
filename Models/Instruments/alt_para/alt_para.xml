@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>alt_para.ac</path>
+    <animation>
+		<type>material</type>
+		<object-name>InhgKnob</object-name>
+		<object-name>ALTface</object-name>
+		<emission>
+			<red>0.0</red>
+			<green>0.2</green>
+			<blue>0.0</blue>
+		</emission>
+	</animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>needle</object-name>
+        <property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
+        <factor>0.027</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+	<animation>
+        <type>rotate</type>
+        <object-name>InhgKnob</object-name>
+        <property>instrumentation/altimeter[1]/setting-inhg</property>
+		<interpolation>
+            <entry><ind>34</ind><dep>0.0</dep></entry>
+            <entry><ind>20</ind><dep>1165</dep></entry>
+        </interpolation>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.037</y-m>
+			<z-m>-0.037</z-m>
+		</center>
+    </animation>
+	
+    <animation>
+        <type>pick</type>
+        <object-name>InhgKnob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+			<interval-sec>0.1</interval-sec>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/altimeter[1]/setting-inhg</property>
+				<step>0.1</step>
+				<min>20</min>
+				<max>34</max>
+				<wrap>0</wrap>
+			</binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>InhgKnob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+			<interval-sec>0.1</interval-sec>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/altimeter[1]/setting-inhg</property>
+				<step>-0.1</step>
+				<min>20</min>
+				<max>34</max>
+				<wrap>0</wrap>
+			</binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>InhgKnob</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/altimeter[1]/setting-inhg</property>
+				<step>0.1</step>
+				<min>20</min>
+				<max>34</max>
+				<wrap>0</wrap>
+			</binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>InhgKnob</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/altimeter[1]/setting-inhg</property>
+				<step>-0.1</step>
+				<min>20</min>
+				<max>34</max>
+				<wrap>0</wrap>
+			</binding>
+        </action>
+    </animation>
+
+</PropertyList>

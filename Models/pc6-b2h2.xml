@@ -605,7 +605,7 @@ livery_update.stop();
 				<property>controls/switches/elevator-trim-click</property>
 				<value type="bool">false</value>
 			</binding>
-		</action>
+		</release>
 	</animation>
 	
 	<!--elevator trim interrupt-->

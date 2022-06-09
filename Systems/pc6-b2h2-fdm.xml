@@ -77,9 +77,9 @@
 	</metrics>
 	
 	<mass_balance>
-		<ixx unit="SLUG*FT2">3942.17</ixx>
-		<iyy unit="SLUG*FT2">3651.34</iyy>
-		<izz unit="SLUG*FT2">7069.92</izz>
+		<ixx unit="SLUG*FT2">2500</ixx>
+		<iyy unit="SLUG*FT2">2000</iyy>
+		<izz unit="SLUG*FT2">3000</izz>
 		<emptywt unit="LBS">2800</emptywt>
 		
 		<location name="CG" unit="IN">
@@ -132,7 +132,7 @@
 		<tank type="FUEL" number="0">
 			<location unit="IN">
 				<x>168.4</x>
-				<y>50</y>
+				<y>-50</y>
 				<z>32.1</z>
 			</location>
 			<type>JET-A</type>
@@ -1034,7 +1034,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value>-0.0508</value>
+					<value>0.0508</value>
 				</product>
 			</function>
 			

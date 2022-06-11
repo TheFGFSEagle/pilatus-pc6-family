@@ -393,16 +393,17 @@
 	
 	<flight_control name="FCS: PC-6">
 		<channel name="Pitch">
-			<summer name="Pitch Trim Sum">
+			<summer>
 				<input>fcs/elevator-cmd-norm</input>
 				<input>fcs/pitch-trim-cmd-norm</input>
 				<clipto>
 					<min>-1</min>
 					<max>1</max>
 				</clipto>
+				<output>fcs/pitch-trim-sum</output>
 			</summer>
 			
-			<aerosurface_scale name="Elevator Control">
+			<aerosurface_scale>
 				<input>fcs/pitch-trim-sum</input>
 				<range>
 					<min>-25</min>
@@ -411,7 +412,7 @@
 				<output>fcs/elevator-pos-deg</output>
 			</aerosurface_scale>
 			
-			<aerosurface_scale name="Elevator Normalization">
+			<aerosurface_scale>
 				<input>fcs/elevator-pos-deg</input>
 				<domain>
 					<min>-25</min>
@@ -425,13 +426,14 @@
 			</aerosurface_scale>
 		</channel>
 		<channel name="Roll">
-			<summer name="Roll Trim Sum">
+			<summer>
 				<input>fcs/aileron-cmd-norm</input>
 				<input>fcs/roll-trim-cmd-norm</input>
 				<clipto>
 					<min>-1</min>
 					<max>1</max>
 				</clipto>
+				<output>fcs/roll-trim-sum</output>
 			</summer>
 			
 			<aerosurface_scale name="Left Aileron Control">
@@ -443,7 +445,7 @@
 				<output>fcs/left-aileron-pos-deg</output>
 			</aerosurface_scale>
 
-			<aerosurface_scale name="Right Aileron Control">
+			<aerosurface_scale>
 				<input>-fcs/roll-trim-sum</input>
 				<range>
 					<min>-15</min>
@@ -452,7 +454,7 @@
 				<output>fcs/right-aileron-pos-deg</output>
 			</aerosurface_scale>
 			
-			<aerosurface_scale name="Left Aileron Normalization">
+			<aerosurface_scale>
 				<input>fcs/left-aileron-pos-deg</input>
 				<domain>
 					<min>-15</min>
@@ -465,7 +467,7 @@
 				<output>fcs/left-aileron-pos-norm</output>
 			</aerosurface_scale>
 
-			<aerosurface_scale name="Right Aileron Normalization">
+			<aerosurface_scale>
 				<input>fcs/right-aileron-pos-deg</input>
 				<domain>
 					<min>-15</min>
@@ -478,7 +480,7 @@
 				<output>fcs/right-aileron-pos-norm</output>
 			</aerosurface_scale>
 			
-			<fcs_function name="Aileron control (degrees)">
+			<fcs_function>
 				<function>
 					<quotient>
 						<sum>
@@ -491,7 +493,7 @@
 				<output>fcs/aileron-pos-deg</output>
 			</fcs_function>
 			
-			<fcs_function name="Aileron control (radians)">
+			<fcs_function>
 				<function>
 					<deg2rad>
 						<property>fcs/aileron-pos-deg</property>
@@ -500,7 +502,7 @@
 				<output>fcs/aileron-pos-rad</output>
 			</fcs_function>
 			
-			<aerosurface_scale name="Aileron normalization">
+			<aerosurface_scale>
 				<input>fcs/aileron-pos-deg</input>
 				<domain>
 					<min>-20</min>
@@ -515,16 +517,17 @@
 		</channel>
 
 		<channel name="Yaw">
-			<summer name="Rudder Command Sum">
+			<summer>
 				<input>fcs/rudder-cmd-norm</input>
 				<input>fcs/yaw-trim-cmd-norm</input>
 				<clipto>
 					<min>-1</min>
 					<max>1</max>
 				</clipto>
+				<output>fcs/rudder-command-sum</output>
 			</summer>
 
-			<aerosurface_scale name="Rudder Control">
+			<aerosurface_scale>
 				<input>fcs/rudder-command-sum</input>
 				<range>
 					<min>-30</min>
@@ -533,7 +536,7 @@
 				<output>fcs/rudder-pos-deg</output>
 			</aerosurface_scale>
 
-			<aerosurface_scale name="Rudder Normalization">
+			<aerosurface_scale>
 				<input>fcs/rudder-pos-deg</input>
 				<domain>
 					<min>-30</min>
@@ -548,7 +551,7 @@
 		</channel>
 		
 		<channel name="Flaps">
-			<aerosurface_scale name="Flaps Control">
+			<aerosurface_scale>
 				<input>fcs/flap-cmd-norm</input>
 				<domain>
 					<min>0</min>
@@ -561,7 +564,7 @@
 				<output>fcs/flap-pos-deg</output>
 			</aerosurface_scale>
 			
-			<aerosurface_scale name="Flap Normalization">
+			<aerosurface_scale>
 				<input>fcs/flap-pos-deg</input>
 				<domain>
 					<min>0</min>

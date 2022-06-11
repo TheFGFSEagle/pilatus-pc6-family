@@ -495,9 +495,9 @@
 			
 			<fcs_function>
 				<function>
-					<deg2rad>
+					<toradians>
 						<property>fcs/aileron-pos-deg</property>
-					</deg2rad>
+					</toradians>
 				</function>
 				<output>fcs/aileron-pos-rad</output>
 			</fcs_function>

@@ -485,7 +485,7 @@
 					<quotient>
 						<sum>
 							<property>fcs/left-aileron-pos-deg</property>
-							<property>fcs/right-aileron-pos-deg</property>
+							<property>-fcs/right-aileron-pos-deg</property>
 						</sum>
 						<value>2</value>
 					</quotient>

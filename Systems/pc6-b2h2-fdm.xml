@@ -167,7 +167,7 @@
 			<static_friction>0.8</static_friction>
 			<dynamic_friction>0.5</dynamic_friction>
 			<rolling_friction>0.02</rolling_friction>
-			<spring_coeff unit="LBS/FT">4000</spring_coeff>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group>LEFT</brake_group>
@@ -184,7 +184,7 @@
 			<static_friction>0.8</static_friction>
 			<dynamic_friction>0.5</dynamic_friction>
 			<rolling_friction>0.02</rolling_friction>
-			<spring_coeff unit="LBS/FT">4000</spring_coeff>
+			<spring_coeff unit="LBS/FT">2000</spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group>RIGHT</brake_group>
@@ -201,8 +201,8 @@
 			<static_friction>0.8</static_friction>
 			<dynamic_friction>0.5</dynamic_friction>
 			<rolling_friction>0.02</rolling_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">800</damping_coeff>
+			<spring_coeff unit="LBS/FT">3000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1500</damping_coeff>
 			<max_steer unit="DEG">25</max_steer>
 			<brake_group>NONE</brake_group>
 			<retractable>0</retractable>
@@ -217,8 +217,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">1000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Right forward wingtip">
@@ -230,8 +230,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">1000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Left rear wingtip">
@@ -243,8 +243,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">1000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Right rear wingtip">
@@ -256,8 +256,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">1000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Propeller spinner tip">
@@ -269,8 +269,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">1000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Vertical stabilizer">
@@ -282,8 +282,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">500</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Rudder">
@@ -295,8 +295,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">500</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Left horizontal stabilizer">
@@ -308,8 +308,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">500</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Right horizontal stabilizer">
@@ -321,8 +321,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">500</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Left elevator">
@@ -334,8 +334,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">500</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Right elevator">
@@ -347,8 +347,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">500</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Tail tip">
@@ -360,8 +360,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">500</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Left upper windshield">
@@ -373,8 +373,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">1000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="Right upper windshield">
@@ -386,8 +386,8 @@
 			
 			<static_friction>1</static_friction>
 			<dynamic_friction>1</dynamic_friction>
-			<spring_coeff unit="LBS/FT">2000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+			<spring_coeff unit="LBS/FT">1000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
 		</contact>
 	</ground_reactions>
 	

@@ -1,0 +1,30 @@
+Sref = 309.877756 
+Cref = 6.060000 
+Bref = 51.134943 
+X_cg = -1.787039 
+Y_cg = -0.004444 
+Z_cg = -0.650827 
+Mach = 0.000000 
+AoA = -10.000000, -4.285714, 1.428571, 7.142857, 12.857143, 18.571429, 24.285714, 30.000000 
+Beta = -90.000000, -79.411765, -68.823529, -58.235294, -47.647059, -37.058824, -26.470588, -15.882353, -5.294118, 5.294118, 15.882353, 26.470588, 37.058824, 47.647059, 58.235294, 68.823529, 79.411765, 90.000000 
+Vinf = 100.000000 
+Rho = 0.002377 
+ReCref = 10000000.000000 
+ClMax = -1.000000 
+MaxTurningAngle = -1.000000 
+Symmetry = NO 
+FarDist = -1.000000 
+NumWakeNodes = 64 
+WakeIters = 5 
+NumberOfControlGroups = 2 
+Flaps
+Wing_Surf0_Flaps,Wing_Surf1_Flaps
+0, 0
+0
+Ailerons
+Wing_Surf0_Ailerons,Wing_Surf1_Ailerons
+1, 1
+0
+Preconditioner = Matrix 
+Karman-Tsien Correction = N 
+Stability Type = 0 

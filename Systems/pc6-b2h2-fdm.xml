@@ -57,7 +57,7 @@
 		<wingarea unit="FT2">310</wingarea>
 		<wingspan unit="FT">49.88</wingspan>
 		<wing_incidence unit="DEG">2</wing_incidence>
-		<chord unit="FT">6.06</chord>
+		<chord unit="FT">6.22</chord>
 		<htailarea unit="FT2">19.8</htailarea>
 		<htailarm unit="FT">22</htailarm>
 		<vtailarea unit="FT2">16.7</vtailarea>

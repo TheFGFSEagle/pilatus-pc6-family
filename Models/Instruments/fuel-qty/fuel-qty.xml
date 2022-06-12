@@ -22,7 +22,7 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>FQTYneedleL</object-name>
-        <property>instrumentation/fuel-qty-indicator[0]/valeur</property>
+        <property>instrumentation/fuel-quantity-indicator/indicated-fuel-level-gal[0]</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>22.25</ind><dep>22.0</dep></entry>
@@ -40,7 +40,7 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>FQTYneedleR</object-name>
-        <property>instrumentation/fuel-qty-indicator[1]/valeur</property>
+        <property>instrumentation/fuel-quantity-indicator/indicated-fuel-level-gal[1]</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>22.25</ind><dep>22.0</dep></entry>

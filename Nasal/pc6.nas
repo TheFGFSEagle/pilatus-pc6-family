@@ -1,19 +1,6 @@
 aircraft.livery.init("Aircraft/pilatus-pc6-family/Models/Liveries");
 
-var fuel_used_value = 0;
-var last_fuel_read = 0;
-var g_dt = 0;
-
 var init = func {
-	fuel_at_start = getprop("/consumables/fuel/total-fuel-lbs");
-	#print("Initialising urban effect and sone things else");
-	#setprop("/sim/rendering/quality-level",2);
-	#setprop("/sim/rendering/urban-shader",1);
-	#setprop("/sim/rendering/transition-shader",1);
-	#setprop("/sim/rendering/random-vegetation",1);
-	
-	last_fuel_read = getprop("/consumables/fuel/total-fuel-lbs");
-	
 	main_loop();
 }
 
@@ -26,9 +13,6 @@ setlistener("sim/signals/fdm-initialized", init);
 
 #main loop
 var main_loop = func {
-
-	fuel_used();
-	
 	stall_horn();
 	
 	##failures
@@ -36,34 +20,6 @@ var main_loop = func {
 	check_vne_structure();
 	
 	settimer(main_loop, 0);
-}
-
-#fuel used, for the fuel used instrument
-var fuel_used = func{
-	if(last_fuel_read==nil){
-		last_fuel_read = getprop("/consumables/fuel/total-fuel-lbs");
-	}
-	var fuel_read = getprop("/consumables/fuel/total-fuel-lbs");
-	if(fuel_read!=nil and last_fuel_read!=nil){
-		var fuel_used_delta = last_fuel_read - fuel_read;
-		if(fuel_used_delta<0){
-			fuel_used_delta = 0;
-		}
-		if(getprop("/instrumentation/fuel-used-indicator/serviceable")){
-			fuel_used_value = fuel_used_value + fuel_used_delta;
-		}
-		last_fuel_read = fuel_read;
-		
-		if(fuel_used_value>999.99){
-			fuel_used_value = 999.99;
-		}
-		setprop("/consumables/fuel/total-fuel-used-lbs",fuel_used_value);
-	}
-}
-
-#fuel used reset, for the fuel used instrument
-var reset_fuel_used = func{
-	fuel_used_value = 0;
 }
 
 #activation de la stall horn

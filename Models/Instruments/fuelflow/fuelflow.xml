@@ -21,10 +21,10 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>FFneedle</object-name>
-        <property>instrumentation/fuelflow-indicator/valeur</property>
+        <property>instrumentation/fuel-flow-indicator/indicated-fuel-flow-pph</property>
         <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>700</ind><dep>215.0</dep></entry>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>700</ind><dep>215</dep></entry>
         </interpolation>
         <axis>
             <x>-1</x>

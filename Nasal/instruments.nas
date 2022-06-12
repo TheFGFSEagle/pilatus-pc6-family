@@ -28,20 +28,6 @@ var adjust_prop_affich = func{
 	}else{
 		interpolate("/instrumentation/torque-indicator/valeur",0,1);
 	}
-	if(getprop("/instrumentation/fuelflow-indicator/serviceable")){
-		interpolate("/instrumentation/fuelflow-indicator/valeur",0+getprop("/engines/pt6a/fuel_flow"),1);
-	}else{
-		interpolate("/instrumentation/fuelflow-indicator/valeur",0,1);
-	}
-	
-	if(getprop("/instrumentation/fuel-qty-indicator/serviceable")){
-		interpolate("/instrumentation/fuel-qty-indicator[0]/valeur",0+getprop("/consumables/fuel/tank[0]/level-gal_us"),1);
-		interpolate("/instrumentation/fuel-qty-indicator[1]/valeur",0+getprop("/consumables/fuel/tank[1]/level-gal_us"),1);
-	}else{
-		interpolate("/instrumentation/fuel-qty-indicator[0]/valeur",0,1);
-		interpolate("/instrumentation/fuel-qty-indicator[1]/valeur",0,1);
-	}
-	
 	if(getprop("/instrumentation/oil-indicator/serviceable")){
 		interpolate("/instrumentation/oil-indicator/temp_valeur",0+getprop("/engines/pt6a/oil_temp"),1);
 		interpolate("/instrumentation/oil-indicator/psi_valeur",0+getprop("/engines/pt6a/oil_psi"),1);

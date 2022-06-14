@@ -1,0 +1,48 @@
+2
+#
+GroupName = Fixed_Group
+NumberOfComponents = 8
+8
+1
+2
+9
+4
+5
+6
+7
+GeometryIsFixed = 1
+GeometryIsDynamic = 0
+GeometryIsARotor = 0
+RotorDiameter = 0.000000
+OVec = 0.000000 0.000000 0.000000
+RVec = 0.000000 0.000000 0.000000
+Velocity = 0.000000 0.000000 0.000000
+Acceleration = 0.000000 0.000000 0.000000
+Omega = 0.000000
+Mass = 0.000000
+Ixx = 0.000000
+Iyy = 0.000000
+Izz = 0.000000
+Ixy = 0.000000
+Ixz = 0.000000
+Iyz = 0.000000
+#
+GroupName = Propeller
+NumberOfComponents = 1
+3
+GeometryIsFixed = 0
+GeometryIsDynamic = 0
+GeometryIsARotor = 1
+RotorDiameter = 8.416666
+OVec = -18.526786 0.000000 0.850000
+RVec = -0.993572 0.000000 0.113203
+Velocity = 0.000000 0.000000 0.000000
+Acceleration = 0.000000 0.000000 0.000000
+Omega = 230.383461
+Mass = 0.000000
+Ixx = 0.000000
+Iyy = 0.000000
+Izz = 0.000000
+Ixy = 0.000000
+Ixz = 0.000000
+Iyz = 0.000000

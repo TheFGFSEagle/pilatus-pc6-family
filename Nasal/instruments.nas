@@ -1,15 +1,3 @@
-##
-# Initialize the instrument system
-##
-
-var init_instruments = func {
-	print("Nasal Instrument System Initialized");
-	
-	settimer(adjust_prop_affich,0);
-}
-
-setlistener("sim/signals/fdm-initialized", init_instruments);
-
 var adjust_prop_affich = func{
 	if(getprop("/instrumentation/rpm-indicator/serviceable")){
 		interpolate("/instrumentation/rpm-percent-indicator/valeur",0+getprop("/engines/pt6a/turbine_percent_rpm"),1);
@@ -17,11 +5,6 @@ var adjust_prop_affich = func{
 	}else{
 		interpolate("/instrumentation/rpm-percent-indicator/valeur",0,1);
 		interpolate("/instrumentation/rpm-indicator/valeur",0,1);
-	}
-	if(getprop("/instrumentation/itt-indicator/serviceable")){
-		interpolate("/instrumentation/itt-indicator/valeur",0+getprop("/engines/pt6a/turbine_itt"),1);
-	}else{
-		interpolate("/instrumentation/itt-indicator/valeur",0,1);
 	}
 	if(getprop("/instrumentation/torque-indicator/serviceable")){
 		interpolate("/instrumentation/torque-indicator/valeur",0+getprop("/engines/pt6a/prop_torque"),1);
@@ -35,9 +18,6 @@ var adjust_prop_affich = func{
 		interpolate("/instrumentation/oil-indicator/temp_valeur",0,1);
 		interpolate("/instrumentation/oil-indicator/psi_valeur",0,1);
 	}
-	
-	
-	
 	
 	settimer(adjust_prop_affich,0);
 }

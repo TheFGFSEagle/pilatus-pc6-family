@@ -1,28 +1,36 @@
-Sref = 309.877756 
-Cref = 6.060000 
-Bref = 51.134943 
-X_cg = -1.787039 
-Y_cg = -0.004444 
-Z_cg = -0.650827 
+Sref = 310.000210 
+Cref = 6.214920 
+Bref = 49.880000 
+X_cg = -1.600112 
+Y_cg = 0.000025 
+Z_cg = -0.281192 
 Mach = 0.000000 
-AoA = -10, -5, 0, 5, 10, 15, 20, 25, 30
-Beta = -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 25, 30 
-Vinf = 30
+AoA = -10.000000, -5.000000, 0.000000, 5.000000, 10.000000, 15.000000, 20.000000, 25.000000, 30.000000 
+Beta = -30.000000, -25.000000, -20.000000, -15.000000, -10.000000, -5.000000, 0.000000, 5.000000, 10.000000, 15.000000, 20.000000, 25.000000, 30.000000 
+Vinf = 100.000000 
 Rho = 0.002377 
 ReCref = 10000000.000000 
-ClMax = -1.000000 
+ClMax = -999.000000 
 MaxTurningAngle = -1.000000 
 Symmetry = NO 
 FarDist = -1.000000 
 NumWakeNodes = 64 
 WakeIters = 5 
-NumberOfControlGroups = 2 
+NumberOfControlGroups = 4 
 Flaps
 Wing_Surf0_Flaps,Wing_Surf1_Flaps
 0, 0
 0
 Ailerons
 Wing_Surf0_Ailerons,Wing_Surf1_Ailerons
+1, 1
+0
+Elevator
+Hstab_Surf0_Elevator,Hstab_Surf1_Elevator
+1, 1
+0
+Rudder
+Vstab_Surf0_Rudder,Vstab_Surf1_Rudder
 1, 1
 0
 Preconditioner = Matrix 

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<filter>
+		<name>Fuel flow indicator</name>
+		<type>gain</type>
+		<enable>/instrumentation/fuel-flow-indicator/serviceable</enable>
+		<input>/engines/engine/fuel-flow-pph</input>
+		<output>/instrumentation/fuel-flow-indicator/indicated-fuel-flow-pph</output>
+	</filter>
+	
+	<filter>
+		<name>Fuel quantity indicator (left)</name>
+		<type>gain</type>
+		<enable>/instrumentation/fuel-quantity-indicator/serviceable[0]</enable>
+		<input>/consumables/fuel/tank[0]/level-gal_us</input>
+		<output>/instrumentation/fuel-quantity-indicator/indicated-fuel-level-gal[0]</output>
+	</filter>
+	<filter>
+		<name>Fuel quantity indicator (right)</name>
+		<type>gain</type>
+		<enable>/instrumentation/fuel-quantity-indicator/serviceable[1]</enable>
+		<input>/consumables/fuel/tank[1]/level-gal_us</input>
+		<output>/instrumentation/fuel-quantity-indicator/indicated-fuel-level-gal[1]</output>
+	</filter>
+	
+	<filter>
+		<name>Fuel used indicator</name>
+		<type>gain</type>
+		<enable>/instrumentation/fuel-used-indicator/serviceable</enable>
+		<input>
+			<expression>
+				<sum>
+					<property>/instrumentation/fuel-used-indicator/indicated-fuel-used-lbs</property>
+					<product>
+						<div>
+							<property>/engines/engine/fuel-flow-rate-pph</property>
+							<!-- pph to pps -->
+							<value>3600</value>
+						</div>
+						<property>/sim/time/dt</property>
+					</product>
+				</sum>
+			</expression>
+		</input>
+		<output>/instrumentation/fuel-used-indicator/indicated-fuel-used-lbs</output>
+	</filter>
+	
+	<filter>
+		<name>ITT indicator</name>
+		<type>gain</type>
+		<enable>/instrumentation/itt-indicator/serviceable</enable>
+		<input>/engines/engine/itt-degc</input>
+		<output>/instrumentation/itt-indicator/indicated-itt-degc</output>
+	</filter>
+	
+	<filter>
+		<name>Oil temperature</name>
+		<type>gain</type>
+		<enable>/instrumentation/oil-indicator/serviceable</enable>
+		<input>/engines/engine/oil-temp-degf</input>
+		<output>/instrumentation/oil-indicator/indicated-oil-temperature-degf</output>
+	</filter>
+	
+	<filter>
+		<name>Oil pressure</name>
+	</filter>
+</PropertyList>
+

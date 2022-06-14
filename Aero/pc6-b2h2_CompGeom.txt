@@ -1,0 +1,35 @@
+...Comp Geom...
+5 Num Comps
+9 Total Num Meshes
+3792 Total Num Tris
+
+Theo_Area   Wet_Area   Theo_Vol    Wet_Vol  Name
+  449.273    430.095    469.943    463.576  Fuselage       
+  155.148    151.492     23.219     23.219  Hstab          
+    7.735      7.735      1.395      1.395  Spinner        
+  653.987    622.435    186.027    182.440  Wing           
+    4.124      4.124      0.091      0.091  Propeller      
+    4.124      4.124      0.091      0.091  Propeller      
+    4.124      4.124      0.091      0.091  Propeller      
+-------------------------------------------------
+ 1278.516   1224.130    680.855    670.902  Totals         
+
+Tag_Theo_Area   Tag_Wet_Area    Tag_Name
+      449.273        430.095    Fuselage_Surf0 
+       43.052         41.500    Hstab_Surf0    
+       43.052         41.500    Hstab_Surf1    
+        7.735          7.735    Spinner_Surf0  
+      257.082        241.306    Wing_Surf0     
+      257.082        241.306    Wing_Surf1     
+        4.124          4.124    Propeller_Surf0
+        4.124          4.124    Propeller_Surf1
+        4.124          4.124    Propeller_Surf2
+       34.523         34.246    Hstab_Surf0,Elevator
+       34.523         34.246    Hstab_Surf1,Elevator
+       34.718         34.718    Wing_Surf0,Flaps
+       35.193         35.193    Wing_Surf0,Ailerons
+       34.718         34.718    Wing_Surf1,Flaps
+       35.193         35.193    Wing_Surf1,Ailerons
+WARNING: 2 open meshes merged
+     Merged: Hstab
+     Merged: Wing

@@ -63,6 +63,11 @@
 	
 	<filter>
 		<name>Oil pressure</name>
+		<type>gain</type>
+		<enable>/instrumentation/oil-indicator/serviceable</enable>
+		<input>/engines/engine/oil-pressure-psi</input>
+		<output>/instrumentation/oil-indicator/indicated-oil-pressure-psi</output>
+	</filter>
 	</filter>
 </PropertyList>
 

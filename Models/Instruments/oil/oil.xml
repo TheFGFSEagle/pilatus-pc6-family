@@ -22,7 +22,7 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>OILneedleC</object-name>
-        <property>instrumentation/oil-indicator/temp_valeur</property>
+        <property>instrumentation/oil-indicator/indicated-oil-temperature-degf</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>120</ind><dep>135.0</dep></entry>
@@ -37,7 +37,7 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>OILneedlePSI</object-name>
-        <property>instrumentation/oil-indicator/psi_valeur</property>
+        <property>instrumentation/oil-indicator/indicated-oil-pressure-psi</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>150</ind><dep>135.0</dep></entry>

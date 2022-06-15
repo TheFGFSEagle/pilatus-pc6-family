@@ -4,9 +4,9 @@ Bref = 49.880000
 X_cg = -2.743953 
 Y_cg = 0.000000 
 Z_cg = 0.549295 
-Mach = 0.000000 
-AoA = -10.000000, -5.000000, 0.000000, 5.000000, 10.000000, 15.000000, 20.000000, 25.000000, 30.000000 
-Beta = -30.000000, -25.000000, -20.000000, -15.000000, -10.000000, -5.000000, 0.000000, 5.000000, 10.000000, 15.000000, 20.000000, 25.000000, 30.000000 
+Mach = 0.200000 
+AoA = 0.000000 
+Beta = 0.000000 
 Vinf = 236.000000 
 Rho = 0.002377 
 ReCref = 10000000.000000 
@@ -16,23 +16,11 @@ Symmetry = NO
 FarDist = -1.000000 
 NumWakeNodes = 64 
 WakeIters = 5 
-NumberOfControlGroups = 4 
-Flaps
-Wing_Surf0_Flaps,Wing_Surf1_Flaps
-1, 1
-0
+NumberOfControlGroups = 1 
 Ailerons
 Wing_Surf0_Ailerons,Wing_Surf1_Ailerons
-1, -1
-0
-Elevator
-Hstab_Surf0_Elevator,Hstab_Surf1_Elevator
 1, 1
-0
-Rudder
-Vstab_Surf0_Rudder
-1
-0
+20
 Preconditioner = Matrix 
 Karman-Tsien Correction = N 
 Stability Type = 1 

@@ -973,12 +973,11 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
-					<property>fcs/aileron-pos-rad</property>
 					<table>
-						<independentVar lookup="row">velocities/mach</independentVar>
+						<independentVar>fcs/aileron-pos-deg</independentVar>
 						<tableData>
-							0	0.17
-							2	0.0425
+							-20		-0.0556804
+							20		0.0556804
 						</tableData>
 					</table>
 				</product>

@@ -20,7 +20,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>pprRPMneedle</object-name>
-		<property>instrumentation/rpm-percent-indicator/valeur</property>
+		<property>instrumentation/n1-indicator/indicated-n1-percent</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 			<entry><ind>110.0</ind><dep>295.0</dep></entry>
@@ -35,7 +35,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>pprRpm</object-name>
-		<property>instrumentation/rpm-percent-indicator/valeur</property>
+		<property>instrumentation/n1-indicator/indicated-n1-percent</property>
 		<factor>36</factor>
 		<center>
 			<x-m>0.0040</x-m>

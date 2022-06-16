@@ -68,6 +68,29 @@
 		<input>/engines/engine/oil-pressure-psi</input>
 		<output>/instrumentation/oil-indicator/indicated-oil-pressure-psi</output>
 	</filter>
+	
+	<filter>
+		<name>Engine N1</name>
+		<type>gain</type>
+		<enable>/instrumentation/n1-indicator/serviceable</enable>
+		<input>/engines/engine/n1</input>
+		<output>/instrumentation/n1-indicator/indicated-n1-percent</output>
+	</filter>
+	
+	<filter>
+		<name>Propeller RPM</name>
+		<type>gain</type>
+		<enable>/instrumentation/rpm-indicator/serviceable</enable>
+		<input>/engines/engine/thruster/rpm</input>
+		<output>/instrumentation/rpm-indicator/indicated-rpm</output>
+	</filter>
+	
+	<filter>
+		<name>Torque</name>
+		<type>gain</type>
+		<enable>/instrumentation/torque-indicator/serviceable</enable>
+		<input>/engines/engine/thruster/torque-ftlbs</input>
+		<output>/instrumentation/torque-indicator/indicated-torque-psi</output>
 	</filter>
 </PropertyList>
 

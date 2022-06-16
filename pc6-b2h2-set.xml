@@ -76,6 +76,11 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 				<!--see electrical.nas ... -->
 			</electrical>
 			<path>Systems/systems.xml</path>
+			
+			<property-rule n="100">
+				<name>Instrument indications</name>
+				<path>Systems/instruments.xml</path>
+			</property-rule>
 		</systems>
 		<instrumentation>
 			<path>Systems/instrumentation.xml</path>
@@ -114,7 +119,7 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 				<float n="3" alias="/controls/doors/door3/position-norm"/>
 				<float n="4" alias="/controls/doors/door4/position-norm"/>
 				<float n="5" alias="/controls/doors/door5/position-norm"/>
-				<float n="6" alias="/engines/pt6a/prop_rpm"/>
+				<float n="6" alias="/engines/engine/thruster/rpm"/>
 			</generic>
 		</multiplay>
 		<view n="0">
@@ -441,11 +446,11 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 		<fuel>
 			<switch-position type="int">0</switch-position>
 			<tank n="0">
-				<name>left wing</name>
+				<name>Left wing</name>
 				<selected type="bool">true</selected>
 			</tank>
 			<tank n="1">
-				<name>right wing</name>
+				<name>Right wing</name>
 				<selected type="bool">true</selected>
 			</tank>
 		</fuel>
@@ -456,10 +461,10 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<serviceable type="bool">true</serviceable>
 		</altimeter>
 		<comm n="0">
-			<serviceable type="bool">false</serviceable>
+			<serviceable type="bool">true</serviceable>
 		</comm>
 		<comm n="1">
-			<serviceable type="bool">false</serviceable>
+			<serviceable type="bool">true</serviceable>
 		</comm>
 		<transponder>
 			<digit1 type="int">7</digit1>
@@ -468,7 +473,7 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<digit4 type="int">6</digit4>
 			<id-code type="string">7016</id-code>
 			<mode type="int">0</mode>
-			<serviceable type="bool">false</serviceable>
+			<serviceable type="bool">true</serviceable>
 		</transponder>
 		<annunciators>
 			<stall-warning>
@@ -479,7 +484,7 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			</general>
 		</annunciators>
 		<bus_radio>
-			<serviceable type="bool">false</serviceable>
+			<serviceable type="bool">true</serviceable>
 		</bus_radio>
 		<turn-indicator>
 			<serviceable type="bool">true</serviceable>
@@ -487,9 +492,9 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 		<rpm-indicator>
 			<serviceable type="bool">true</serviceable>
 		</rpm-indicator>
-		<rpm-percent-indicator>
+		<n1-indicator>
 			<serviceable type="bool">true</serviceable>
-		</rpm-percent-indicator>
+		</n1-indicator>
 		<itt-indicator>
 			<serviceable type="bool">true</serviceable>
 		</itt-indicator>
@@ -509,16 +514,16 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<serviceable type="bool">true</serviceable>
 		</oil-indicator>
 		<starter>
-			<serviceable type="bool">false</serviceable>
+			<serviceable type="bool">true</serviceable>
 		</starter>
 		<ignition>
-			<serviceable type="bool">false</serviceable>
+			<serviceable type="bool">true</serviceable>
 		</ignition>
 		<aux_fuel_pump>
-			<serviceable type="bool">false</serviceable>
+			<serviceable type="bool">true</serviceable>
 		</aux_fuel_pump>
 		<deice>
-			<serviceable type="bool">false</serviceable>
+			<serviceable type="bool">true</serviceable>
 		</deice>
 	</instrumentation>
 	<limits>
@@ -552,7 +557,7 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 	<controls>
 		<engines>
 			<engine n="0">
-				<throttle>0.4</throttle>
+				<throttle>0</throttle>
 			</engine>
 		</engines>
 		<gear>
@@ -675,11 +680,9 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 		<pc6>
 			<file>Nasal/pc6.nas</file>
 			<file>Nasal/doors.nas</file>
-			<!--<file>Nasal/tools.nas</file>-->
 			<file>Nasal/registration.nas</file>
 			<file>Nasal/electrical.nas</file>
 			<file>Nasal/radio.nas</file>
-			<!--<file>Nasal/instruments.nas</file>-->
 			<file>Nasal/annunciators.nas</file>
 			<!--<file>Nasal/engine.nas</file>-->
 		</pc6>

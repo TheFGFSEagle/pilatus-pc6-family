@@ -22,7 +22,7 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>TQneedle</object-name>
-        <property>instrumentation/torque-indicator/valeur</property>
+        <property>instrumentation/torque-indicator/indicated-torque-psi</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>60</ind><dep>270.0</dep></entry>
@@ -37,7 +37,7 @@ Syd Adams
 	<animation>
         <type>textranslate</type>
         <object-name>TQ.101</object-name>
-        <property>engines/pt6a/prop_torque</property>
+        <property>instrumentation/torque-indicator/indicated-torque-psi</property>
         <factor>0.01</factor>
         <step>10</step>
         <bias>0.005</bias>
@@ -51,7 +51,7 @@ Syd Adams
     <animation>
         <type>textranslate</type>
         <object-name>TQ.102</object-name>
-        <property>engines/pt6a/prop_torque</property>
+        <property>instrumentation/torque-indicator/indicated-torque-psi</property>
         <factor>0.1</factor>
         <step>1</step>
         <bias>0.005</bias>
@@ -65,7 +65,7 @@ Syd Adams
     <animation>
         <type>textranslate</type>
         <object-name>TQ.103</object-name>
-        <property>engines/pt6a/prop_torque</property>
+        <property>instrumentation/torque-indicator/indicated-torque-psi</property>
         <factor>1</factor>
         <step>.1</step>
         <bias>0.005</bias>

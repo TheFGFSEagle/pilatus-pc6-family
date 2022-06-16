@@ -99,7 +99,7 @@ AlternatorClass = {};
 
 AlternatorClass.new = func {
     obj = { parents : [AlternatorClass],
-            rpm_source : "/engines/pt6a/turbine_rpm",
+            rpm_source : "/engines/engine/rpm",
 			rpm_threshold : 22500.0, # the turbine operate from 0 to 37500, the generator from 0 to ~12000 and provide volts at 7200
             ideal_volts : 28.0,
             ideal_amps : 200.0,
@@ -384,7 +384,7 @@ var update_virtual_bus = func(dt,totalVolt){
 			setprop("/systems/electrical/outputs/rpm-indicator", totalVolt);
 			setprop("/instrumentation/rpm-indicator/serviceable", 1);
 			setprop("/systems/electrical/outputs/rpm-percent-indicator", totalVolt);
-			setprop("/instrumentation/rpm-percent-indicator/serviceable", 1);
+			setprop("/instrumentation/n1-indicator/serviceable", 1);
 			setprop("/systems/electrical/outputs/fuelflow-indicator", totalVolt);
 			setprop("/instrumentation/fuelflow-indicator/serviceable", 1);
 			load += 1.2;
@@ -392,7 +392,7 @@ var update_virtual_bus = func(dt,totalVolt){
 			setprop("/systems/electrical/outputs/rpm-indicator", 0.0);
 			setprop("/instrumentation/rpm-indicator/serviceable", 0);
 			setprop("/systems/electrical/outputs/rpm-percent-indicator", 0.0);
-			setprop("/instrumentation/rpm-percent-indicator/serviceable", 0);
+			setprop("/instrumentation/n1-indicator/serviceable", 0);
 			setprop("/systems/electrical/outputs/fuelflow-indicator", 0.0);
 			setprop("/instrumentation/fuelflow-indicator/serviceable", 0);
 		}
@@ -543,7 +543,7 @@ var update_virtual_bus = func(dt,totalVolt){
 		setprop("/systems/electrical/outputs/rpm-indicator", 0.0);
 		setprop("/instrumentation/rpm-indicator/serviceable", 0);
 		setprop("/systems/electrical/outputs/rpm-percent-indicator", 0.0);
-		setprop("/instrumentation/rpm-percent-indicator/serviceable", 0);
+		setprop("/instrumentation/n1-indicator/serviceable", 0);
 		setprop("/systems/electrical/outputs/fuelflow-indicator", 0.0);
 		setprop("/instrumentation/fuelflow-indicator/serviceable", 0);
 		setprop("/systems/electrical/outputs/torque-indicator", 0.0);

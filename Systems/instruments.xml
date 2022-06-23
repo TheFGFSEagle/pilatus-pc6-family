@@ -4,7 +4,7 @@
 		<name>Fuel flow indicator</name>
 		<type>gain</type>
 		<enable>/instrumentation/fuel-flow-indicator/serviceable</enable>
-		<input>/engines/engine/fuel-flow-pph</input>
+		<input>/engines/engine/fuel-flow_pph</input>
 		<output>/instrumentation/fuel-flow-indicator/indicated-fuel-flow-pph</output>
 	</filter>
 	
@@ -33,7 +33,7 @@
 					<property>/instrumentation/fuel-used-indicator/indicated-fuel-used-lbs</property>
 					<product>
 						<div>
-							<property>/engines/engine/fuel-flow-rate-pph</property>
+							<property>/engines/engine/fuel-flow_pph</property>
 							<!-- pph to pps -->
 							<value>3600</value>
 						</div>
@@ -57,7 +57,7 @@
 		<name>Oil temperature</name>
 		<type>gain</type>
 		<enable>/instrumentation/oil-indicator/serviceable</enable>
-		<input>/engines/engine/oil-temp-degf</input>
+		<input>/engines/engine/oil-temperature-degf</input>
 		<output>/instrumentation/oil-indicator/indicated-oil-temperature-degf</output>
 	</filter>
 	
@@ -88,8 +88,9 @@
 	<filter>
 		<name>Torque</name>
 		<type>gain</type>
+		<gain>-1</gain>
 		<enable>/instrumentation/torque-indicator/serviceable</enable>
-		<input>/engines/engine/thruster/torque-ftlbs</input>
+		<input>/engines/engine/thruster/torque</input>
 		<output>/instrumentation/torque-indicator/indicated-torque-psi</output>
 	</filter>
 </PropertyList>

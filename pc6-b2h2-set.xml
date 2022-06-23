@@ -73,7 +73,6 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 		<systems>
 			<electrical>
 				<path>Systems/electrical.xml</path>
-				<!--see electrical.nas ... -->
 			</electrical>
 			<path>Systems/systems.xml</path>
 			
@@ -415,7 +414,10 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 		</weight>
 	</sim>
 	<engines>
-		<pt6a>
+		<engine>
+			<itt-degc alias="/fdm/jsbsim/propulsion/engine/itt-c"/>
+		</engine>
+		<!--<pt6a>
 			<fuel_press type="double">0.0</fuel_press>
 			<fuel_flow type="double">0.0</fuel_flow>
 			<fuel_in_chamber type="double">0.0</fuel_in_chamber>
@@ -440,7 +442,7 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 				<propeller type="bool">0</propeller>
 				<propeller-blade type="bool">0</propeller-blade>
 			</failure>
-		</pt6a>
+		</pt6a>-->
 	</engines>
 	<consumables>
 		<fuel>
@@ -507,9 +509,9 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 		<fuel-used-indicator>
 			<serviceable type="bool">true</serviceable>
 		</fuel-used-indicator>
-		<fuel-qty-indicator>
+		<fuel-quantity-indicator>
 			<serviceable type="bool">true</serviceable>
-		</fuel-qty-indicator>
+		</fuel-quantity-indicator>
 		<oil-indicator>
 			<serviceable type="bool">true</serviceable>
 		</oil-indicator>
@@ -684,7 +686,6 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<file>Nasal/electrical.nas</file>
 			<file>Nasal/radio.nas</file>
 			<file>Nasal/annunciators.nas</file>
-			<!--<file>Nasal/engine.nas</file>-->
 		</pc6>
 		<systems>
 			<file>Models/Instruments/KLN90B/kln90b.nas</file>

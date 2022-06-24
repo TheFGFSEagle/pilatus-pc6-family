@@ -82,9 +82,10 @@
 	</metrics>
 	
 	<mass_balance>
-		<ixx unit="SLUG*FT2">3000</ixx>
-		<iyy unit="SLUG*FT2">2500</iyy>
-		<izz unit="SLUG*FT2">3500</izz>
+		<ixx unit="SLUG*FT2">9163.3</ixx>
+		<iyy unit="SLUG*FT2">7059.6</iyy>
+		<izz unit="SLUG*FT2">15619.6</izz>
+		<ixz unit="SLUG*FT2">-563.9</ixz>
 		<emptywt unit="LBS">2800</emptywt>
 		
 		<location name="CG" unit="IN">
@@ -886,7 +887,7 @@
 					<property>metrics/cbarw-ft</property>
 					<property>aero/ci2vel</property>
 					<property>velocities/q-aero-rad_sec</property>
-					<value>-6.9379</value>
+					<value>-4.6148</value>
 				</product>
 			</function>
 			
@@ -943,7 +944,7 @@
 					<property>metrics/bw-ft</property>
 					<property>aero/bi2vel</property>
 					<property>velocities/p-aero-rad_sec</property>
-					<value>-0.7506</value>
+					<value>-0.2154</value>
 				</product>
 			</function>
 			
@@ -1055,7 +1056,7 @@
 					<property>metrics/bw-ft</property>
 					<property>aero/bi2vel</property>
 					<property>velocities/r-aero-rad_sec</property>
-					<value>-0.0494</value>
+					<value>-0.1245</value>
 				</product>
 			</function>
 			

@@ -1,0 +1,34 @@
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 310.0002100 Lunit^2             
+Cref_                   6.2149200 Lunit               
+Bref_                  49.8800000 Lunit               
+Xcg_                   -2.8225440 Lunit               
+Ycg_                   -0.0000260 Lunit               
+Zcg_                    0.5605210 Lunit               
+Mach_                   0.2000000 no_unit             
+AoA_                    0.0000000 deg                 
+Beta_                   0.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 236.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+# Name 		 Value 
+CFx_(r - beta_dot) 		   14.6675082 
+CFy_(r - beta_dot) 		   -7.4451848 
+CFz_(r - beta_dot) 		   -1.5986883 
+CMx_(r - beta_dot) 		   -0.4207438 
+CMy_(r - beta_dot) 		 -246.6762299 
+CMz_(r - beta_dot) 		   -3.5956681 
+ CL_(r - beta_dot) 		   -1.5986883 
+ CD_(r - beta_dot) 		  139.8993888 
+ CS_(r - beta_dot) 		   -7.4451848 
+CMl_(r - beta_dot) 		    0.4207438 
+CMm_(r - beta_dot) 		 -246.6762299 
+CMn_(r - beta_dot) 		    3.5956681 
+#
+#
+#

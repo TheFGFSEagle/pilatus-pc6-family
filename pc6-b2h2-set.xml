@@ -314,7 +314,12 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 						<label>Autostart</label>
 						<binding>
 							<command>nasal</command>
-							<script>pc6.engine.autostart();</script>
+							<!--<script>pc6.engine.autostart();</script>-->
+							<script>
+								setprop("/controls/electric/engine/generator", 1);
+								setprop("/controls/engines/engine/cutoff", 0);
+								setprop("/controls/engines/engine/starter", 1);
+							</script>
 						</binding>
 					</item>
 				</menu>

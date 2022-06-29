@@ -4,12 +4,12 @@
 Sref_                 310.0002100 Lunit^2             
 Cref_                   6.2149200 Lunit               
 Bref_                  49.8800000 Lunit               
-Xcg_                   -2.8296960 Lunit               
-Ycg_                   -0.0000280 Lunit               
-Zcg_                    0.5713930 Lunit               
+Xcg_                   -2.8648670 Lunit               
+Ycg_                   -0.0000430 Lunit               
+Zcg_                    2.2293310 Lunit               
 Mach_                   0.2000000 no_unit             
-AoA_                    0.0000000 deg                 
-Beta_                   0.0000000 deg                 
+AoA_                  -15.0000000 deg                 
+Beta_                 -30.0000000 deg                 
 Rho_                    0.0023770 Munit/Lunit^3       
 Vinf_                 163.0000000 Lunit/Tunit         
 Roll__Rate              0.0000000 rad/Tunit           

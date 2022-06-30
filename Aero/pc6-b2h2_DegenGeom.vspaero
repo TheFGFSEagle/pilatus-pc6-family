@@ -5,8 +5,8 @@ X_cg = -2.864867
 Y_cg = -0.000043 
 Z_cg = 2.229331 
 Mach = 0.200000 
-AoA = -15,-10,-5,0,5,10,15,20,30
-Beta = -30,-10,0,10,30
+AoA = 0.00000
+Beta = 0.00000
 Vinf = 163.000000 
 Rho = 0.002377 
 ReCref = 10000000.000000 
@@ -14,25 +14,9 @@ ClMax = -999.000000
 MaxTurningAngle = -1.000000 
 Symmetry = NO 
 FarDist = -1.000000 
-NumWakeNodes = 64 
-WakeIters = 10 
-NumberOfControlGroups = 4 
-Flaps
-Wing_Surf0_Flaps,Wing_Surf1_Flaps
-1, -1
-0
-Ailerons
-Wing_Surf0_Ailerons,Wing_Surf1_Ailerons
-1, 1
-0
-Elevator
-Hstab_Surf0_Elevator,Hstab_Surf1_Elevator
-1, -1
-0
-Rudder
-DorsalFin_Surf0_BottomRudder,DorsalFin_Surf0_LowerRudder,DorsalFin_Surf0_UpperRudder,DorsalFin_Surf0_TopRudder
-1, 1, 1, 1
-0
+NumWakeNodes = 64
+WakeIters = 10
+NumberOfControlGroups = 0
 Preconditioner = Matrix 
 Karman-Tsien Correction = N 
 Stability Type = 1 

@@ -1,12 +1,12 @@
 Sref = 310.000210 
 Cref = 6.214920 
 Bref = 49.880000 
-X_cg = -2.864867 
-Y_cg = -0.000043 
-Z_cg = 2.229331 
+X_cg = -2.809379 
+Y_cg = -0.000042 
+Z_cg = 2.200430 
 Mach = 0.200000 
-AoA = 0.00000
-Beta = 0.00000
+AoA = 0.000000, 10.000000 
+Beta = 0.000000 
 Vinf = 163.000000 
 Rho = 0.002377 
 ReCref = 10000000.000000 
@@ -14,9 +14,13 @@ ClMax = -999.000000
 MaxTurningAngle = -1.000000 
 Symmetry = NO 
 FarDist = -1.000000 
-NumWakeNodes = 64
-WakeIters = 10
-NumberOfControlGroups = 0
+NumWakeNodes = 4 
+WakeIters = 3 
+NumberOfControlGroups = 1 
+Rudder
+DorsalFin_Surf0_LowerRudder
+1
+0
 Preconditioner = Matrix 
 Karman-Tsien Correction = N 
 Stability Type = 1 

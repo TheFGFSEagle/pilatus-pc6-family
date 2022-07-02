@@ -699,7 +699,7 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>fcs/elevator-pos-rad</property>
-					<value>0.1713</value>
+					<value>0.4575024</value>
 				</product>
 			</function>
 			
@@ -768,7 +768,7 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<abs><property>fcs/elevator-pos-rad</property></abs>
-					<value>0.04</value>
+					<value>0.0963533</value>
 				</product>
 			</function>
 			
@@ -917,7 +917,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/cbarw-ft</property>
 					<property>fcs/elevator-pos-rad</property>
-					<value>-1.9</value>
+					<value>-1.290231</value>
 				</product>
 			</function>
 
@@ -1149,7 +1149,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value>-0.07</value>
+					<value>0.07</value>
 				</product>
 			</function>
 			

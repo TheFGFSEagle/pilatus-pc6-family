@@ -20,7 +20,7 @@ NumberOfControlGroups = 1
 Rudder
 DorsalFin_Surf0_LowerRudder
 1
-0
+30
 Preconditioner = Matrix 
 Karman-Tsien Correction = N 
 Stability Type = 1 

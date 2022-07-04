@@ -625,6 +625,32 @@
 			</table>
 		</function>
 		
+		<function name="aero/function/Alpha_Beta_Csurf_Reversal">
+			<description>Factor for force and moment coefficients for control surfaces, to simulate ineffectivity / reversal at high alphas and betas</description>
+			<product>
+				<table>
+					<independentVar>aero/alpha-deg</independentVar>
+					<tableData>
+						-180	-1
+						-90		0
+						0		1
+						90		0
+						180	-1
+					</tableData>
+				</table>
+				<table>
+					<independentVar>aero/beta-deg</independentVar>
+					<tableData>
+						-180	-1
+						-90		0
+						0		1
+						90		0
+						180	-1
+					</tableData>
+				</table>
+			</product>
+		</function>
+		
 		<axis name="LIFT">
 			<function name="aero/force/Lift_propwash">
 				<description>Delta lift due to propeller induced velocity</description>
@@ -699,6 +725,7 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>fcs/elevator-pos-rad</property>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
 					<value>0.4575024</value>
 				</product>
 			</function>
@@ -709,6 +736,7 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>fcs/flap-pos-deg</property>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
 					<value>0.0123</value>
 				</product>
 			</function>
@@ -845,7 +873,8 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value>0.0758</value>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
+					<value>-0.110015</value>
 				</product>
 			</function>
 		</axis>
@@ -905,7 +934,6 @@
 							20.0	-0.297101
 							30.0	-0.373964
 						</tableData>
-							
 					</table>
 				</product>
 			</function>
@@ -917,6 +945,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/cbarw-ft</property>
 					<property>fcs/elevator-pos-rad</property>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
 					<value>-1.290231</value>
 				</product>
 			</function>
@@ -1039,6 +1068,7 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
 					<table>
 						<independentVar>fcs/aileron-pos-deg</independentVar>
 						<tableData>
@@ -1056,7 +1086,8 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value>0.001</value>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
+					<value>0.0037326</value>
 				</product>
 			</function>
 		</axis>
@@ -1149,7 +1180,8 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value>0.07</value>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
+					<value>0.0382394</value>
 				</product>
 			</function>
 			

@@ -14,13 +14,17 @@ ClMax = -999.000000
 MaxTurningAngle = -1.000000 
 Symmetry = NO 
 FarDist = -1.000000 
-NumWakeNodes = 2 
-WakeIters = 3 
-NumberOfControlGroups = 1 
-Aileron
-Wing_Surf0_Ailerons,Wing_Surf1_Ailerons
-1, 0.6
+NumWakeNodes = 64 
+WakeIters = 10 
+NumberOfControlGroups = 2 
+RightAileron
+Wing_Surf0_Ailerons
+1
+15
+LeftAileron
+Wing_Surf1_Ailerons
+1
 25
 Preconditioner = Matrix 
 Karman-Tsien Correction = N 
-Stability Type = 1 
+Stability Type = 1

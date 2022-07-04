@@ -730,6 +730,17 @@
 				</product>
 			</function>
 			
+			<function name="aero/force/Lift_aileron">
+				<description>Lift due to aileron deflection</description>
+				<product>
+					<property>aero/qbar-psf</property>
+					<property>metrics/Sw-sqft</property>
+					<abs><property>fcs/aileron-pos-rad</property></abs>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
+					<value>-0.120395</value>
+				</product>
+			</function>
+			
 			<function name="aero/force/Lift_flap">
 				<description>Delta Lift due to flaps</description>
 				<product>
@@ -797,6 +808,16 @@
 					<property>metrics/Sw-sqft</property>
 					<abs><property>fcs/elevator-pos-rad</property></abs>
 					<value>0.0963533</value>
+				</product>
+			</function>
+			
+			<function name="aero/force/Drag_aileron">
+				<description>Drag due to aileron deflection</description>
+				<product>
+					<property>aero/qbar-psf</property>
+					<property>metrics/Sw-sqft</property>
+					<abs><property>fcs/aileron-pos-rad</property></abs>
+					<value>0.112153</value>
 				</product>
 			</function>
 			
@@ -949,6 +970,18 @@
 					<value>-1.290231</value>
 				</product>
 			</function>
+			
+			<function name="aero/moment/Pitch_aileron">
+				<description>Pitch moment due to ailerons</description>
+				<product>
+					<property>aero/qbar-psf</property>
+					<property>metrics/Sw-sqft</property>
+					<property>metrics/cbarw-ft</property>
+					<property>fcs/elevator-pos-rad</property>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
+					<value>0.6261751</value>
+				</product>
+			</function>
 
 			<function name="aero/moment/Pitch_damp">
 				<description>Pitch moment due to pitch rate</description>
@@ -1072,8 +1105,8 @@
 					<table>
 						<independentVar>fcs/aileron-pos-deg</independentVar>
 						<tableData>
-							-20		-0.0556804
-							20		0.0556804
+							-20		-0.103631
+							20		0.103631
 						</tableData>
 					</table>
 				</product>
@@ -1192,7 +1225,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/aileron-pos-rad</property>
-					<value>-0.01</value>
+					<value>-0.003169</value>
 				</product>
 			</function>
 		</axis>

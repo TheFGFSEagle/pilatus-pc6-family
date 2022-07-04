@@ -821,6 +821,16 @@
 				</product>
 			</function>
 			
+			<function name="aero/force/Drag_rudder">
+				<description>Drag due to rudder deflection</description>
+				<product>
+					<property>aero/qbar-psf</property>
+					<property>metrics/Sw-sqft</property>
+					<abs><property>fcs/rudder-pos-rad</property></abs>
+					<value>0.027332</value>
+				</product>
+			</function>
+			
 			<function name="aero/force/Drag_gear">
 				<description>Drag due to gear</description>
 				<product>
@@ -895,7 +905,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>fcs/rudder-pos-rad</property>
 					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
-					<value>-0.110015</value>
+					<value>-0.108931</value>
 				</product>
 			</function>
 		</axis>
@@ -1120,7 +1130,7 @@
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
 					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
-					<value>0.0037326</value>
+					<value>-0.0033953</value>
 				</product>
 			</function>
 		</axis>
@@ -1214,7 +1224,7 @@
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
 					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
-					<value>0.0382394</value>
+					<value>0.037832</value>
 				</product>
 			</function>
 			

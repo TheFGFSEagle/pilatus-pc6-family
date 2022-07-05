@@ -746,9 +746,9 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
-					<property>fcs/flap-pos-deg</property>
+					<property>fcs/flap-pos-rad</property>
 					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
-					<value>0.0123</value>
+					<value>0.3168579</value>
 				</product>
 			</function>
 		</axis>
@@ -845,8 +845,8 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
-					<property>fcs/flap-pos-deg</property>
-					<value>0.0009</value>
+					<property>fcs/flap-pos-rad</property>
+					<value>0.0511421</value>
 				</product>
 			</function>
 		</axis>
@@ -993,6 +993,18 @@
 				</product>
 			</function>
 
+			<function name="aero/moment/Pitch_flaps">
+				<description>Pitch moment due to flaps</description>
+				<product>
+					<property>aero/qbar-psf</property>
+					<property>metrics/Sw-sqft</property>
+					<property>metrics/cbarw-ft</property>
+					<property>fcs/flap-pos-rad</property>
+					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
+					<value>0.1524785</value>
+				</product>
+			</function>
+			
 			<function name="aero/moment/Pitch_damp">
 				<description>Pitch moment due to pitch rate</description>
 				<product>

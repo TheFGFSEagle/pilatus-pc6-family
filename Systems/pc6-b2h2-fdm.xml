@@ -63,9 +63,9 @@
 		<vtailarea unit="FT2">16.7</vtailarea>
 		<vtailarm unit="FT" >18.7</vtailarm>
 		<location name="AERORP" unit="IN">
-			<x>161.5</x>
+			<x>202.88</x>
 			<y>0</y>
-			<z>32.5</z>
+			<z>17.14</z>
 		</location>
 		
 		<location name="EYEPOINT" unit="IN">
@@ -82,16 +82,16 @@
 	</metrics>
 	
 	<mass_balance>
-		<ixx unit="SLUG*FT2">9163.3</ixx>
-		<iyy unit="SLUG*FT2">7059.6</iyy>
-		<izz unit="SLUG*FT2">15619.6</izz>
-		<ixz unit="SLUG*FT2">-563.9</ixz>
+		<ixx unit="SLUG*FT2">9152</ixx>
+		<iyy unit="SLUG*FT2">7187</iyy>
+		<izz unit="SLUG*FT2">15814</izz>
+		<ixz unit="SLUG*FT2">261</ixz>
 		<emptywt unit="LBS">2800</emptywt>
 		
 		<location name="CG" unit="IN">
-			<x>166.35</x>
+			<x>202.88</x>
 			<y>0</y>
-			<z>0</z>
+			<z>17.14</z>
 		</location>
 		<!--<pointmass name="Payload">
 			<description> 1332.20 LBS should bring model up to entered max weight </description>
@@ -652,7 +652,7 @@
 		</function>
 		
 		<axis name="LIFT">
-			<function name="aero/force/Lift_propwash">
+			<!--<function name="aero/force/Lift_propwash">
 				<description>Delta lift due to propeller induced velocity</description>
 				<product>
 					<property>propulsion/engine[0]/thrust-coefficient</property>
@@ -670,7 +670,7 @@
 						</tableData>
 					</table>
 				</product>
-			</function>
+			</function>-->
 			
 			<function name="aero/force/Lift_alpha">
 				<description>Lift due to alpha</description>
@@ -911,7 +911,7 @@
 		</axis>
 		
 		<axis name="PITCH">
-			<function name="aero/moment/Pitch_propwash">
+			<!--<function name="aero/moment/Pitch_propwash">
 				<description>Pitch moment due to propeller induced velocity</description>
 				<product>
 					<property>propulsion/engine[0]/thrust-coefficient</property>
@@ -930,7 +930,7 @@
 						</tableData>
 					</table>
 				</product>
-			</function>
+			</function>-->
 			
 			<function name="aero/moment/Pitch_alpha">
 				<description>Pitch moment due to alpha</description>
@@ -1055,7 +1055,7 @@
 		</axis>
 
 		<axis name="ROLL">
-			<function name="aero/moment/Roll_differential_propwash">
+			<!--<function name="aero/moment/Roll_differential_propwash">
 				<description>Roll moment due to differential propwash</description>
 				<product>
 					<property>propulsion/engine[0]/thrust-coefficient</property>
@@ -1065,7 +1065,7 @@
 					<property>aero/alpha-rad</property>
 					<value>0.1285</value>
 				</product>
-			</function>
+			</function>-->
 
 			<function name="aero/moment/Roll_beta">
 				<description>Roll moment due to beta</description>

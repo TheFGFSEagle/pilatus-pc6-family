@@ -477,11 +477,11 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<serviceable type="bool">true</serviceable>
 		</comm>
 		<transponder>
-			<digit1 type="int">7</digit1>
-			<digit2 type="int">0</digit2>
-			<digit3 type="int">1</digit3>
-			<digit4 type="int">6</digit4>
-			<id-code type="string">7016</id-code>
+			<digit1 type="int">1</digit1>
+			<digit2 type="int">2</digit2>
+			<digit3 type="int">0</digit3>
+			<digit4 type="int">0</digit4>
+			<id-code type="string">1200</id-code>
 			<mode type="int">0</mode>
 			<serviceable type="bool">true</serviceable>
 		</transponder>
@@ -564,11 +564,6 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 	</systems>
 	<!-- set up control -->
 	<controls>
-		<engines>
-			<engine n="0">
-				<throttle>0</throttle>
-			</engine>
-		</engines>
 		<gear>
 			<tailwheel-lock>true</tailwheel-lock>
 			<brake-parking>1</brake-parking>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="pt6a-20">
+	<channel name="Propeller">
+		<switch>
+			<default value="1"/>
+			<test value="0">
+				/controls/engines/engine/reverser EQ 1
+			</test>
+			<output>propulsion/engine/constant-speed-mode</output>
+		</switch>
+		
+		<fcs_function>
+			<function>
+				<ifthen>
+					<property>/controls/engines/engine/reverser</property>
+					<table>
+						<independentVar lookup="row">/controls/engines/engine/throttle</independentVar>
+						<tableData>
+							0	-0.5
+							0.3	-10.5
+						</tableData>
+					</table>
+					<property>propulsion/engine/blade-angle</property>
+				</ifthen>
+			</function>
+			<output>propulsion/engine/blade-angle</output>
+		</fcs_function>
+	</channel>
+</system>

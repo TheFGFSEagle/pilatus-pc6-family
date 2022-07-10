@@ -120,7 +120,7 @@ var check_vne_flaps = func{
 	var kias = getprop("velocities/airspeed-kt");
 	var flaps = getprop("/controls/flight/flaps");
 	if(kias!=nil and kias>95 and flaps!=nil and flaps>0){
-		setprop("/sim/failure-manager/controls/flight/flaps/serviceable",0);
+		#setprop("/sim/failure-manager/controls/flight/flaps/serviceable",0);
 		setprop("/sim/messages/copilot","Vfe exceeded");
 	}
 }
@@ -128,7 +128,7 @@ var check_vne_flaps = func{
 var	check_vne_structure = func{
 	var kias = getprop("velocities/airspeed-kt");
 	if(kias!=nil and kias>151){
-		setprop("/sim/sound/crash",1);
+		#setprop("/sim/sound/crash",1);
 		setprop("/sim/messages/copilot","VNE exceeded");
 	}
 }

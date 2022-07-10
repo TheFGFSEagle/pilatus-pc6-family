@@ -93,19 +93,100 @@
 			<y>0</y>
 			<z>17.14</z>
 		</location>
-		<!--<pointmass name="Payload">
-			<description> 1332.20 LBS should bring model up to entered max weight </description>
-			<weight unit="LBS"> 666.10 </weight>
+		<pointmass name="Pilot">
+			<weight unit="LBS">150</weight>
 			<location name="POINTMASS" unit="IN">
-				<x>166.35 </x>
-				<y>     0.00 </y>
-				<z>   -10.80 </z>
+				<x>139.4</x>
+				<y>-11</y>
+				<z>0</z>
 			</location>
-		</pointmass>-->
+		</pointmass>
+		
+		<pointmass name="Copilot">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>139.4</x>
+				<y>11</y>
+				<z>0</z>
+			</location>
+		</pointmass>
+		
+		<pointmass name="First on bench">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>166.5</x>
+				<y>-11</y>
+				<z>-5.1</z>
+			</location>
+		</pointmass>
+		
+		<pointmass name="Second on bench">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>184.3</x>
+				<y>-11</y>
+				<z>-5.1</z>
+			</location>
+		</pointmass>
+		
+		<pointmass name="Third on bench">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>196.9</x>
+				<y>-11</y>
+				<z>-5.1</z>
+			</location>
+		</pointmass>
+		
+		<pointmass name="Before cave">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>216.1</x>
+				<y>-11</y>
+				<z>-5.1</z>
+			</location>
+		</pointmass>
+		
+		<pointmass name="Cave">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>233.1</x>
+				<y>-11</y>
+				<z>-5.1</z>
+			</location>
+		</pointmass>
+		
+		<pointmass name="Largeur">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>155.9</x>
+				<y>11</y>
+				<z>-14.6</z>
+			</location>
+		</pointmass>
+		
+		<pointmass name="Mid on floor">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>184.6</x>
+				<y>-11</y>
+				<z>-5.1</z>
+			</location>
+		</pointmass>
+		
+		<pointmass name="Last on floor">
+			<weight unit="LBS">150</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>211.8</x>
+				<y>-11</y>
+				<z>-5.1</z>
+			</location>
+		</pointmass>
 	</mass_balance>
+	
 	<propulsion>
 		<engine file="Pratt-Whitney-PT6A-20">
-			<location unit="IN">
+			<!--<location unit="IN">
 				<x>85.1</x>
 				<y>0</y>
 				<z>0</z>
@@ -114,8 +195,7 @@
 				<pitch>-2.8</pitch>
 				<roll>0</roll>
 				<yaw>0</yaw>
-			</orient>
-			
+			</orient>-->
 			<feed>0</feed>
 			<feed>1</feed>
 			
@@ -579,6 +659,8 @@
 			</aerosurface_scale>
 		</channel>
 	</flight_control>
+	
+	<system file="pt6a-20"/>
 	
 	<aerodynamics>
 		<function name="aero/function/kCDge">

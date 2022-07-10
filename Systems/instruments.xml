@@ -88,9 +88,21 @@
 	<filter>
 		<name>Torque</name>
 		<type>gain</type>
-		<gain>-1</gain>
 		<enable>/instrumentation/torque-indicator/serviceable</enable>
-		<input>/engines/engine/thruster/torque</input>
+		<input>
+			<expression>
+				<div>
+					<max>
+						<prod>
+							<property>/engines/engine/thruster/torque</property>
+							<value>-1</value>
+						</prod>
+						<value>0</value>
+					</max>
+					<value>30.87</value>
+				</div>
+			</expression>
+		</input>
 		<output>/instrumentation/torque-indicator/indicated-torque-psi</output>
 	</filter>
 </PropertyList>

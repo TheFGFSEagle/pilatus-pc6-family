@@ -598,6 +598,12 @@
 		</channel>
 
 		<channel name="Yaw">
+			<pure_gain>
+				<input>/controls/flight/rudder</input>
+				<gain>-1</gain>
+				<output>fcs/steer-cmd-norm</output>
+			</pure_gain>
+			
 			<summer>
 				<input>fcs/rudder-cmd-norm</input>
 				<input>fcs/yaw-trim-cmd-norm</input>
@@ -1223,7 +1229,7 @@
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
 					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
-					<value>-0.0033953</value>
+					<value>0.0033953</value>
 				</product>
 			</function>
 		</axis>
@@ -1243,11 +1249,11 @@
 							-15.0	0.010833	0.006591	0	-0.006378	-0.010004
 							-5.0	0.020074	0.004120	0	-0.004240	-0.020074
 							0.0		0.024066	0.006903	0	-0.006903	-0.023428
-							5.0		0.023761	0.004550	0	-0.0023761	-0.023761
+							5.0		0.023761	0.004550	0	-0.004550	-0.023761
 							10.0	0.05		0.015640	0	-0.015217	-0.05
-							15.0	11.35907	0.025955	0	-0.025780	-11.35907
-							20.0	0.667340	0.022717	0	-0.022269	-0.667340
-							30.0	0.099275	0.014566	0	-0.014566	-0.030871
+							15.0	3.0			0.5			0	-0.5		-3.0
+							20.0	0.667340	0.1			0	-0.1		-0.667340
+							30.0	0.099275	0.014566	0	-0.014566	-0.099275
 						</tableData>
 					</table>
 					<!--<table>

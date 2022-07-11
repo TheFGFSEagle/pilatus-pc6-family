@@ -355,6 +355,7 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 	<engines>
 		<engine>
 			<itt-degc alias="/fdm/jsbsim/propulsion/engine/itt-c"/>
+			<rpm alias="/fdm/jsbsim/propulsion/engine/engine-rpm"/>
 		</engine>
 		<!--<pt6a>
 			<fuel_press type="double">0.0</fuel_press>

@@ -113,7 +113,7 @@ var update_annunciators=func{
 				setprop("/sim/alarms/annunciator.light_1_4",0);
 			}
 			
-			var fuel_press = getprop("/engines/pt6a/fuel_press");
+			var fuel_press = getprop("/engines/engine/fuel-pressure-psi") or 1;
 			if(fuel_press<0.5){
 				setprop("/sim/alarms/annunciator.light_1_3",1);
 			}else{
@@ -134,15 +134,15 @@ var update_annunciators=func{
 				setprop("/sim/alarms/annunciator.light_2_2",0);
 			}
 			
-			var chip_detection = getprop("/engines/pt6a/chip");
-			if(chip_detection>0.5){
-				setprop("/sim/alarms/annunciator.light_2_4",1);
-			}
+#			var chip_detection = getprop("/engines/pt6a/chip");
+#			if(chip_detection>0.5){
+#				setprop("/sim/alarms/annunciator.light_2_4",1);
+#			}
 			
-			var low_pitch_prop = pc6.engine.power_reverse.getValue();
-			var wow1 = getprop("/gear/gear[1]/wow");
-			var wow2 = getprop("/gear/gear[2]/wow");
-			if(low_pitch_prop!=nil and low_pitch_prop>0 and !wow1 and !wow2){
+			var low_pitch_prop = getprop("/engines/engine/thruster/pitch") < 0.5;
+			var wow1 = getprop("/gear/gear[0]/wow");
+			var wow2 = getprop("/gear/gear[1]/wow");
+			if(low_pitch_prop and !wow1 and !wow2){
 				setprop("/sim/alarms/annunciator.light_1_1",1);
 			}else{
 				setprop("/sim/alarms/annunciator.light_1_1",0);
@@ -156,7 +156,7 @@ var update_annunciators=func{
 			}
 			
 			###### beta range annunciator, to help the virtual pilot
-			var beta_range = getprop("/controls/engines/pt6a/power_beta");
+			var beta_range = getprop("/controls/engines/engine/reverser");
 			if(beta_range){
 				setprop("/sim/alarms/annunciator.light_2_5",1);
 			}else{

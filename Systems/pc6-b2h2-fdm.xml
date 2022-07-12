@@ -89,9 +89,9 @@
 		<emptywt unit="LBS">2800</emptywt>
 		
 		<location name="CG" unit="IN">
-			<x>202.88</x>
+			<x>185</x>
 			<y>0</y>
-			<z>17.14</z>
+			<z>16</z>
 		</location>
 		<pointmass name="Pilot">
 			<weight unit="LBS">150</weight>
@@ -668,6 +668,11 @@
 	
 	<system file="pt6a-20"/>
 	
+	<hysteresis_limits unit="DEG">
+		<min>5</min>
+		<max>15</max>
+	</hysteresis_limits>
+	
 	<aerodynamics>
 		<function name="aero/function/kCDge">
 			<description>Change in drag due to ground effect</description>
@@ -1172,11 +1177,18 @@
 							0.0		-0.018230	-0.004117	0	0.004140	0.019879
 							5.0		-0.017859	-0.004132	0	0.004079	0.017737
 							10.0	-0.017628	-0.003690	0	0.003614	0.018354
-							15.0	-0.607920	-0.004270	0	0.004278	0.607920
+							<!--15.0	-0.607920	-0.004270	0	0.004278	0.607920-->
 							20.0	-0.051660	-0.007966	0	0.007980	0.051660
 							30.0	-0.032209	-0.017133	0	0.016531	0.032209
 						</tableData>
 					</table>
+					<!--<table>
+						<independentVar lookup="row">aero/alpha-deg</independentVar>
+						<tableData>
+							14     1
+							15     3.5
+						</tableData>
+					</table>-->
 				</product>
 			</function>
 			
@@ -1189,6 +1201,13 @@
 					<property>aero/bi2vel</property>
 					<property>velocities/p-aero-rad_sec</property>
 					<value>-0.5428329</value>
+					<!--<table>
+						<independentVar lookup="row">aero/alpha-wing-rad</independentVar>
+						<tableData>
+							14    1
+							15    0.4
+						</tableData>
+					</table>-->
 				</product>
 			</function>
 			
@@ -1201,6 +1220,22 @@
 					<property>aero/bi2vel</property>
 					<property>velocities/r-aero-rad_sec</property>
 					<value>0.1003814</value>
+					<!--<table>
+						<independentVar lookup="row">aero/alpha-deg</independentVar>
+						<independentVar lookup="column">velocities/r-aero-rad_sec</independentVar>
+						<independentVar lookup="table">aero/stall-hyst-norm</independentVar>
+						<tableData breakPoint="0">
+								-0.15	-0.1	0	0.1	0.15
+							14	1		1		1	1	1
+							15	35 		30		1	30	35
+							30	5		5		1	5	5
+						</tableData>
+						<tableData breakPoint="1">
+								-0.15	-0.1	0	0.1	0.15
+							15	35		30		1	30	35
+							30	5		5		1	5	5
+						</tableData>
+					</table>-->
 				</product>
 			</function>
 			
@@ -1242,21 +1277,6 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<table>
-						<independentVar lookup="row">aero/alpha-deg</independentVar>
-						<independentVar lookup="column">aero/beta-deg</independentVar>
-						<tableData>
-									-30.0		-10.0		0.0	10.0		30.0
-							-15.0	0.010833	0.006591	0	-0.006378	-0.010004
-							-5.0	0.020074	0.004120	0	-0.004240	-0.020074
-							0.0		0.024066	0.006903	0	-0.006903	-0.023428
-							5.0		0.023761	0.004550	0	-0.004550	-0.023761
-							10.0	0.05		0.015640	0	-0.015217	-0.05
-							15.0	3.0			0.5			0	-0.5		-3.0
-							20.0	0.667340	0.1			0	-0.1		-0.667340
-							30.0	0.099275	0.014566	0	-0.014566	-0.099275
-						</tableData>
-					</table>
-					<!--<table>
 						<independentVar>aero/beta-deg</independentVar>
 						<tableData>
 							-30		0.024
@@ -1265,10 +1285,36 @@
 							10		-0.0073
 							30		-0.024
 						</tableData>
-					</table>-->
+					</table>
 					<value>-1</value>
 				</product>
 			</function>
+			
+			<!--<function name="aero/moment/Yaw_flat_spin">
+				<description>Yaw moment due to flat spin</description>
+				<product>
+					<property>aero/qbar-psf</property>
+					<property>metrics/Sw-sqft</property>
+					<property>metrics/bw-ft</property>
+					<property>aero/bi2vel</property>
+					<table>
+						<independentVar lookup="row">velocities/r-aero-rad_sec</independentVar>
+						<independentVar lookup="column">aero/alpha-deg</independentVar>
+						<tableData>
+								-23		-14	14	23
+							-15	0		0	0	0
+							-5	0		0	0	0
+							-3	-0.1	0	0	-0.1
+							-1	0		0	0	0
+							0	0		0	0	0
+							1	0		0	0	0
+							3	-0.1	0	0	0.1
+							5	0		0	0	0
+							15	0		0	0	0
+						</tableData>
+					</table>
+				</product>
+			</function>-->
 			
 			<function name="aero/moment/Yaw_roll_rate">
 				<description>Yaw moment due to roll rate</description>

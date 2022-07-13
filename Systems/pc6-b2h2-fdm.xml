@@ -998,7 +998,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>fcs/rudder-pos-rad</property>
 					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
-					<value>-0.108931</value>
+					<value>0.108931</value>
 				</product>
 			</function>
 		</axis>
@@ -1054,11 +1054,13 @@
 							0.0		0.033768
 							5.0		0.0043
 							10.0	-0.044374
-							15.0	-0.14
-							20.0	-0.297101
-							30.0	-0.373964
+							14.0	-0.12
+							15		-0.01
 						</tableData>
 					</table>
+					<cos>
+						<property>aero/beta-rad</property>
+					</cos>
 				</product>
 			</function>
 			
@@ -1071,6 +1073,7 @@
 					<property>fcs/elevator-pos-rad</property>
 					<property>aero/function/Alpha_Beta_Csurf_Reversal</property>
 					<value>-1.290231</value>
+					<value>2</value> <!-- to simulate all-movable horizontal tail -->
 				</product>
 			</function>
 			
@@ -1166,6 +1169,7 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
+					<value>-1</value>
 					<table>
 						<independentVar lookup="row">aero/alpha-deg</independentVar>
 						<independentVar lookup="column">aero/beta-deg</independentVar>
@@ -1182,13 +1186,13 @@
 							30.0	-0.032209	-0.017133	0	0.016531	0.032209
 						</tableData>
 					</table>
-					<!--<table>
+					<table>
 						<independentVar lookup="row">aero/alpha-deg</independentVar>
 						<tableData>
 							14     1
 							15     3.5
 						</tableData>
-					</table>-->
+					</table>
 				</product>
 			</function>
 			
@@ -1201,13 +1205,13 @@
 					<property>aero/bi2vel</property>
 					<property>velocities/p-aero-rad_sec</property>
 					<value>-0.5428329</value>
-					<!--<table>
+					<table>
 						<independentVar lookup="row">aero/alpha-wing-rad</independentVar>
 						<tableData>
 							14    1
 							15    0.4
 						</tableData>
-					</table>-->
+					</table>
 				</product>
 			</function>
 			
@@ -1220,7 +1224,7 @@
 					<property>aero/bi2vel</property>
 					<property>velocities/r-aero-rad_sec</property>
 					<value>0.1003814</value>
-					<!--<table>
+					<table>
 						<independentVar lookup="row">aero/alpha-deg</independentVar>
 						<independentVar lookup="column">velocities/r-aero-rad_sec</independentVar>
 						<independentVar lookup="table">aero/stall-hyst-norm</independentVar>
@@ -1235,7 +1239,7 @@
 							15	35		30		1	30	35
 							30	5		5		1	5	5
 						</tableData>
-					</table>-->
+					</table>
 				</product>
 			</function>
 			
@@ -1290,7 +1294,7 @@
 				</product>
 			</function>
 			
-			<!--<function name="aero/moment/Yaw_flat_spin">
+			<function name="aero/moment/Yaw_flat_spin">
 				<description>Yaw moment due to flat spin</description>
 				<product>
 					<property>aero/qbar-psf</property>
@@ -1302,19 +1306,15 @@
 						<independentVar lookup="column">aero/alpha-deg</independentVar>
 						<tableData>
 								-23		-14	14	23
-							-15	0		0	0	0
 							-5	0		0	0	0
-							-3	-0.1	0	0	-0.1
-							-1	0		0	0	0
+							-3	-0.2	0	0	-0.2
 							0	0		0	0	0
-							1	0		0	0	0
-							3	-0.1	0	0	0.1
+							3	0.2		0	0	0.2
 							5	0		0	0	0
-							15	0		0	0	0
 						</tableData>
 					</table>
 				</product>
-			</function>-->
+			</function>
 			
 			<function name="aero/moment/Yaw_roll_rate">
 				<description>Yaw moment due to roll rate</description>

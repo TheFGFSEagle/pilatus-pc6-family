@@ -171,8 +171,8 @@ var update_electrical = func {
 }
 
 var update_annunciators_bus = func(dt){
-	var master_bat = getprop("/controls/switches/battery-click");
-	var master_alt = getprop("/controls/switches/generator-click");
+	var master_bat = getprop("/controls/electric/battery-switch");
+	var master_alt = getprop("/controls/electric/engine/generator");
 	var battery_volts = battery.get_output_volts();
 	var alternator_volts = alternator.get_output_volts();
 	var load = 0.0;
@@ -201,10 +201,10 @@ var update_annunciators_bus = func(dt){
 }
 
 var update_radio_bus = func(dt){
-	var master_bat = getprop("/controls/switches/battery-click");
+	var master_bat = getprop("/controls/electric/battery-switch");
 	var bat_cb = getprop("/controls/electric/circuitbreaker/cb_1_3");
 	var bat_bus_click = getprop("/controls/switches/bat_bus-click");
-	var master_alt = getprop("/controls/switches/generator-click");
+	var master_alt = getprop("/controls/electric/engine/generator");
 	var alt_cb = getprop("/controls/electric/circuitbreaker/cb_1_6");
 	var alt_bus_click = getprop("/controls/switches/gen_bus-click");
 	var battery_volts = battery.get_output_volts();
@@ -590,8 +590,8 @@ var update_output = func(dt){
 	var battery_volts = battery.get_output_volts();
 	
 	# switch state
-    var master_bat = getprop("/controls/switches/battery-click");
-    var master_alt = getprop("/controls/switches/generator-click");
+    var master_bat = getprop("/controls/electric/battery-switch");
+    var master_alt = getprop("/controls/electric/engine/generator");
 	var power_source = nil;
 	
 	if ( master_bat and battery.isServiceable()) {

@@ -1220,7 +1220,7 @@ livery_update.stop();
 		<object-name>damper1.L</object-name>
 		<object-name>vstrut.L</object-name>
 		<object-name>fairing.L</object-name>
-		<property>gear/gear[0]/compression-norm</property>
+		<property>gear/gear[0]/compression-ft</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
@@ -1250,7 +1250,7 @@ livery_update.stop();
 	<animation>
 		<type>rotate</type>
 		<object-name>damper2.L</object-name>
-		<property>gear/gear[0]/compression-norm</property>
+		<property>gear/gear[0]/compression-ft</property>
 		<interpolation>
 		<entry>
 			<ind>0.0</ind>
@@ -1303,7 +1303,7 @@ livery_update.stop();
 		<object-name>damper1.R</object-name>
 		<object-name>vstrut.R</object-name>
 		<object-name>fairing.R</object-name>
-		<property>gear/gear[1]/compression-norm</property>
+		<property>gear/gear[1]/compression-ft</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
@@ -1333,7 +1333,7 @@ livery_update.stop();
 	<animation>
 		<type>rotate</type>
 		<object-name>damper2.R</object-name>
-		<property>gear/gear[1]/compression-norm</property>
+		<property>gear/gear[1]/compression-ft</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
@@ -1382,7 +1382,7 @@ livery_update.stop();
 	<animation>
 		<type>rotate</type>
 		<object-name>tail_gear</object-name>
-		<property>gear/gear[2]/caster-angle-deg</property>
+		<property>gear/gear[2]/steering-angle-deg</property>
 		<factor>1</factor>
 		<axis>
 			<x>0.0</x>
@@ -1399,7 +1399,7 @@ livery_update.stop();
 	<animation>
 		<type>translate</type>
 		<object-name>tail_amorto</object-name>
-		<property>gear/gear[2]/compression-norm</property>
+		<property>gear/gear[2]/compression-ft</property>
 		<factor>-0.025</factor>
 		<axis>
 			<x1-m>10.55</x1-m>
@@ -1418,7 +1418,7 @@ livery_update.stop();
 		<object-name>tailtyre</object-name>
 		<object-name>tailwheel</object-name>
 		<object-name>tail.gardeboue</object-name>
-		<property>gear/gear[2]/compression-norm</property>
+		<property>gear/gear[2]/compression-ft</property>
 		<factor>-25</factor>
 		<center>
 			<x-m>10.435</x-m>

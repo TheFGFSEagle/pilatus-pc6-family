@@ -8,9 +8,9 @@
     
 	<!--battery_generator.lock-->   
     	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>battery_generator.lock</object-name>
-		<property>controls/switches/battery_generator-lock-click</property>
+		<property>controls/electric/battery-generator-switch-lock</property>
 		<factor>-30</factor>
 		<axis>
 			<x1-m>0.015</x1-m>
@@ -20,25 +20,19 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>0.084</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>battery_generator.lock</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/switches/battery_generator-lock-click</property>
+				<property>controls/electric/battery-generator-switch-lock</property>
 			</binding>
 		</action>
 	</animation>
 	
  	<!--battery interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>battery.lever</object-name>
-		<property>controls/switches/battery-click</property>
+		<property>controls/electric/battery-switch</property>
 		<factor>-60</factor>
 		<axis>
 			<x1-m>0.095</x1-m>
@@ -48,18 +42,12 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.013</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>battery.lever</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/battery_generator-lock-click</property>
-						<value type="double">0</value>
+						<property>controls/electric/battery-generator-switch-lock</property>
+						<value type="bool">false</value>
 					</equals>
 				</condition>
 				<command>property-toggle</command>
@@ -68,8 +56,8 @@
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/battery_generator-lock-click</property>
-						<value type="double">0</value>
+						<property>controls/electric/battery-generator-switch-lock</property>
+						<value type="bool">false</value>
 					</equals>
 				</condition>
 				<command>property-toggle</command>
@@ -80,9 +68,9 @@
 	
 	<!--generator interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>generator.lever</object-name>
-		<property>controls/switches/generator-click</property>
+		<property>controls/electric/engine/generator</property>
 		<factor>-60</factor>
 		<axis>
 			<x1-m>0.095</x1-m>
@@ -92,28 +80,22 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.013</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>generator.lever</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/battery_generator-lock-click</property>
-						<value type="double">0</value>
+						<property>controls/electric/battery-generator-switch-lock</property>
+						<value type="bool">false</value>
 					</equals>
 				</condition>
 				<command>property-toggle</command>
-				<property>controls/switches/generator-click</property>
+				<property>controls/electric/engine/generator</property>
 			</binding>
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/battery_generator-lock-click</property>
-						<value type="double">0</value>
+						<property>controls/electric/battery-generator-switch-lock</property>
+						<value type="bool">false</value>
 					</equals>
 				</condition>
 				<command>property-toggle</command>
@@ -265,10 +247,8 @@
 	
 	<!--starter interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>starter.lever</object-name>
-		<property>controls/switches/starter-click</property>
-		<factor>-60</factor>
 		<axis>
 			<x1-m>0.095</x1-m>
 			<y1-m>0.006</y1-m>
@@ -277,28 +257,24 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.013</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>starter.lever</object-name>
+		<property>controls/engines/engine/starter</property>
+		<factor>-60</factor>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/starter-lock-click</property>
-						<value type="double">1</value>
+						<property>controls/engines/engine/starter-lock</property>
+						<value type="bool">true</value>
 					</equals>
 				</condition>
 				<command>property-toggle</command>
-				<property>controls/switches/starter-click</property>
+				<property>controls/engines/engine/starter</property>
 			</binding>
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/starter-lock-click</property>
-						<value type="double">1</value>
+						<property>controls/engines/engine/starter-lock</property>
+						<value type="bool">true</value>
 					</equals>
 				</condition>
 				<command>property-toggle</command>
@@ -308,9 +284,9 @@
 	</animation>
 	
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>starter.interrupt_lock.lever</object-name>
-		<property>controls/switches/starter-lock-click</property>
+		<property>controls/engines/engine/starter-lock</property>
 		<factor>90</factor>
 		<axis>
 			<x1-m>-0.068</x1-m>
@@ -320,22 +296,16 @@
 			<y2-m>0.012</y2-m>
 			<z2-m>0.035</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>starter.interrupt_lock.lever</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/starter-click</property>
-						<value type="double">0</value>
+						<property>controls/engines/engine/starter</property>
+						<value type="bool">false</value>
 					</equals>
 				</condition>
 				<command>property-toggle</command>
-				<property>controls/switches/starter-lock-click</property>
+				<property>controls/engines/engine/starter-lock</property>
 			</binding>
 		</action>
 	</animation>

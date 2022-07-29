@@ -144,7 +144,7 @@ controls.throttleMouse = func {
 		if (!e.controls.getNode("reverser").getBoolValue() and val < 0.4) {
 			val = 0.4;
 		} elsif (e.controls.getNode("reverser").getBoolValue() and val > 0.4) {
-			val = 0.4,
+			val = 0.4;
 		}
 		
 		if(size(arg) > 0) val = -val;

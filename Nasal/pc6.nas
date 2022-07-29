@@ -77,38 +77,38 @@ var terrain_lookup = func {
 
    var lat = getprop("/position/latitude-deg");
    var lon = getprop("/position/longitude-deg");
-   setprop("/environment/terrain_lookup/latitude",lat);
-   setprop("/environment/terrain_lookup/longitude",lon);
+   setprop("/environment/terrain_lookup/latitude", lat);
+   setprop("/environment/terrain_lookup/longitude", lon);
    
    if(lat != nil and lon != nil)
    {
-      # Get Geo-Info
-      var info = geodinfo(lat, lon);
-
-      if(info != nil){
-         if (info[1] != nil){
+	  # Get Geo-Info
+	  var info = geodinfo(lat, lon);
+	
+	  if(info != nil){
+		 if (info[1] != nil){
 			var names = props.globals.getNode("/environment/terrain_lookup/names");
-			if(names!=nil){
+			if (names !=nil) {
 				names.removeChildren();
 			}
-		 
-            forindex(i; info[1].names){
+		 	
+			forindex (i; info[1].names){
 				setprop("/environment/terrain_lookup/names/names["~i~"]",info[1].names[i]);
-            }
-			if(getprop("/environment/terrain_lookup/names/names")!=nil and substr(getprop("/environment/terrain_lookup/names/names"),0,1)=="p"){
+			}
+			if (getprop("/environment/terrain_lookup/names/names") != nil and substr(getprop("/environment/terrain_lookup/names/names"), 0, 1) == "p") {
 				setprop("/environment/terrain_lookup/dust_color",1);
-			}else{
+			} else {
 				setprop("/environment/terrain_lookup/dust_color",0);
 			}
-			setprop("/environment/terrain_lookup/light_coverage",info[1].light_coverage);
-			setprop("/environment/terrain_lookup/bumpiness",info[1].bumpiness);
-			setprop("/environment/terrain_lookup/load_resistance",info[1].load_resistance);
-			setprop("/environment/terrain_lookup/solid",info[1].solid);
-			setprop("/environment/terrain_lookup/friction_factor",info[1].friction_factor);
-			setprop("/environment/terrain_lookup/rolling_friction",info[1].rolling_friction);
-			setprop("/environment/terrain_lookup/bumpiness",info[1].bumpiness);
-         }
-      }
+			setprop("/environment/terrain_lookup/light_coverage", info[1].light_coverage);
+			setprop("/environment/terrain_lookup/bumpiness", info[1].bumpiness);
+			setprop("/environment/terrain_lookup/load_resistance", info[1].load_resistance);
+			setprop("/environment/terrain_lookup/solid", info[1].solid);
+			setprop("/environment/terrain_lookup/friction_factor", info[1].friction_factor);
+			setprop("/environment/terrain_lookup/rolling_friction", info[1].rolling_friction);
+			setprop("/environment/terrain_lookup/bumpiness", info[1].bumpiness);
+		 }
+	  }
    }
 
    #settimer(terrain_loockup, 0.1);
@@ -119,7 +119,7 @@ setlistener("/sim/signals/fdm-initialized", terrain_lookup);
 var check_vne_flaps = func{
 	var kias = getprop("velocities/airspeed-kt");
 	var flaps = getprop("/controls/flight/flaps");
-	if(kias!=nil and kias>95 and flaps!=nil and flaps>0){
+	if (kias != nil and kias > 95 and flaps != nil and flaps > 0) {
 		#setprop("/sim/failure-manager/controls/flight/flaps/serviceable",0);
 		setprop("/sim/messages/copilot","Vfe exceeded");
 	}
@@ -127,8 +127,28 @@ var check_vne_flaps = func{
 
 var	check_vne_structure = func{
 	var kias = getprop("velocities/airspeed-kt");
-	if(kias!=nil and kias>151){
+	if (kias != nil and kias > 151) {
 		#setprop("/sim/sound/crash",1);
 		setprop("/sim/messages/copilot","VNE exceeded");
 	}
 }
+
+controls.throttleMouse = func {
+	!getprop("/devices/status/mice/mouse[0]/button[1]") and return;
+	var delta = cmdarg().getNode("offset").getValue() * -4;
+	foreach(var e; engines) {
+		!e.selected.getValue() and continue;
+		var throttle = e.controls.getNode("throttle");
+		var val = throttle.getValue() + delta;
+		
+		if (!e.controls.getNode("reverser").getBoolValue() and val < 0.4) {
+			val = 0.4;
+		} elsif (e.controls.getNode("reverser").getBoolValue() and val > 0.4) {
+			val = 0.4,
+		}
+		
+		if(size(arg) > 0) val = -val;
+		throttle.setDoubleValue(val);
+	}
+}
+

@@ -881,11 +881,24 @@ livery_update.stop();
 		</axis>
 		<action>
 			<binding>
+				<condition>
+					<not><property>controls/engines/engine/reverser</property></not>
+				</condition>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/throttle</property>
+				<factor>0.01</factor>
+				<min>0.4</min>
+				<max>1</max>
+			</binding>
+			<binding>
+				<condition>
+					<property>controls/engines/engine/reverser</property>
+				</condition>
 				<command>property-adjust</command>
 				<property>controls/engines/engine/throttle</property>
 				<factor>0.01</factor>
 				<min>0</min>
-				<max>1</max>
+				<max>0.4</max>
 			</binding>
 		</action>
 	</animation>

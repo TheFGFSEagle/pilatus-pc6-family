@@ -320,6 +320,7 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 								setprop("/controls/electric/battery-switch", 1);
 								setprop("/controls/electric/engine/generator", 1);
 								setprop("/controls/engines/engine/condition", 1);
+								setprop("/controls/fuel/valve", 1);
 								setprop("/controls/engines/engine/starter", 1);
 							</script>
 						</binding>

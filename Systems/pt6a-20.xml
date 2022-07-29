@@ -12,9 +12,9 @@
 		<fcs_function>
 			<function>
 				<ifthen>
-					<property>/controls/engines/engine/reverser</property>
+					<property>propulsion/engine/reverser</property>
 					<table>
-						<independentVar lookup="row">/controls/engines/engine/throttle</independentVar>
+						<independentVar lookup="row">fcs/throttle-pos-norm</independentVar>
 						<tableData>
 							0	-0.5
 							0.3	-10.5
@@ -24,6 +24,56 @@
 				</ifthen>
 			</function>
 			<output>propulsion/engine/blade-angle</output>
+		</fcs_function>
+	</channel>
+	
+	<channel name="Engine">		
+		<switch>
+			<default value="1"/>
+			<test value="0">
+				/controls/engines/engine/condition GT 0.3
+			</test>
+			<output>propulsion/cutoff_cmd</output>
+		</switch>
+		
+		<fcs_function>
+			<function>
+				<ifthen>
+					<not><property>/controls/engines/engine/reverser</property></not>
+					<table>
+						<independentVar lookup="row">fcs/throttle-cmd-norm</independentVar>
+						<tableData>
+							0.4	0
+							1	1
+						</tableData>
+					</table>
+					<table>
+						<independentVar lookup="row">fcs/throttle-cmd-norm</independentVar>
+						<tableData>
+							0	1
+							0.4	0
+						</tableData>
+					</table>
+				</ifthen>
+			</function>
+			<output>fcs/throttle-pos-norm</output>
+		</fcs_function>
+		
+		<fcs_function>
+			<function>
+				<ifthen>
+					<not><property>/controls/engines/engine/reverser</property></not>
+					<max>
+						<property>/controls/engines/engine/throttle</property>
+						<value>0.4</value>
+					</max>
+					<min>
+						<property>/controls/engines/engine/throttle</property>
+						<value>0.4</value>
+					</min>
+				</ifthen>
+			</function>
+			<output>/controls/engines/engine/throttle</output>
 		</fcs_function>
 	</channel>
 </system>

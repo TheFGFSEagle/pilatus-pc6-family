@@ -920,7 +920,7 @@ livery_update.stop();
 		<type>knob</type>
 		<object-name>condition</object-name>
 		<property>controls/engines/engine/condition</property>
-		<factor>35.0</factor>
+		<factor>70</factor>
 		<center>
 			<x-m>3.0663</x-m>
 			<y-m>0.827828</y-m>
@@ -935,10 +935,10 @@ livery_update.stop();
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/engines/engine/condition</property>
-				<factor>0.01</factor>
+				<factor>0.05</factor>
 				<min>0</min>
 				<max>1</max>
-			</binding>   
+			</binding>
 		</action>
 	</animation>
 	

@@ -316,8 +316,9 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 							<command>nasal</command>
 							<!--<script>pc6.engine.autostart();</script>-->
 							<script>
+								setprop("/controls/electric/battery-switch", 1);
 								setprop("/controls/electric/engine/generator", 1);
-								setprop("/controls/engines/engine/cutoff", 0);
+								setprop("/controls/engines/engine/condition", 1);
 								setprop("/controls/engines/engine/starter", 1);
 							</script>
 						</binding>
@@ -559,6 +560,11 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 	</systems>
 	<!-- set up control -->
 	<controls>
+		<engines>
+			<engine>
+				<starter-lock type="bool">true</starter-lock>
+			</engine>
+		</engines>
 		<gear>
 			<tailwheel-lock>true</tailwheel-lock>
 			<brake-parking>1</brake-parking>
@@ -596,6 +602,8 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<elt_diod type="double">0</elt_diod>
 		</lighting>
 		<electric>
+			<battery-switch type="bool">false</battery-switch>
+			<battery-generator-switch-lock type="bool">true</battery-generator-switch-lock>
 			<circuitbreaker>
 				<cb_1_1 type="bool">true</cb_1_1>
 				<cb_1_2 type="bool">true</cb_1_2>
@@ -636,16 +644,11 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 		<switches>
 			<elevator-trim-interrupt-click type="bool">false</elevator-trim-interrupt-click>
 			<elevator-trim-interrupt-lock-click type="bool">false</elevator-trim-interrupt-lock-click>
-			<battery_generator-lock-click type="bool">true</battery_generator-lock-click>
-			<battery-click type="bool">false</battery-click>
-			<generator-click type="bool">false</generator-click>
 			<gen-reset-click type="bool">false</gen-reset-click>
 			<aux_fuel_pump-click type="bool">false</aux_fuel_pump-click>
 			<ignition-click type="bool">false</ignition-click>
-			<starter-click type="bool">false</starter-click>
 			<zero_v_test-click type="bool">false</zero_v_test-click>
 			<ignition-lock-click type="bool">false</ignition-lock-click>
-			<starter-lock-click type="bool">false</starter-lock-click>
 			<light_landing_R-click type="bool">false</light_landing_R-click>
 			<pos_landing_R-click type="int">0</pos_landing_R-click>
 			<pos_landing_L-click type="int">0</pos_landing_L-click>
@@ -707,8 +710,13 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 					<condition>
 						<less-than>
 							<property>/controls/engines/engine/throttle</property>
-							<value>0.05</value>
+							<value>0.45</value>
 						</less-than>
+						<greater-than>
+							<property>/controls/engines/engine/throttle</property>
+							<value>0.35</value>
+						</greater-than>
+					</condition>
 					</condition>
 					<command>property-toggle</command>
 					<property>/controls/engines/engine/reverser</property>

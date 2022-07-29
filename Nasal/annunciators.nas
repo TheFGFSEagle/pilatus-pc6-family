@@ -120,14 +120,14 @@ var update_annunciators=func{
 				setprop("/sim/alarms/annunciator.light_1_3",0);
 			}
 			
-			var battery_click = getprop("/controls/switches/battery-click");
-			var generator_click = getprop("/controls/switches/generator-click");
-			if(!generator_click){
+			var battery_switch = getprop("/controls/electric/battery-switch");
+			var generator = getprop("/controls/electric/engine/generator");
+			if(!generator){
 				setprop("/sim/alarms/annunciator.light_3_2",1);
 			}else{
 				setprop("/sim/alarms/annunciator.light_3_2",0);
 			}
-			if(!battery_click){
+			if(!battery_switch){
 				setprop("/sim/alarms/annunciator.light_2_2",1);
 				
 			}else{
@@ -139,7 +139,7 @@ var update_annunciators=func{
 #				setprop("/sim/alarms/annunciator.light_2_4",1);
 #			}
 			
-			var low_pitch_prop = getprop("/engines/engine/thruster/pitch") < 0.5;
+			var low_pitch_prop = getprop("/engines/engine/thruster/pitch-deg") < 0.5;
 			var wow1 = getprop("/gear/gear[0]/wow");
 			var wow2 = getprop("/gear/gear[1]/wow");
 			if(low_pitch_prop and !wow1 and !wow2){

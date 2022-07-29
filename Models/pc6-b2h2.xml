@@ -480,12 +480,12 @@ livery_update.stop();
 			<y-m>-0.543</y-m>
 			<z-m>0.062</z-m>
 		</center>
-		<property>consumables/fuel/switch-position</property>
+		<property>controls/fuel/valve</property>
 		<factor>90</factor>
 		<action>
 			<binding>
 				<command>property-toggle</command>
-				<property>consumables/fuel/switch-position</property>
+				<property>controls/fuel/valve</property>
 			</binding>
 		</action>
 	</animation>

@@ -30,10 +30,11 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 				<email>thefgfseagle@gmail.com</email>
 			</author>
 		</authors>
-		<aircraft-version>V 1.0 30/03/2011</aircraft-version>
+		<aircraft-version>1.0</aircraft-version>
+		<minimum-fg-version>2017.2.0</minimum-fg-version>
 		<flight-model>jsb</flight-model>
 		<aero>Systems/pc6-b2h2-fdm</aero>
-		<status>alpha</status>
+		<status>beta</status>
 		<rating>
 			<FDM type="int">3</FDM>
 			<systems type="int">4</systems>
@@ -387,7 +388,6 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 	</engines>
 	<consumables>
 		<fuel>
-			<switch-position type="int">0</switch-position>
 			<tank n="0">
 				<name>Left wing</name>
 				<selected type="bool">true</selected>
@@ -565,9 +565,12 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 				<starter-lock type="bool">true</starter-lock>
 			</engine>
 		</engines>
+		<fuel>
+			<valve type="bool">true</valve>
+		</fuel>
 		<gear>
-			<tailwheel-lock>true</tailwheel-lock>
-			<brake-parking>1</brake-parking>
+			<tailwheel-lock type="bool">true</tailwheel-lock>
+			<brake-parking type="bool">true</brake-parking>
 		</gear>
 		<doors>
 			<door0>
@@ -673,9 +676,6 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<tirette.2 type="double">1</tirette.2>
 			<tirette.3 type="double">1</tirette.3>
 		</switches>
-		<flight>
-			<wing_destroyed type="double">0</wing_destroyed>
-		</flight>
 	</controls>
 	<!-- Nasal files/scripts -->
 	<nasal>

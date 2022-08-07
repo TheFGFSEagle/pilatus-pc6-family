@@ -136,7 +136,7 @@ var	check_vne_structure = func{
 controls.throttleMouse = func {
 	!getprop("/devices/status/mice/mouse[0]/button[1]") and return;
 	var delta = cmdarg().getNode("offset").getValue() * -4;
-	foreach(var e; engines) {
+	foreach(var e; controls.engines) {
 		!e.selected.getValue() and continue;
 		var throttle = e.controls.getNode("throttle");
 		var val = throttle.getValue() + delta;

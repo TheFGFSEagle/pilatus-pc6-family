@@ -16,8 +16,8 @@
 					<table>
 						<independentVar lookup="row">fcs/throttle-pos-norm</independentVar>
 						<tableData>
-							0	-0.5
-							0.3	-10.5
+							0		-10.5
+							0.28	-0.5
 						</tableData>
 					</table>
 					<property>propulsion/engine/blade-angle</property>

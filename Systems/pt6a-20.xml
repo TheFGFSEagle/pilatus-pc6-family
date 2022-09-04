@@ -3,10 +3,11 @@
 	<channel name="Propeller">
 		<switch>
 			<default value="1"/>
-			<test value="0">
-				/controls/engines/engine/reverser EQ 1
+			<test logic="OR" value="0">
+				propulsion/engine[0]/reverser == 1
+				fcs/feather-pos-norm == 1
 			</test>
-			<output>propulsion/engine/constant-speed-mode</output>
+			<output>propulsion/engine[0]/constant-speed-mode</output>
 		</switch>
 		
 		<fcs_function>
@@ -14,16 +15,56 @@
 				<ifthen>
 					<property>propulsion/engine/reverser</property>
 					<table>
-						<independentVar lookup="row">fcs/throttle-pos-norm</independentVar>
+						<independentVar lookup="row">fcs/throttle-cmd-norm</independentVar>
 						<tableData>
-							0		-10.5
-							0.28	-0.5
+							0.28	-10.5
+							0.38	-0.5
 						</tableData>
 					</table>
-					<property>propulsion/engine/blade-angle</property>
+					<ifthen>
+						<property>fcs/feather-pos-norm</property>
+						<sum>
+							<property>propulsion/engine/blade-angle</property>
+							<product>
+								<property>simulation/channel-dt</property>
+								<value>5</value>
+							</product>
+						</sum>
+						<property>propulsion/engine/blade-angle</property>
+					</ifthen>
 				</ifthen>
 			</function>
 			<output>propulsion/engine/blade-angle</output>
+			<clipto>
+				<min>-10.5</min>
+				<max>86</max>
+			</clipto>
+		</fcs_function>
+		
+		<switch>
+			<default value="0"/>
+			<test value="1">
+				fcs/advance-cmd-norm LT 0.4
+			</test>
+			<output>fcs/feather-cmd-norm</output>
+			<output>fcs/feather-pos-norm</output>
+		</switch>
+		
+		<fcs_function>
+			<function>
+				<ifthen>
+					<property>fcs/feather-pos-norm</property>
+					<value>0</value>
+					<table>
+						<independentVar lookup="row">fcs/advance-cmd-norm</independentVar>
+						<tableData>
+							0.4	0
+							1	1
+						</tableData>
+					</table>
+				</ifthen>
+			</function>
+			<output>fcs/advance-pos-norm</output>
 		</fcs_function>
 	</channel>
 	
@@ -44,15 +85,15 @@
 					<table>
 						<independentVar lookup="row">fcs/throttle-cmd-norm</independentVar>
 						<tableData>
-							0.4	0
-							1	1
+							0.42	0
+							1		1
 						</tableData>
 					</table>
 					<table>
 						<independentVar lookup="row">fcs/throttle-cmd-norm</independentVar>
 						<tableData>
-							0	1
-							0.4	0
+							0		1
+							0.3		0
 						</tableData>
 					</table>
 				</ifthen>

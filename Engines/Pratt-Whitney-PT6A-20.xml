@@ -3,7 +3,7 @@
 <turboprop_engine name="Pratt-Whitney-PT6A-20">
 	<milthrust unit="LBS">1232</milthrust>
 	<idlen1>50.6</idlen1>
-	<idlen2>1113.6</idlen2>
+	<idlen2>18750</idlen2>
 	<maxn1>110</maxn1>
 	<maxpower unit="HP">550</maxpower>
 	<psfc unit="LBS/HR/HP">0.5</psfc>
@@ -13,7 +13,7 @@
 	<!--<ielumaxtorque unit="FT*LB">1386.5</ielumaxtorque>-->
 	<itt_delay>3</itt_delay>
 	<betarangeend>30</betarangeend>
-	<reversemaxpower>90.909</reversemaxpower>
+	<reversemaxpower>100</reversemaxpower>
 
 	<function name="EnginePowerVC">
 		<table>

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <propeller version="1.01" name="Hartzell-HC-B3TN-3C">
-	<ixx>25</ixx>
+	<ixx>5</ixx>
 	<diameter unit="IN">101</diameter>
 	<numblades>3</numblades>
 	<gearratio>17.0454545</gearratio>
 	<reversepitch>-10.5</reversepitch>
 	<minpitch>9.5</minpitch>
-	<maxpitch>86</maxpitch>
+	<maxpitch>40</maxpitch>
 	<minrpm>1113.2</minrpm>
 	<maxrpm>2200</maxrpm>
 	<constspeed>1</constspeed>

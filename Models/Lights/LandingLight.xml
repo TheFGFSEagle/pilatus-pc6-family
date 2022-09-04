@@ -13,12 +13,6 @@
     </animation>
 
     <animation>
-        <type>billboard</type>
-        <object-name>Light</object-name>
-        <spherical type="bool">true</spherical>
-    </animation>
-
-    <animation>
         <type>dist-scale</type>
         <object-name>Light</object-name>
         <interpolation>

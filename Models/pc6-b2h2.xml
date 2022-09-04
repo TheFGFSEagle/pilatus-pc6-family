@@ -30,13 +30,14 @@ var rplayer = cmdarg();
 livery_update.stop();
 		]]></unload>
 	</nasal>
-
-	<animation>
-		<type>shader</type>
-		<shader>chrome</shader>
-		<texture>Models/chrome2.png</texture>
-		<object-name>prophub</object-name>
-	</animation>
+	
+	<effect>
+		<inherits-from>Effects/exterior-opaque</inherits-from>
+		<parameters>
+			<reflection-correction>0</reflection-correction>
+		</parameters>
+		<object-name>PropellerSpinner</object-name>
+	</effect>
 
 	<model>
 		<name>Left Electric Switches Panel</name>
@@ -422,11 +423,70 @@ livery_update.stop();
 			<z-m>0.66</z-m>
 		</offsets>
 	</model>
+	
+	<effect>
+		<inherits-from>Effects/exterior-opaque</inherits-from>
+		<object-name>Fuselage</object-name>
+		<object-name>WingLeft</object-name>
+		<object-name>WingRight</object-name>
+		<object-name>AileronLeft</object-name>
+		<object-name>AileronRight</object-name>
+		<object-name>FlapLeft</object-name>
+		<object-name>FlapRight</object-name>
+		<object-name>WingtipLeft</object-name>
+		<object-name>WingtipRight</object-name>
+		<object-name>WingStrutLeft</object-name>
+		<object-name>WingStrutRight</object-name>
+		<object-name>VerticalFin</object-name>
+		<object-name>Rudder</object-name>
+		<object-name>HorizontalStabilizerLeft</object-name>
+		<object-name>HorizontalStabilizerRight</object-name>
+		<object-name>ElevatorLeft</object-name>
+		<object-name>ElevatorRight</object-name>
+		<object-name>ProtectionGearTail</object-name>
+		<object-name>RimMainLeft</object-name>
+		<object-name>RimMainRight</object-name>
+		<object-name>RimTail</object-name>
+		<object-name>ProtectionGearTail</object-name>
+		<object-name>GearTorqueLinkTailLower</object-name>
+		<object-name>GearTorqueLinkTailUpper</object-name>
+		<object-name>GearMudguardTail</object-name>
+		<object-name>GearCylinderMainLeft</object-name>
+		<object-name>GearCylinderMainRight</object-name>
+		<object-name>GearCylinderTail</object-name>
+		<object-name>GearStrutMainLeft</object-name>
+		<object-name>GearStrutMainRight</object-name>
+		<object-name>GearDamperMainLeft</object-name>
+		<object-name>GearDamperMainRight</object-name>
+		<object-name>GearDamperTail</object-name>
+		<object-name>DoorFrontLeftExterior</object-name>
+		<object-name>DoorFrontRightExterior</object-name>
+		<object-name>DoorSlideExterior</object-name>
+		<object-name>DoorSwingFrontExterior</object-name>
+		<object-name>DoorSwingRearExterior</object-name>
+		<object-name>BaggageDoorExterior</object-name>
+		<object-name>LightMountNavTail</object-name>
+		<object-name>AntennaCOM1</object-name>
+		<object-name>AntennaCOM2</object-name>
+		<object-name>AntennaELT</object-name>
+		<object-name>ForwardTube</object-name>
+	</effect>
+	
+	<effect>
+		<inherits-from>Effects/exterior-glass</inherits-from>
+		<object-name>WindowDoorFrontLeftExterior</object-name>
+		<object-name>WindowDoorFrontRightExterior</object-name>
+		<object-name>WindowDoorSlideExterior</object-name>
+		<object-name>WindowDoorSwingFrontExterior</object-name>
+		<object-name>WindowDoorSwingRearExterior</object-name>
+		<object-name>WindowRearLeft</object-name>
+		<object-name>WindowRearRight</object-name>
+		<object-name>Windshield</object-name>
+	</effect>
 
-	<!--Tail wheel lock-->
 	<animation>
 		<type>knob</type>
-		<object-name>tailwheel_lock.manette</object-name>
+		<object-name>TailWheelLockLever</object-name>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
@@ -447,10 +507,9 @@ livery_update.stop();
 		</action>
 	</animation>
 
-	<!--ParkingBrakeControl-->
 	<animation>
 		<type>slider</type>
-		<object-name>parking_brake</object-name>
+		<object-name>ParkingBrakeHandle</object-name>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -466,10 +525,9 @@ livery_update.stop();
 		</action>
 	</animation>
 
-	<!--Fuel Valve control-->
 	<animation>
 		<type>knob</type>
-		<object-name>fuel_valve.valve</object-name>
+		<object-name>FuelValveHandle</object-name>
 		<axis>
 		    <x>1</x>
 		    <y>0</y>
@@ -490,11 +548,9 @@ livery_update.stop();
 		</action>
 	</animation>
 
-<!-- flaps manette -->
 	<animation>
 		<type>knob</type>
-		<object-name>flaps_manette.tige</object-name>
-		<object-name>flaps_manette.manette</object-name>
+		<object-name>FlapsLever</object-name>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -505,7 +561,7 @@ livery_update.stop();
 			<y-m>0</y-m>
 			<z-m>0</z-m>
 		</center>
-		<property>surface-positions/flap-pos-norm</property>
+		<property>controls/flight/flaps</property>
 		<factor>4320</factor>
 		<action>
 			<binding>
@@ -519,10 +575,9 @@ livery_update.stop();
 	</animation>
  
 
-<!-- aileron trim -->
 	<animation>
 		<type>knob</type>
-		<object-name>aileron_trim.knob</object-name>
+		<object-name>AileronTrimKnob</object-name>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -547,7 +602,7 @@ livery_update.stop();
 	</animation>
 	<animation>
 		<type>translate</type>
-		<object-name>aileron_trim.aiguille</object-name>
+		<object-name>AileronTrimIndicatorNeedle</object-name>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -557,10 +612,9 @@ livery_update.stop();
 		<factor>0.08</factor>
 	</animation>
 	
-	<!-- elevator trim -->
 	<animation>
 		<type>knob</type>
-		<object-name>elevator_trim.trim_lever</object-name>
+		<object-name>ElevatorTrimSwitch</object-name>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
@@ -608,10 +662,9 @@ livery_update.stop();
 		</release>
 	</animation>
 	
-	<!--elevator trim interrupt-->
 	<animation>
 		<type>knob</type>
-		<object-name>elevator_trim.interrupt_lever</object-name>
+		<object-name>ElevatorTrimInterruptSwitch</object-name>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
@@ -628,7 +681,7 @@ livery_update.stop();
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/elevator-trim-interrupt-lock-click</property>
+						<property>controls/switches/elevator-trim-interrupt-guard-click</property>
 						<value type="double">1</value>
 					</equals>
 				</condition>
@@ -638,7 +691,7 @@ livery_update.stop();
 			<binding>
 				<condition>
 					<equals>
-						<property>controls/switches/elevator-trim-interrupt-lock-click</property>
+						<property>controls/switches/elevator-trim-interrupt-guard-click</property>
 						<value type="double">1</value>
 					</equals>
 				</condition>
@@ -648,10 +701,9 @@ livery_update.stop();
 		</action>
 	</animation>
 
-	<!--elevator trim interrupt lock-->
 	<animation>
 		<type>knob</type>
-		<object-name>elevator_trim.interrupt_lock.lever</object-name>
+		<object-name>ElevatorTrimInterruptSwitchGuard</object-name>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
@@ -662,7 +714,7 @@ livery_update.stop();
 			<y-m>-0.454</y-m>
 			<z-m>0.275</z-m>
 		</center>
-		<property>controls/switches/elevator-trim-interrupt-lock-click</property>
+		<property>controls/switches/elevator-trim-interrupt-guard-click</property>
 		<factor>90</factor>
 		<action>
 			<binding>
@@ -673,15 +725,14 @@ livery_update.stop();
 					</equals>
 				</condition>
 				<command>property-toggle</command>
-				<property>controls/switches/elevator-trim-interrupt-lock-click</property>
+				<property>controls/switches/elevator-trim-interrupt-guard-click</property>
 			</binding>
 		</action>
 	</animation>
 	
-<!-- rudder trim -->
 	<animation>
 		<type>knob</type>
-		<object-name>trim_rudder.manette</object-name>
+		<object-name>RudderTrimKnob</object-name>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -693,10 +744,7 @@ livery_update.stop();
 			<z-m>-0.103</z-m>
 		</center>
 		<property>controls/flight/rudder-trim</property>
-		<interpolation>
-			<entry><ind>0.3</ind><dep>-45.0</dep></entry>
-			<entry><ind>-0.3</ind><dep>45.0</dep></entry>
-		</interpolation>
+		<factor>-45</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
@@ -708,21 +756,20 @@ livery_update.stop();
 		</action>
 	</animation>
 	
-	<!-- tirette.1-->
 	<animation>
 		<type>slider</type>
-		<object-name>tirette.1</object-name>
+		<object-name>EngineControlsOilCoolerHandle</object-name>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>controls/switches/tirette.1</property>
+		<property>controls/engines/engine/oil-cooler-norm</property>
 		<factor>0.03</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/switches/tirette.1</property>
+				<property>controls/engines/engine/oil-cooler-norm</property>
 				<factor>1</factor>
 				<min>0</min>
 				<max>1</max>
@@ -731,7 +778,7 @@ livery_update.stop();
 		<shift-action>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/switches/tirette.1</property>
+				<property>controls/engines/engine/oil-cooler-norm</property>
 				<factor>0.1</factor>
 				<min>0</min>
 				<max>1</max>
@@ -739,21 +786,20 @@ livery_update.stop();
 		</shift-action>
 	</animation>
 	
-	<!-- tirette.2-->
 	<animation>
 		<type>slider</type>
-		<object-name>tirette.2</object-name>
+		<object-name>CabinAirTemperatureHandle</object-name>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>controls/switches/tirette.2</property>
+		<property>controls/cabin/ventilation/hot-cold</property>
 		<factor>0.03</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/switches/tirette.2</property>
+				<property>controls/cabin/ventilation/hot-cold</property>
 				<factor>1</factor>
 				<min>0</min>
 				<max>1</max>
@@ -762,7 +808,7 @@ livery_update.stop();
 		<shift-action>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/switches/tirette.2</property>
+				<property>controls/cabin/ventilation/hot-cold</property>
 				<factor>0.1</factor>
 				<min>0</min>
 				<max>1</max>
@@ -770,70 +816,57 @@ livery_update.stop();
 		</shift-action>
 	</animation>
 	
-	<!-- tirette.3-->
 	<animation>
 		<type>slider</type>
-		<object-name>tirette.3</object-name>
+		<object-name>CabinAirDefrostHandle</object-name>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>controls/switches/tirette.3</property>
+		<property>controls/cabin/ventilation/defrost</property>
 		<factor>0.03</factor>
 		<action>
 			<binding>
-				<command>property-adjust</command>
-				<property>controls/switches/tirette.3</property>
-				<factor>1</factor>
-				<min>0</min>
-				<max>1</max>
+				<command>property-toggle</command>
+				<property>controls/cabin/ventilation/defrost</property>
 			</binding>
 		</action>
-		<shift-action>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/switches/tirette.3</property>
-				<factor>0.1</factor>
-				<min>0</min>
-				<max>1</max>
-			</binding>
-		</shift-action>
 	</animation>
 	
-	<!--ICS-->
 	<animation>
 		<type>slider</type>
-		<object-name>ics.push</object-name>
+		<object-name>IntercomPTTButton</object-name>
 		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
 		</axis>
-		<property>controls/switches/ics-click</property>
+		<property>controls/cabin/intercom/ptt</property>
 		<factor>0.007</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>controls/switches/ics-click</property>
-				<value>0</value>
+				<property>controls/cabin/intercom/ptt</property>
+				<value type="bool">true</value>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-assign</command>
-				<property>controls/switches/ics-click</property>
-				<value>1</value>
+				<property>controls/cabin/intercom/ptt</property>
+				<value type="bool">false</value>
 			</binding>
 		</release>
 	</animation>
 
-	<!--Yoke-->
 	<animation>
 		<type>rotate</type>
-		<object-name>yoke</object-name>
+		<object-name>ControlStick</object-name>
+		<object-name>ControlStickTriggerButton</object-name>
+		<object-name>ControlStickTrimSwitch</object-name>
 		<property>controls/flight/elevator</property>
-		<factor>20.0</factor>
+		<factor>20</factor>
 			<center>
 			<x-m>3.325</x-m>
 			<y-m>-0.119</y-m>
@@ -848,9 +881,11 @@ livery_update.stop();
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>yoke</object-name>
+		<object-name>ControlStick</object-name>
+		<object-name>ControlStickTriggerButton</object-name>
+		<object-name>ControlStickTrimSwitch</object-name>
 		<property>controls/flight/aileron</property>
-		<factor>20.0</factor>
+		<factor>20</factor>
 			<center>
 			<x-m>3.325</x-m>
 			<y-m>-0.119</y-m>
@@ -863,12 +898,11 @@ livery_update.stop();
 		</axis>
 	</animation>
 	
-	<!--throttle-->
 	<animation>
 		<type>knob</type>
-		<object-name>throttle</object-name>
+		<object-name>EngineControlsThrottleLever</object-name>
 		<property>controls/engines/engine[0]/throttle</property>
-		<factor>70.0</factor>
+		<factor>70</factor>
 		<center>
 			<x-m>3.0663</x-m>
 			<y-m>0.827828</y-m>
@@ -901,13 +935,29 @@ livery_update.stop();
 				<max>0.4</max>
 			</binding>
 		</action>
+		<shift-action>
+			<binding>
+				<condition>
+					<less-than>
+						<property>/controls/engines/engine/throttle</property>
+						<value>0.45</value>
+					</less-than>
+					<greater-than>
+						<property>/controls/engines/engine/throttle</property>
+						<value>0.35</value>
+					</greater-than>
+				</condition>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine/reverser</property>
+			</binding>
+		</shift-action>
 	</animation>
 
 	<animation>
 		<type>knob</type>
-		<object-name>feather</object-name>
+		<object-name>EngineControlsPropellerPitchLever</object-name>
 		<property>controls/engines/engine/propeller-pitch</property>
-		<factor>70.0</factor>
+		<factor>70</factor>
 		<center>
 			<x-m>3.0663</x-m>
 			<y-m>0.827828</y-m>
@@ -931,7 +981,7 @@ livery_update.stop();
 	
 	<animation>
 		<type>knob</type>
-		<object-name>condition</object-name>
+		<object-name>EngineControlsConditionLever</object-name>
 		<property>controls/engines/engine/condition</property>
 		<factor>70</factor>
 		<center>
@@ -955,65 +1005,103 @@ livery_update.stop();
 		</action>
 	</animation>
 	
-	<!-- propeller -->
 	<animation>
-		<type>select</type>
-		<object-name>prop.1</object-name>
-		<object-name>prop.2</object-name>
-		<condition>
-			<less-than>
-				<property>engines/engine/thruster/rpm</property>
-				<value>1000</value>
-			</less-than>
-		</condition>
+		<type>spin</type>
+		<object-name>PropellerBlade1</object-name>
+		<object-name>PropellerBlade1Axis</object-name>
+		<object-name>PropellerBlade2</object-name>
+		<object-name>PropellerBlade2Axis</object-name>
+		<object-name>PropellerBlade3</object-name>
+		<object-name>PropellerBlade3Axis</object-name>
+		<object-name>SlowPropellerDisk</object-name>
+		<object-name>FastPropellerDisk</object-name>
+		<axis>
+			<object-name>PropellerAxis</object-name>
+		</axis>
+		<property>engines/engine/thruster/rpm</property>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>PropellerBlade1</object-name>
+		<axis>
+			<object-name>PropellerBlade1Axis</object-name>
+		</axis>
+		<property>engines/engine/thruster/pitch</property>
 	</animation>
 	<animation>
+		<type>rotate</type>
+		<object-name>PropellerBlade2</object-name>
+		<axis>
+			<object-name>PropellerBlade2Axis</object-name>
+		</axis>
+		<property>engines/engine/thruster/pitch</property>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>PropellerBlade3</object-name>
+		<axis>
+			<object-name>PropellerBlade3Axis</object-name>
+		</axis>
+		<property>engines/engine/thruster/pitch</property>
+	</animation>
+	
+	<animation>
 		<type>select</type>
-		<object-name>prop.3</object-name>
-		<object-name>prop.4</object-name>
+		<object-name>FastPropellerDisk</object-name>
 		<condition>
-			<and><!--the propeller is visible if it's not destroyed-->
-				<equals>
-					<property>engines/pt6a/failure/propeller-blade</property>
-					<value>0</value>
-				</equals>
-				<less-than>
+			<greater-than>
+				<property>engines/engine/thruster/rpm</property>
+				<value>1700</value>
+			</greater-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>SlowPropellerDisk</object-name>
+		<condition>
+			<and>
+				<less-than-equals>
+					<property>engines/engine/thruster/rpm</property>
+					<value>1700</value>
+				</less-than-equals>
+				<greater-than>
 					<property>engines/engine/thruster/rpm</property>
 					<value>1000</value>
-				</less-than>
+				</greater-than>
 			</and>
 		</condition>
 	</animation>
 	
-	
-	
 	<animation>
-		<type>spin</type>
-		<object-name>prop.1</object-name>
-		<object-name>prop.2</object-name>
-		<object-name>prop.3</object-name>
-		<object-name>prop.4</object-name>
-		<property>engines/engine/thruster/rpm</property>
-		<factor>-1</factor>
-		<center>
-			<x-m>0.318</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.004</z-m>
-		</center>
-		<axis>
-			<x1-m>0.424</x1-m>
-			<y1-m>0.0</y1-m>
-			<z1-m>0.009</z1-m>
-			<x2-m>-0.021</x2-m>
-			<y2-m>0.0</y2-m>
-			<z2-m>-0.013</z2-m>
-		</axis>
+		<type>select</type>
+		<object-name>PropellerBlade1</object-name>
+		<object-name>PropellerBlade2</object-name>
+		<object-name>PropellerBlade3</object-name>
+		<condition>
+			<less-than>
+				<property>engines/engine/thruster/rpm</property>
+				<value>1200</value>
+			</less-than>
+		</condition>
 	</animation>
 	
-	<!-- Aileron -->
+	<animation>
+		<type>noshadow</type>
+		<object-name>SlowPropellerDisk</object-name>
+		<object-name>FastPropellerDisk</object-name>
+	</animation>
+	
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>SlowPropellerDisk</object-name>
+		<object-name>FastPropellerDisk</object-name>
+	</effect>
+	
 	<animation>
 		<type>rotate</type>
-		<object-name>aileron.L</object-name>
+		<object-name>AileronLeft</object-name>
 		<property>surface-positions/left-aileron-pos-norm</property>
 			<interpolation>
 			<entry>
@@ -1046,7 +1134,7 @@ livery_update.stop();
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>aileron.R</object-name>
+		<object-name>AileronRight</object-name>
 		<property>surface-positions/right-aileron-pos-norm</property>
 		<interpolation>
 			<entry>
@@ -1077,10 +1165,9 @@ livery_update.stop();
 		</axis>
 	</animation>
 	
-	<!-- Flaps -->
 	<animation>
 		<type>rotate</type>
-		<object-name>flap.L</object-name>
+		<object-name>FlapLeft</object-name>
 		<property>surface-positions/flap-pos-norm</property>
 		<factor>-38.0</factor>
 		<center>
@@ -1100,7 +1187,7 @@ livery_update.stop();
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>flap.R</object-name>
+		<object-name>FlapRight</object-name>
 		<property>surface-positions/flap-pos-norm</property>
 		<factor>38.0</factor>
 		<center>
@@ -1118,15 +1205,13 @@ livery_update.stop();
 		</axis>
 	</animation>
 	
-	<!-- Landing Lights -->
 	<animation>
 		<type>rotate</type>
-		<object-name>landinglight.R</object-name>
-		<object-name>lightglass.R</object-name>
-		<object-name>RightLandingLight</object-name>
-		<object-name>RightLandingCone</object-name>
-		<property>controls/lighting/landing-lights-pos-R</property>
-		<factor>90.0</factor>
+		<object-name>LightLandingLeftCase</object-name>
+		<object-name>LightLandingLeftGlass</object-name>
+		<object-name>LightLandingLeft</object-name>
+		<property>sim/model/lights/landing-light[0]/pos-norm</property>
+		<factor>90</factor>
 		<center>
 			<x-m>4.17155</x-m>
 			<y-m>-6.69803</y-m>
@@ -1138,22 +1223,13 @@ livery_update.stop();
 			<z>0</z>
 		</axis>
 	</animation>
-	<animation>
-		<type>select</type>
-		<object-name>RightLandingLight</object-name>
-		<object-name>RightLandingCone</object-name>
-		<condition>
-	    	<property>controls/lighting/landing-lights-R</property>
-		</condition>
-	</animation>
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>landinglight.L</object-name>
-		<object-name>lightglass.L</object-name>
-		<object-name>LeftLandingLight</object-name>
-		<object-name>LeftLandingCone</object-name>
-		<property>controls/lighting/landing-lights-pos-L</property>
+		<object-name>LightLandingRightCase</object-name>
+		<object-name>LightLandingRightGlass</object-name>
+		<object-name>LightLandingRight</object-name>
+		<property>sim/model/lights/landing-light[1]/pos-norm</property>
 		<factor>90.0</factor>
 		<center>
 			<x-m>4.17155</x-m>
@@ -1166,21 +1242,12 @@ livery_update.stop();
 			<z>0</z>
 		</axis>
 	</animation>
-	<animation>
-		<type>select</type>
-		<object-name>LeftLandingLight</object-name>
-		<object-name>LeftLandingCone</object-name>
-		<condition>
-	    <property>controls/lighting/landing-lights-L</property>
-	</condition>
-	</animation>
 	
-	<!-- Rudder -->
 	<animation>
 		<type>rotate</type>
-		<object-name>rudder</object-name>
+		<object-name>Rudder</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>30.0</factor>
+		<factor>30</factor>
 		<center>
 			<x-m>9.738</x-m>
 			<y-m>0.0</y-m>
@@ -1193,24 +1260,23 @@ livery_update.stop();
 		</axis>
 	</animation>
 	
-	<!-- Elevator -->
 	<animation>
 		<type>rotate</type>
-		<object-name>elevator.L</object-name>
-		<object-name>elevator.R</object-name>
+		<object-name>ElevatorLeft</object-name>
+		<object-name>ElevatorRight</object-name>
 		<property>surface-positions/elevator-pos-norm</property>
 		<interpolation>
 			<entry>
-				<ind>-1.0</ind>
-				<dep>-25.0</dep>
+				<ind>-1</ind>
+				<dep>-25</dep>
 			</entry>
 			<entry>
-				<ind>0.0</ind>
+				<ind>0</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>1.00</ind>
-				<dep>15.0</dep>
+				<ind>1</ind>
+				<dep>15</dep>
 			</entry>
 		</interpolation>
 		<center>
@@ -1225,14 +1291,15 @@ livery_update.stop();
 		</axis>
 	</animation>
 	
-	<!--left Gear -->
 	<animation>
 		<type>rotate</type>
-		<object-name>tire.L</object-name>
-		<object-name>wheel.L</object-name>
-		<object-name>damper1.L</object-name>
-		<object-name>vstrut.L</object-name>
-		<object-name>fairing.L</object-name>
+		<object-name>TyreMainLeft</object-name>
+		<object-name>RimMainLeft</object-name>
+		<object-name>GearDamperMainLeft</object-name>
+		<object-name>GearStrutMainLeft</object-name>
+		<axis>
+			<object-name>GearStrutMainLeftAxis</object-name>
+		</axis>
 		<property>gear/gear[0]/compression-ft</property>
 		<interpolation>
 			<entry>
@@ -1248,74 +1315,52 @@ livery_update.stop();
 				<dep>-6.0</dep>
 			</entry>
 		</interpolation>
-		<center>
-			<x-m>3.606</x-m>
-			<y-m>0.040</y-m>
-			<z-m>-0.627</z-m>
-		</center>
-		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
-		</axis>
 	</animation>
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>damper2.L</object-name>
+		<object-name>GearCylinderMainLeft</object-name>
+		<axis>
+			<object-name>GearCylinderMainLeftAxis</object-name>
+		</axis>
 		<property>gear/gear[0]/compression-ft</property>
 		<interpolation>
-		<entry>
-			<ind>0.0</ind>
-			<dep>2.0</dep>
-		</entry>
-		<entry>
-			<ind>0.5</ind>
-			<dep>-1.0</dep>
-		</entry>
-		<entry>
-			<ind>1.00</ind>
-			<dep>-3.0</dep>
-		</entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>2.0</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>-1.0</dep>
+			</entry>
+			<entry>
+				<ind>1.00</ind>
+				<dep>-3.0</dep>
+			</entry>
 		</interpolation>
-		<center>
-			<x-m>3.192</x-m>
-			<y-m>-0.624</y-m>
-			<z-m>0.215</z-m>
-		</center>
-		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
-		</axis>
 	</animation>
 	
 	<animation>
 		<type>spin</type>
-		<object-name>wheel.L</object-name>
-		<object-name>tire.L</object-name>
-		<property>gear/gear[0]/rollspeed-ms</property>
-		<factor>10</factor>
-		<center>
-			<x-m>3.195</x-m>
-			<y-m>1.473</y-m>
-			<z-m>-1.178</z-m>
-		</center>
-			<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0.0</z>
+		<object-name>TyreMainLeft</object-name>
+		<object-name>RimMainLeft</object-name>
+		<axis>
+			<object-name>WheelMainLeftAxis</object-name>
 		</axis>
+		<property>gear/gear[0]/rollspeed-ms</property>
+		<factor>26</factor>
 	</animation>
 	
 	<!--right Gear -->
 	<animation>
 		<type>rotate</type>
-		<object-name>tire.R</object-name>
-		<object-name>wheel.R</object-name>
-		<object-name>damper1.R</object-name>
-		<object-name>vstrut.R</object-name>
-		<object-name>fairing.R</object-name>
+		<object-name>TyreMainRight</object-name>
+		<object-name>RimMainRight</object-name>
+		<object-name>GearDamperMainRight</object-name>
+		<object-name>GearStrutMainRight</object-name>
+		<axis>
+			<object-name>GearStrutMainRightAxis</object-name>
+		</axis>
 		<property>gear/gear[1]/compression-ft</property>
 		<interpolation>
 			<entry>
@@ -1331,21 +1376,14 @@ livery_update.stop();
 				<dep>-6.0</dep>
 			</entry>
 		</interpolation>
-		<center>
-			<x-m>3.606</x-m>
-			<y-m>-0.040</y-m>
-			<z-m>-0.627</z-m>
-		</center>
-		<axis>
-			<x>-1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
-		</axis>
 	</animation>
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>damper2.R</object-name>
+		<object-name>GearCylinderMainRight</object-name>
+		<axis>
+			<object-name>GearCylinderMainRightAxis</object-name>
+		</axis>
 		<property>gear/gear[1]/compression-ft</property>
 		<interpolation>
 			<entry>
@@ -1361,123 +1399,73 @@ livery_update.stop();
 				<dep>-3.0</dep>
 			</entry>
 		</interpolation>
-		<center>
-			<x-m>3.192</x-m>
-			<y-m>0.624</y-m>
-			<z-m>0.215</z-m>
-		</center>
-		<axis>
-			<x>-1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
-		</axis>
 	</animation>
 	
 	<animation>
 		<type>spin</type>
-			<object-name>wheel.R</object-name>
-			<object-name>tire.R</object-name>
-		<property>gear/gear[1]/rollspeed-ms</property>
-		<factor>10</factor>
-			<center>
-			<x-m>3.195</x-m>
-			<y-m>-1.473</y-m>
-			<z-m>-1.178</z-m>
-		</center>
+		<object-name>RimMainRight</object-name>
+		<object-name>TyreMainRight</object-name>
 		<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0.0</z>
+			<object-name>WheelMainRightAxis</object-name>
 		</axis>
+		<property>gear/gear[1]/rollspeed-ms</property>
+		<factor>26</factor>
 	</animation>
 
-<!-- Animation roulette arriere-->
 	<animation>
 		<type>rotate</type>
-		<object-name>tail_gear</object-name>
-		<property>gear/gear[2]/steering-angle-deg</property>
-		<factor>1</factor>
+		<object-name>GearTorqueLinkTailUpper</object-name>
+		<object-name>GearTorqueLinkTailLower</object-name>
+		<object-name>GearMudguardTail</object-name>
+		<object-name>TyreTail</object-name>
+		<object-name>RimTail</object-name>
 		<axis>
-			<x>0.0</x>
-			<y>0.0</y>
-			<z>1.0</z>
+			<object-name>GearCylinderTailAxis</object-name>
 		</axis>
-	<center> 
-	<x-m>10.62</x-m>
-	<y-m>0</y-m>
-	<z-m>0.02</z-m>
-      </center>
+		<property>gear/gear[2]/steering-angle-deg</property>
 	</animation>
 
 	<animation>
 		<type>translate</type>
-		<object-name>tail_amorto</object-name>
-		<property>gear/gear[2]/compression-ft</property>
-		<factor>-0.025</factor>
+		<object-name>GearCylinderTail</object-name>
 		<axis>
-			<x1-m>10.55</x1-m>
-			<y1-m>0</y1-m>
-			<z1-m>0.54</z1-m>
-	
-			<x2-m>10.62</x2-m>
-			<y2-m>0</y2-m>
-			<z2-m>0.02</z2-m>
+			<object-name>GearCylinderTailAxis</object-name>
 		</axis>
+		<property>gear/gear[2]/compression-ft</property>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
-		<object-name>tailassy.1</object-name>
-		<object-name>tailtyre</object-name>
-		<object-name>tailwheel</object-name>
-		<object-name>tail.gardeboue</object-name>
-		<property>gear/gear[2]/compression-ft</property>
-		<factor>-25</factor>
-		<center>
-			<x-m>10.435</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.13</z-m>
-		</center>
+		<object-name>GearTorqueLinkTailLower</object-name>
+		<object-name>TyreTail</object-name>
+		<object-name>RimTail</object-name>
+		<object-name>GearMudguardTail</object-name>
 		<axis>
-			<x>0.0</x>
-			<y>1.0</y>
-			<z>0.0</z>
+			<object-name>GearTorqueLinkTailLowerAxis</object-name>
 		</axis>
+		<property>gear/gear[2]/compression-ft</property>
+		<factor>-50</factor>
 	</animation>
 
 	<animation>
 		<type>spin</type>
-		<object-name>tailtyre</object-name>
-		<object-name>tailwheel</object-name>
+		<object-name>TyreTail</object-name>
+		<object-name>RimTail</object-name>
 		<property>gear/gear[2]/rollspeed-ms</property>
-		<factor>15</factor>
-		<center>
-			<x-m>10.75</x-m>
-			<y-m>0</y-m>
-			<z-m>-0.33</z-m>
-		</center>
 		<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0</z>
+			<object-name>WheelTailAxis</object-name>
 		</axis>
+		<factor>55</factor>
 	</animation>
 
-	<!-- doors movement -->
 	<animation>
 		<type>rotate</type>
-		<object-name>pdoor.L</object-name>
+		<object-name>DoorFrontLeftExterior</object-name>
+		<object-name>DoorFrontLeftInterior</object-name>
+		<object-name>WindowDoorFrontLeftExterior</object-name>
+		<object-name>DoorHandleFrontLeft</object-name>
 		<property>controls/doors/door0/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>1.00</ind>
-				<dep>-100.0</dep>
-			</entry>
-		</interpolation>
+		<factor>-100</factor>
 		<center>
 			<x-m>3.256</x-m>
 			<y-m>-0.602</y-m>
@@ -1492,19 +1480,13 @@ livery_update.stop();
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>pdoor.R</object-name>
+		<object-name>DoorFrontRightExterior</object-name>
+		<object-name>DoorFrontRightInterior</object-name>
+		<object-name>WindowDoorFrontRightExterior</object-name>
+		<object-name>DoorHandleFrontRight</object-name>
 		<object-name>Thermometer</object-name>
 		<property>controls/doors/door1/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>1.00</ind>
-				<dep>100.0</dep>
-			</entry>
-		</interpolation>
+		<factor>100</factor>
 		<center>
 			<x-m>3.256</x-m>
 			<y-m>0.602</y-m>
@@ -1519,18 +1501,12 @@ livery_update.stop();
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>swingdoor.F</object-name>
+		<object-name>DoorSwingFrontExterior</object-name>
+		<object-name>DoorSwingFrontInterior</object-name>
+		<object-name>WindowDoorSwingFrontExterior</object-name>
+		<object-name>DoorHandleSwingFront</object-name>
 		<property>controls/doors/door2/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>1.00</ind>
-				<dep>-85.0</dep>
-			</entry>
-		</interpolation>
+		<factor>-85</factor>
 		<center>
 			<x-m>3.991</x-m>
 			<y-m>-0.601</y-m>
@@ -1545,18 +1521,12 @@ livery_update.stop();
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>swingdoor.R</object-name>
+		<object-name>DoorSwingRearExterior</object-name>
+		<object-name>DoorSwingRearInterior</object-name>
+		<object-name>WindowDoorSwingRearExterior</object-name>
+		<object-name>DoorHandleSwingRear</object-name>
 		<property>controls/doors/door3/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>1.00</ind>
-				<dep>100.0</dep>
-			</entry>
-		</interpolation>
+		<factor>100</factor>
 		<center>
 			<x-m>5.547</x-m>
 			<y-m>-0.601</y-m>
@@ -1571,18 +1541,12 @@ livery_update.stop();
 	
 	<animation>
 		<type>translate</type>
-		<object-name>slidedoor</object-name>
+		<object-name>DoorSlideExterior</object-name>
+		<object-name>DoorSlideInterior</object-name>
+		<object-name>WindowDoorSlideExterior</object-name>
+		<object-name>DoorHandleSlide</object-name>
 		<property>controls/doors/door4/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>1.00</ind>
-				<dep>1.5</dep>
-			</entry>
-		</interpolation>
+		<factor>1.5</factor>
 		<axis>
 			<x>1.0</x>
 			<y>0.0</y>
@@ -1592,18 +1556,10 @@ livery_update.stop();
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>rearhatch</object-name>
+		<object-name>BaggageDoorExterior</object-name>
+		<object-name>BaggageDoorInterior</object-name>
 		<property>controls/doors/door5/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>1.00</ind>
-				<dep>-170.0</dep>
-			</entry>
-		</interpolation>
+		<factor>-170</factor>
 		<center>
 			<x-m>7.13</x-m>
 			<y-m>0.50</y-m>
@@ -1616,10 +1572,12 @@ livery_update.stop();
 		</axis>
 	</animation>
 	
-	<!-- doors select -->
 	<animation>
 		<type>select</type>
-		<object-name>pdoor.L</object-name>
+		<object-name>DoorFrontLeftExterior</object-name>
+		<object-name>DoorFrontLeftInterior</object-name>
+		<object-name>WindowDoorFrontLeftExterior</object-name>
+		<object-name>DoorHandleFrontLeft</object-name>
 		<condition>
 			<equals>
 				<property>controls/doors/door0/enabled</property>
@@ -1630,7 +1588,10 @@ livery_update.stop();
 	
 	<animation>
 		<type>select</type>
-		<object-name>pdoor.R</object-name>
+		<object-name>DoorFrontRightExterior</object-name>
+		<object-name>DoorFrontRightInterior</object-name>
+		<object-name>WindowDoorFrontRightExterior</object-name>
+		<object-name>DoorHandleFrontRight</object-name>
 		<condition>
 			<equals>
 				<property>controls/doors/door1/enabled</property>
@@ -1641,7 +1602,10 @@ livery_update.stop();
 
 	<animation>
 		<type>select</type>
-		<object-name>swingdoor.F</object-name>
+		<object-name>DoorSwingFrontExterior</object-name>
+		<object-name>DoorSwingFrontInterior</object-name>
+		<object-name>WindowDoorSwingFrontExterior</object-name>
+		<object-name>DoorHandleSwingFront</object-name>
 		<condition>
 			<equals>
 				<property>controls/doors/door2/enabled</property>
@@ -1652,7 +1616,10 @@ livery_update.stop();
 	
 	<animation>
 		<type>select</type>
-		<object-name>swingdoor.R</object-name>
+		<object-name>DoorSwingRearExterior</object-name>
+		<object-name>DoorSwingRearInterior</object-name>
+		<object-name>WindowDoorSwingRearExterior</object-name>
+		<object-name>DoorHandleSwingRear</object-name>
 		<condition>
 			<equals>
 				<property>controls/doors/door3/enabled</property>
@@ -1663,7 +1630,10 @@ livery_update.stop();
 	
 	<animation>
 		<type>select</type>
-		<object-name>slidedoor</object-name>
+		<object-name>DoorSlideExterior</object-name>
+		<object-name>DoorSlideInterior</object-name>
+		<object-name>WindowDoorSlideExterior</object-name>
+		<object-name>DoorHandleSlide</object-name>
 		<condition>
 			<equals>
 				<property>controls/doors/door4/enabled</property>
@@ -1674,7 +1644,8 @@ livery_update.stop();
 	
 	<animation>
 		<type>select</type>
-		<object-name>rearhatch</object-name>
+		<object-name>BaggageDoorExterior</object-name>
+		<object-name>BaggageDoorInterior</object-name>
 		<condition>
 			<equals>
 				<property>controls/doors/door5/enabled</property>
@@ -1685,7 +1656,7 @@ livery_update.stop();
 	
 	<animation>
 		<type>knob</type>
-		<object-name>phandle.L</object-name>
+		<object-name>DoorHandleFrontLeft</object-name>
 		<action>
 			<binding>
 				<command>nasal</command>
@@ -1696,7 +1667,7 @@ livery_update.stop();
 	
 	<animation>
 		<type>knob</type>
-		<object-name>phandle.R</object-name>
+		<object-name>DoorHandleFrontRight</object-name>
 		<action>
 			<binding>
 				<command>nasal</command>
@@ -1707,7 +1678,7 @@ livery_update.stop();
 
 	<animation>
 		<type>knob</type>
-		<object-name>fswdoorhandle</object-name>
+		<object-name>DoorHandleSwingFront</object-name>
 		<action>
 			<binding>
 				<command>nasal</command>
@@ -1718,7 +1689,7 @@ livery_update.stop();
 	
 	<animation>
 		<type>knob</type>
-		<object-name>rswdoorhandle</object-name>
+		<object-name>DoorHandleSwingRear</object-name>
 		<action>
 			<binding>
 				<command>nasal</command>
@@ -1729,7 +1700,7 @@ livery_update.stop();
 	
 	<animation>
 		<type>knob</type>
-		<object-name>sldoorhandle</object-name>
+		<object-name>DoorHandleSlide</object-name>
 		<action>
 			<binding>
 				<command>nasal</command>
@@ -1740,16 +1711,15 @@ livery_update.stop();
 	
 	<animation>
 		<type>knob</type>
-		<object-name>rearhatch</object-name>
+		<object-name>BaggageDoorExterior</object-name>
+		<object-name>BaggageDoorInterior</object-name>
 		<action>
 			<binding>
 				<condition>
-					<not>
-						<greater-than>
-							<property>controls/doors/door4/position-norm</property>
-							<value type="double">0</value>
-						</greater-than>
-					</not>
+					<equals>
+						<property>controls/doors/door4/position-norm</property>
+						<value type="double">0</value>
+					</equals>
 				</condition>
 				<command>nasal</command>
 				<script>pc6.toggle_rearhatch()</script>
@@ -1759,8 +1729,8 @@ livery_update.stop();
 
 	<animation>
 		<type>knob</type>
-		<object-name>registration.plaqueL</object-name>
-		<object-name>registration.plaqueR</object-name>
+		<object-name>RegistrationPlatePanelLeft</object-name>
+		<object-name>RegistrationPlatePanelRight</object-name>
 		<action>
 			<binding>
 				<command>nasal</command>
@@ -1769,87 +1739,57 @@ livery_update.stop();
 		</action>
 	</animation>
 	
-	<model> 
-		<path>Models/pdisk.xml</path>
-		<name>pdisk</name>
-<!--		<nopreview/>-->
-		<offsets> 
-			<x-m>0.35</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.0</z-m>
-		 	<pitch-deg>-2.8</pitch-deg>
-		</offsets>
-	</model>
-
-<!-- illumination du cockpit -->
-	<animation>
-		<type>material</type>
-		<object-name>fuel_vave</object-name>
-		<object-name>panel.B</object-name>
-		<object-name>panel.C</object-name>
-		<object-name>panel.R</object-name>
-		<object-name>panel.L</object-name>
-		<object-name>elevator_trim</object-name>
-		<object-name>panel.L.tour</object-name>
-		<object-name>colonne</object-name>
-		<object-name>parking_brake</object-name>
-		<object-name>registration.plaqueL</object-name>
-		<object-name>registration.plaqueR</object-name>
-		<object-name>yoke</object-name>
-		<object-name>interiour.1</object-name>
-		<object-name>fuel_valve</object-name>
-		<object-name>Left Electric Switches Panel</object-name>
-		<object-name>Right Electric Switches Panel</object-name>
-		<object-name>throttle_support</object-name>
-		<object-name>tige_condition</object-name>
-		<object-name>poignee_condition</object-name>
-		<object-name>tige_feather</object-name>
-		<object-name>poignee_feather</object-name>
-		<object-name>tige_throttle</object-name>
-		<object-name>poignee_throttle</object-name>
-		<object-name>Left Circuit breakers Panel</object-name>
-		<object-name>Right Circuit breakers Panel</object-name>
-		<object-name>flaps_manette.tige</object-name>
-		<object-name>flaps_manette.manette</object-name>
-		<object-name>flaps_manette.support</object-name>
-		<object-name>cockpit.texts</object-name>
-		<!--<object-name>radiostack</object-name>
-		<object-name>com1</object-name>
-		<object-name>com2</object-name>
-		<object-name>ident</object-name>-->
-		<emission>
-			<red>0.2</red>
-			<green>0.2</green>
-			<blue>0.2</blue>
-			<factor-prop>controls/lighting/light_cabin</factor-prop>
-		</emission>
-	</animation>
-	<animation>
-		<type>material</type>
-		<object-name>cabin_light</object-name>
-		<emission>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>controls/lighting/light_cabin</factor-prop>
-		</emission>
-	</animation>
+	<light>
+		<type>spot</type>
+		<name>Cabin light</name>
+		<position>
+			<x-m>3.821</x-m>
+			<y-m>-0.152</y-m>
+			<z-m>0.919</z-m>
+		</position>
+		<direction>
+			<pointing_x>0</pointing_x>
+			<pointing_y>-0.05</pointing_y>
+			<pointing_z>1</pointing_z>
+		</direction>
+		<ambient>
+			<r>0.05</r>
+			<g>0.05</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1</c>
+			<l>0</l>
+			<q>1.5</q>
+		</attenuation>
+		<range-m>1.4</range-m>
+		<spot-cutoff>89</spot-cutoff>
+		<spot-exponent>0.25</spot-exponent>
+		<dim-factor><property>controls/lighting/light_cabin</property></dim-factor>
+	</light>
 	
 	<animation>
 		<type>material</type>
-		<object-name>cabin_light</object-name>
+		<object-name>LightCabin</object-name>
 		<emission>
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>controls/switches/light_cabin-click</factor-prop>
+			<factor-prop>controls/lighting/light_cabin</factor-prop>
 		</emission>
-		<condition>
-			<greater-than>
-				<property>systems/electrical/outputs/light_cabin</property>
-				<value>20</value>
-			</greater-than>
-		</condition>
 	</animation>
 
 
@@ -2106,7 +2046,6 @@ livery_update.stop();
 		</condition>
 	</animation>
 
-	<!-- Labels activated by hotspots (from c172p)-->
 	<text>
 		<name>Label Magnetic compass</name>
 		<type type="string">literal</type>
@@ -2914,13 +2853,13 @@ livery_update.stop();
 		</condition>
 	</animation>
 	
-	<animation>
+	<!--<animation>
 		<type>material</type>
 		<object-name>Exterior</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture</texture-prop>
 		<texture>porter-1.rgb</texture>
-	</animation>
+	</animation>-->
 
 	<!-- Registration (left) -->
 	<model>
@@ -3021,7 +2960,6 @@ livery_update.stop();
 		</overlay>
 	</model>
 	
-	<!-- Left Nav Light-->
 	<model>
 		<path>Models/Lights/RedNavLight.xml</path>
 		<name>Left Nav Light</name>
@@ -3032,7 +2970,6 @@ livery_update.stop();
 		</offsets>
 	</model>
 
-	<!-- Right Nav Light-->
 	<model>
 		<path>Models/Lights/GreenNavLight.xml</path>
 		<name>Right Nav Light</name>
@@ -3054,7 +2991,6 @@ livery_update.stop();
 		</offsets>
 	</model>
 
-	<!-- White Strobe -->
 	<model>
 		<path>Models/Lights/StrobeLight.xml</path>
 		<name>StrobeLight</name>
@@ -3066,7 +3002,7 @@ livery_update.stop();
 	</model>
 	<animation>
 		<type>material</type>
-		<object-name>strobe.light</object-name>
+		<object-name>LightStrobe</object-name>
 		<emission>
 			<red>1.0</red>
 			<green>1.0</green>
@@ -3075,53 +3011,138 @@ livery_update.stop();
 		</emission>
 	</animation>
 	
-	<!-- Left landing light -->
+	<light>
+		<name>LightLandingLeft</name>
+		<type>spot</type>
+		<position>
+			<x-m>4.26</x-m>
+			<y-m>-6.7</y-m>
+			<z-m>0.82</z-m>
+		</position>
+		<direction>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</direction>
+		<ambient>
+			<r>0</r>
+			<g>0</g>
+			<b>0</b>
+			<a>0</a>
+		</ambient>
+		<diffuse>
+			<r>1.00</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>0</a>
+		</diffuse>
+		<specular>
+			<r>1.00</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>0</a>
+		</specular>
+		<attenuation>
+			<c>0.2</c>
+			<l>0</l>
+			<q>0.00001</q>
+		</attenuation>
+		<spot-exponent>5</spot-exponent>
+		<spot-cutoff>80</spot-cutoff>
+		<range-m>500</range-m>
+		<dim-factor>
+			<property>sim/model/lights/landing-light[0]/state</property>
+		</dim-factor>
+	</light>
+	<light>
+		<name>LightLandingRight</name>
+		<type>spot</type>
+		<position>
+			<x-m>4.26</x-m>
+			<y-m>6.7</y-m>
+			<z-m>0.82</z-m>
+		</position>
+		<direction>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</direction>
+		<ambient>
+			<r>0</r>
+			<g>0</g>
+			<b>0</b>
+			<a>0</a>
+		</ambient>
+		<diffuse>
+			<r>1.00</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>0</a>
+		</diffuse>
+		<specular>
+			<r>1.00</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>0</a>
+		</specular>
+		<attenuation>
+			<c>0.2</c>
+			<l>0</l>
+			<q>0.00001</q>
+		</attenuation>
+		<spot-exponent>5</spot-exponent>
+		<spot-cutoff>80</spot-cutoff>
+		<range-m>500</range-m>
+		<dim-factor>
+			<property>sim/model/lights/landing-light[1]/state</property>
+		</dim-factor>
+	</light>
+	
 	<model>
 		<path>Models/Lights/LandingLight.xml</path>
-		<name>LeftLandingLight</name>
+		<name>LightLandingLeftLamp</name>
 		<offsets>
 			<x-m>4.26</x-m>
 			<y-m>-6.70</y-m>
 			<z-m>0.82</z-m>
 		</offsets>
 	</model>
-	<!-- Left landing cone -->
-	<model>
-		<path>Models/Lights/light-cone.xml</path>
-		<name>LeftLandingCone</name>
-		<offsets>
-			<x-m>4.26</x-m>
-			<y-m>-6.70</y-m>
-			<z-m>0.82</z-m>
-		</offsets>
-	</model>
-
-	<!-- Right landing light -->
 	<model>
 		<path>Models/Lights/LandingLight.xml</path>
-		<name>RightLandingLight</name>
+		<name>LightLandingRightLamp</name>
 		<offsets>
 			<x-m>4.26</x-m>
 			<y-m>6.70</y-m>
 			<z-m>0.82</z-m>
 		</offsets>
 	</model>
-	<!-- Right landing cone -->
-	<model>
-		<path>Models/Lights/light-cone.xml</path>
-		<name>RightLandingCone</name>
-		<offsets>
-			<x-m>4.26</x-m>
-			<y-m>6.70</y-m>
-			<z-m>0.82</z-m>
-		</offsets>
-	</model>
-
-
-	<!-- Beacon -->
+	
+	<animation>
+		<type>select</type>
+		<object-name>LightLandingLeft</object-name>
+		<object-name>LightLandingLeftLamp</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/model/lights/landing-light[0]/pos-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LightLandingRight</object-name>
+		<object-name>LightLandingRightLamp</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/model/lights/landing-light[1]/pos-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+	</animation>
+	
 	<animation>
 		<type>material</type>
-		<object-name>beacon.light</object-name>
+		<object-name>LightBeacon</object-name>
 		<emission>
 			<red>1.0</red>
 			<green>0.0</green>
@@ -3131,7 +3152,6 @@ livery_update.stop();
 	</animation>
 
 	<!-- Particles smoke effect (from C130 ...) -->
-	<!-- Left wheel -->
 	<model>
 		<path>Models/Effects/ground_left_wheel.xml</path>
 		<offsets>
@@ -3141,7 +3161,6 @@ livery_update.stop();
 		</offsets>
 	</model>
 	
-	<!-- Right wheel -->
 	<model>
 		<path>Models/Effects/ground_right_wheel.xml</path>
 		<offsets>
@@ -3151,7 +3170,6 @@ livery_update.stop();
 		</offsets>
 	</model>
 	
-	<!-- Tail wheel -->
 	<model>
 		<path>Models/Effects/ground_tail_wheel.xml</path>
 		<offsets>
@@ -3161,7 +3179,6 @@ livery_update.stop();
 		</offsets>
 	</model>
 	
-	<!-- Left engine in fire ... -->
 	<model>
 		<path>Models/Effects/leftengine.xml</path>
 		<offsets>
@@ -3171,7 +3188,6 @@ livery_update.stop();
 		</offsets>
 	</model>
 	
-	<!-- Right engine in fire ... -->
 	<model>
 		<path>Models/Effects/rightengine.xml</path>
 		<offsets>

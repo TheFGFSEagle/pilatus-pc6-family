@@ -310,13 +310,13 @@ var update_virtual_bus = func(dt,totalVolt){
 		}
 		
 		# Left landing Light Power
-		if ( getprop("/controls/switches/light_landing_L-click")  and getprop("/controls/electric/circuitbreaker/cb_3_2")) {
+		if ( getprop("/controls/lighting/landing-light[0]") and getprop("/sim/model/lights/landing-light[0]/pos-norm") > 0 and getprop("/controls/electric/circuitbreaker/cb_3_2")) {
 			setprop("/systems/electrical/outputs/landing-lights-L", totalVolt);
-			setprop("/controls/lighting/landing-lights-L", 1);
+			setprop("/sim/model/lights/landing-light[0]/state", 1);
 			load += 9;
 		} else {
 			setprop("/systems/electrical/outputs/landing-lights-L", 0.0);
-			setprop("/controls/lighting/landing-lights-L", 0);
+			setprop("/sim/model/lights/landing-light[0]/state", 0);
 		}
 		
 		# Left landing Light Power
@@ -452,13 +452,13 @@ var update_virtual_bus = func(dt,totalVolt){
 		}
 		
 		# Right landing Light Power
-		if ( getprop("/controls/switches/light_landing_R-click")  and getprop("/controls/electric/circuitbreaker/cb_3_7")) {
+		if ( getprop("/controls/lighting/landing-light[1]") and getprop("/sim/model/lights/landing-light[0]/pos-norm") > 0 and getprop("/controls/electric/circuitbreaker/cb_3_7")) {
 			setprop("/systems/electrical/outputs/landing-lights-R", totalVolt);
-			setprop("/controls/lighting/landing-lights-R", 1);
+			setprop("/sim/model/lights/landing-light[1]/state", 1);
 			load += 6;
 		} else {
 			setprop("/systems/electrical/outputs/landing-lights-R", 0.0);
-			setprop("/controls/lighting/landing-lights-R", 0);
+			setprop("/sim/model/lights/landing-light[1]/state", 0);
 		}
 
 		# Right landing Light Power

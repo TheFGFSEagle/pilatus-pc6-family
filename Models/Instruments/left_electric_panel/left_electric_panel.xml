@@ -345,9 +345,9 @@
 	
 	<!--landing light right interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>light_landing_R.lever</object-name>
-		<property>controls/switches/light_landing_R-click</property>
+		<property>controls/lighting/landing-light[1]</property>
 		<factor>-60</factor>
 		<axis>
 			<x1-m>0.068</x1-m>
@@ -357,16 +357,10 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.053</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>light_landing_R.lever</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/switches/light_landing_R-click</property>
+				<property>controls/lighting/landing-light[1]</property>
 			</binding>
 			<binding>
 				<command>property-toggle</command>
@@ -377,9 +371,9 @@
 	
 	<!--landing light right position-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>pos_landing_R.lever</object-name>
-		<property>controls/switches/pos_landing_R-click</property>
+		<property>controls/lighting/landing-light-pos[1]</property>
 		<factor>-30</factor>
 		<axis>
 			<x1-m>0.068</x1-m>
@@ -389,63 +383,56 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.053</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>pos_landing_R.clickup</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/lights/landing-light[1]/pos-norm</property>
+				<factor>0.02</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/landing-light-pos[1]</property>
+				<factor>1</factor>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+			<binding>
+				<condition>
+					<not><property>sim/sound/switch</property></not>
+				</condition>
+				<command>property-assign</command>
+				<property>sim/sound/switch</property>
+				<value type="bool">true</value>
+			</binding>
+			<binding>
+				<condition>
+					<property>sim/sound/switch</property>
+				</condition>
+				<command>property-assign</command>
+				<property>sim/sound/switch</property>
+				<value type="bool">false</value>
+			</binding>
+		</action>
+		<release>
 			<binding>
 				<command>property-assign</command>
-				<property>controls/switches/pos_landing_R-click</property>
-				<value type="double">1.0</value>
+				<property>controls/lighting/landing-light-pos[1]</property>
+				<value>0</value>
 			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/switches/pos_landing_R-click</property>
-					<value type="double">0.0</value>
-				</binding>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/sound/switch</property>
-				</binding>
-			</mod-up>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>pos_landing_R.clickdn</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
 			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/pos_landing_R-click</property>
-				<value type="double">-1.0</value>
+				<command>property-toggle</command>
+				<property>sim/sound/switch</property>
 			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/switches/pos_landing_R-click</property>
-					<value type="double">0.0</value>
-				</binding>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/sound/switch</property>
-				</binding>
-			</mod-up>
-		</action>
+		</release>
 	</animation>
 	
 	<!--landing light left interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>light_landing_L.lever</object-name>
-		<property>controls/switches/light_landing_L-click</property>
+		<property>controls/lighting/landing-light[0]</property>
 		<factor>-60</factor>
 		<axis>
 			<x1-m>0.068</x1-m>
@@ -455,20 +442,10 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.053</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>light_landing_L.lever</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/switches/light_landing_L-click</property>
-			</binding>
-			<binding>
-				<command>property-toggle</command>
-				<property>controls/lighting/landing-lights-L</property>
+				<property>controls/lighting/landing-light[0]</property>
 			</binding>
 			<binding>
 				<command>property-toggle</command>
@@ -479,9 +456,9 @@
 	
 	<!--landing light left position-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>pos_landing_L.lever</object-name>
-		<property>controls/switches/pos_landing_L-click</property>
+		<property>controls/lighting/landing-light-pos[0]</property>
 		<factor>-30</factor>
 		<axis>
 			<x1-m>0.068</x1-m>
@@ -491,56 +468,49 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.053</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>pos_landing_L.clickup</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/lights/landing-light[0]/pos-norm</property>
+				<factor>0.02</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/landing-light-pos[0]</property>
+				<factor>1</factor>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+			<binding>
+				<condition>
+					<not><property>sim/sound/switch</property></not>
+				</condition>
+				<command>property-assign</command>
+				<property>sim/sound/switch</property>
+				<value type="bool">true</value>
+			</binding>
+			<binding>
+				<condition>
+					<property>sim/sound/switch</property>
+				</condition>
+				<command>property-assign</command>
+				<property>sim/sound/switch</property>
+				<value type="bool">false</value>
+			</binding>
+		</action>
+		<release>
 			<binding>
 				<command>property-assign</command>
-				<property>controls/switches/pos_landing_L-click</property>
-				<value type="double">1.0</value>
+				<property>controls/lighting/landing-light-pos[0]</property>
+				<value>0</value>
 			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/switches/pos_landing_L-click</property>
-					<value type="double">0.0</value>
-				</binding>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/sound/switch</property>
-				</binding>
-			</mod-up>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>false</visible>
-		<object-name>pos_landing_L.clickdn</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
 			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/pos_landing_L-click</property>
-				<value type="double">-1.0</value>
+				<command>property-toggle</command>
+				<property>sim/sound/switch</property>
 			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/switches/pos_landing_L-click</property>
-					<value type="double">0.0</value>
-				</binding>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/sound/switch</property>
-				</binding>
-			</mod-up>
-		</action>
+		</release>
 	</animation>
 	
 	<!--beacon light interrupt-->

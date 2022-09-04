@@ -99,7 +99,19 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 			<path>Aircraft/pilatus-pc6-family/Models/pc6-b2h2.xml</path>
 			<livery>
 				<file type="string">shark</file>
+				<shininess type="double">-0.5</shininess>
+				<fresnel type="double">0.5</fresnel>
 			</livery>
+			<lights>
+				<landing-light n="0">
+					<state type="bool">false</state>
+					<pos-norm type="double">0</pos-norm>
+				</landing-light>
+				<landing-light n="1">
+					<state type="bool">false</state>
+					<pos-norm type="double">0</pos-norm>
+				</landing-light>
+			</lights>
 		</model>
 		<multiplay>
 			<generic>
@@ -597,10 +609,10 @@ Never exceed 50 of torque (it can damage the propeller reducter), 1090 C of ITT 
 			<strobe type="bool">false</strobe>
 			<beacon type="bool">false</beacon>
 			<nav-lights type="bool">false</nav-lights>
-			<landing-lights-R type="bool">false</landing-lights-R>
-			<landing-lights-L type="bool">false</landing-lights-L>
-			<landing-lights-pos-R type="double">0</landing-lights-pos-R>
-			<landing-lights-pos-L type="double">0</landing-lights-pos-L>
+			<landing-light n="0" type="bool">false</landing-light>
+			<landing-light n="1" type="bool">false</landing-light>
+			<landing-light-pos n="0" type="int">0</landing-light-pos>
+			<landing-light-pos n="1" type="int">0</landing-light-pos>
 			<light_instr type="bool">false</light_instr>
 			<light_cabin type="bool">false</light_cabin>
 			<elt_diod type="double">0</elt_diod>

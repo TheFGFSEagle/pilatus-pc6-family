@@ -9,7 +9,7 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 -->
 <PropertyList>
 	<sim>
-		<description>Pilatus PC-6 "Turbo Porter"</description>
+		<description>Pilatus PC-6 B2/H4 "Turbo Porter"</description>
 		<long-description>
 			This aircraft may be ugly but it is perhaps the most capable STOL utility plane in existence.
 			It is the only fixed-wing aircraft that can land at the Mount Everest base camp at an altitude of 17500 ft.
@@ -33,7 +33,7 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 		<aircraft-version>1.0</aircraft-version>
 		<minimum-fg-version>2017.2.0</minimum-fg-version>
 		<flight-model>jsb</flight-model>
-		<aero>Systems/pc6-b2h2-fdm</aero>
+		<aero>Systems/pc6-b2h4-fdm</aero>
 		<status>beta</status>
 		<rating>
 			<FDM type="int">3</FDM>
@@ -69,7 +69,7 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 		</tags>
 		<startup>
 			<splash-texture>splash.png</splash-texture>
-			<splash-title>Pilatus PC6 "Turbo Porter"</splash-title>
+			<splash-title>Pilatus PC6 B2/H4 "Turbo Porter"</splash-title>
 		</startup>
 		<systems>
 			<electrical>
@@ -85,8 +85,6 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 		<instrumentation>
 			<path>Systems/instrumentation.xml</path>
 		</instrumentation>
-		<virtual-cockpit archive="y">true</virtual-cockpit>
-		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
 		<sound>
 			<path>Aircraft/pilatus-pc6-family/Sounds/sound.xml</path>
 		</sound>
@@ -96,21 +94,21 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 			<tutorial include="Tutorials/shutdown.xml"/>
 		</tutorials>
 		<model>
-			<path>Aircraft/pilatus-pc6-family/Models/pc6-b2h2.xml</path>
+			<path>Aircraft/pilatus-pc6-family/Models/pc6-b2h4.xml</path>
 			<livery>
 				<file type="string">shark</file>
 				<shininess type="double">-0.5</shininess>
 				<fresnel type="double">0.5</fresnel>
 			</livery>
 			<lights>
-				<landing-light n="0">
+				<landing n="0">
 					<state type="bool">false</state>
 					<pos-norm type="double">0</pos-norm>
-				</landing-light>
-				<landing-light n="1">
+				</landing>
+				<landing n="1">
 					<state type="bool">false</state>
 					<pos-norm type="double">0</pos-norm>
-				</landing-light>
+				</landing>
 			</lights>
 		</model>
 		<multiplay>

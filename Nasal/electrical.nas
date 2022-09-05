@@ -290,13 +290,13 @@ var update_virtual_bus = func(dt,totalVolt){
 	
 	if(totalVolt>vcutoff){
 		# Nav Lights Power
-		if ( getprop("/controls/switches/light_position-click")  and getprop("/controls/electric/circuitbreaker/cb_3_3")) {
+		if ( getprop("/controls/lighting/nav-lights")  and getprop("/controls/electric/circuitbreaker/cb_3_3")) {
 			setprop("/systems/electrical/outputs/position-lights", totalVolt);
-			setprop("/controls/lighting/nav-lights", 1);
+			setprop("/sim/model/lights/nav/state", 1);
 			load += 3;
 		} else {
 			setprop("/systems/electrical/outputs/position-lights", 0.0);
-			setprop("/controls/lighting/nav-lights", 0);
+			setprop("/sim/model/lights/nav/state", 0);
 		}
 
 		# Trim Power
@@ -310,13 +310,13 @@ var update_virtual_bus = func(dt,totalVolt){
 		}
 		
 		# Left landing Light Power
-		if ( getprop("/controls/lighting/landing-light[0]") and getprop("/sim/model/lights/landing-light[0]/pos-norm") > 0 and getprop("/controls/electric/circuitbreaker/cb_3_2")) {
+		if ( getprop("/controls/lighting/landing-light[0]") and getprop("/sim/model/lights/landing[0]/pos-norm") > 0 and getprop("/controls/electric/circuitbreaker/cb_3_2")) {
 			setprop("/systems/electrical/outputs/landing-lights-L", totalVolt);
-			setprop("/sim/model/lights/landing-light[0]/state", 1);
+			setprop("/sim/model/lights/landing[0]/state", 1);
 			load += 9;
 		} else {
 			setprop("/systems/electrical/outputs/landing-lights-L", 0.0);
-			setprop("/sim/model/lights/landing-light[0]/state", 0);
+			setprop("/sim/model/lights/landing[0]/state", 0);
 		}
 		
 		# Left landing Light Power
@@ -330,13 +330,13 @@ var update_virtual_bus = func(dt,totalVolt){
 		}
 		
 		# Beacon Lights Power
-		if ( getprop("/controls/switches/light_beacon-click")  and getprop("/controls/electric/circuitbreaker/cb_3_3")) {
+		if ( getprop("/controls/lighting/beacon")  and getprop("/controls/electric/circuitbreaker/cb_3_3")) {
 			setprop("/systems/electrical/outputs/beacon-lights", totalVolt);
-			setprop("/controls/lighting/beacon", 1);
+			setprop("/sim/model/lights/beacon/powered", 1);
 			load += 3;
 		} else {
 			setprop("/systems/electrical/outputs/beacon-lights", 0.0);
-			setprop("/controls/lighting/beacon", 0);
+			setprop("/sim/model/lights/beacon/powered", 0);
 		}
 		
 		# Deice Power
@@ -452,13 +452,13 @@ var update_virtual_bus = func(dt,totalVolt){
 		}
 		
 		# Right landing Light Power
-		if ( getprop("/controls/lighting/landing-light[1]") and getprop("/sim/model/lights/landing-light[0]/pos-norm") > 0 and getprop("/controls/electric/circuitbreaker/cb_3_7")) {
+		if ( getprop("/controls/lighting/landing-light[1]") and getprop("/sim/model/lights/landing[0]/pos-norm") > 0 and getprop("/controls/electric/circuitbreaker/cb_3_7")) {
 			setprop("/systems/electrical/outputs/landing-lights-R", totalVolt);
-			setprop("/sim/model/lights/landing-light[1]/state", 1);
+			setprop("/sim/model/lights/landing[1]/state", 1);
 			load += 6;
 		} else {
 			setprop("/systems/electrical/outputs/landing-lights-R", 0.0);
-			setprop("/sim/model/lights/landing-light[1]/state", 0);
+			setprop("/sim/model/lights/landing[1]/state", 0);
 		}
 
 		# Right landing Light Power
@@ -472,13 +472,13 @@ var update_virtual_bus = func(dt,totalVolt){
 		}
 
 		# Strobe Lights Power
-		if ( getprop("/controls/switches/light_strobe-click")  and getprop("/controls/electric/circuitbreaker/cb_3_6")) {
+		if ( getprop("/controls/lighting/strobe")  and getprop("/controls/electric/circuitbreaker/cb_3_6")) {
 			setprop("/systems/electrical/outputs/strobe-lights", totalVolt);
-			setprop("/controls/lighting/strobe", 1);
+			setprop("/sim/model/lights/strobe/powered", 1);
 			load += 6;
 		} else {
 			setprop("/systems/electrical/outputs/strobe-lights", 0.0);
-			setprop("/controls/lighting/strobe", 0);
+			setprop("/sim/model/lights/strobe/powered", 0);
 		}
 		
 		# Instruments Lights Power
@@ -527,15 +527,15 @@ var update_virtual_bus = func(dt,totalVolt){
 		}
 	}else{
 		setprop("/systems/electrical/outputs/position-lights", 0.0);
-		setprop("/controls/lighting/nav-lights", 0);
+		setprop("/sim/model/lights/nav/state", 0);
 		setprop("/systems/electrical/outputs/stab-trim", 0.0);
 		setprop("/instrumentation/trim/serviceable", 0);
 		setprop("/systems/electrical/outputs/landing-lights-L", 0.0);
-		setprop("/controls/lighting/landing-lights-L", 0);
+		setprop("/sim/model/lights/landing[0]/state", 0);
 		setprop("/systems/electrical/outputs/pos-landing-lights-L", 0.0);
 		setprop("/controls/lighting/pos-landing-lights-L-serviceable", 0);
 		setprop("/systems/electrical/outputs/beacon-lights", 0.0);
-		setprop("/controls/lighting/beacon", 0);
+		setprop("/sim/model/lights/beacon/powered", 0);
 		setprop("/systems/electrical/outputs/stall-warn", 0.0);
 		setprop("/instrumentation/annunciators/stall-warning/serviceable", 0);
 		setprop("/systems/electrical/outputs/heading-indicator", 0.0);
@@ -559,11 +559,11 @@ var update_virtual_bus = func(dt,totalVolt){
 		setprop("/systems/electrical/outputs/cabin-lights", 0.0);
 		setprop("/controls/lighting/light_cabin", 0);
 		setprop("/systems/electrical/outputs/landing-lights-R", 0.0);
-		setprop("/controls/lighting/landing-lights-R", 0);
+		setprop("/sim/model/lights/landing[1]/state", 0);
 		setprop("/systems/electrical/outputs/pos-landing-lights-R", 0.0);
 		setprop("/controls/lighting/pos-landing-lights-R-serviceable", 0);
 		setprop("/systems/electrical/outputs/strobe-lights", 0.0);
-		setprop("/controls/lighting/strobe", 0);
+		setprop("/sim/model/lights/strobe/powered", 0);
 		setprop("/systems/electrical/outputs/instr-lights", 0.0);
 		setprop("/systems/electrical/outputs/instrument-lights-norm", 0);
 		setprop("/systems/electrical/outputs/turn-coordinator", 0.0);

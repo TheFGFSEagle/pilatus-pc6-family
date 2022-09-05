@@ -386,7 +386,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>sim/model/lights/landing-light[1]/pos-norm</property>
+				<property>sim/model/lights/landing[1]/pos-norm</property>
 				<factor>0.02</factor>
 				<min>0</min>
 				<max>1</max>
@@ -471,7 +471,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>sim/model/lights/landing-light[0]/pos-norm</property>
+				<property>sim/model/lights/landing[0]/pos-norm</property>
 				<factor>0.02</factor>
 				<min>0</min>
 				<max>1</max>
@@ -515,9 +515,9 @@
 	
 	<!--beacon light interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>light_beacon.lever</object-name>
-		<property>controls/switches/light_beacon-click</property>
+		<property>controls/lighting/beacon</property>
 		<factor>-60</factor>
 		<axis>
 			<x1-m>0.068</x1-m>
@@ -527,16 +527,10 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.053</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>light_beacon.lever</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/switches/light_beacon-click</property>
+				<property>controls/lighting/beacon</property>
 			</binding>
 			<binding>
 				<command>property-toggle</command>
@@ -547,9 +541,9 @@
 	
 	<!--position light interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>light_position.lever</object-name>
-		<property>controls/switches/light_position-click</property>
+		<property>controls/lighting/nav-lights</property>
 		<factor>-60</factor>
 		<axis>
 			<x1-m>0.068</x1-m>
@@ -559,16 +553,10 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.053</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>light_position.lever</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/switches/light_position-click</property>
+				<property>controls/lighting/nav-lights</property>
 			</binding>
 			<binding>
 				<command>property-toggle</command>
@@ -579,9 +567,9 @@
 	
 	<!--strobe light interrupt-->
 	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>light_strobe.lever</object-name>
-		<property>controls/switches/light_strobe-click</property>
+		<property>controls/lighting/strobe</property>
 		<factor>-60</factor>
 		<axis>
 			<x1-m>0.068</x1-m>
@@ -591,16 +579,10 @@
 			<y2-m>0.006</y2-m>
 			<z2-m>-0.053</z2-m>
 		</axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>light_strobe.lever</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/switches/light_strobe-click</property>
+				<property>controls/lighting/strobe</property>
 			</binding>
 			<binding>
 				<command>property-toggle</command>

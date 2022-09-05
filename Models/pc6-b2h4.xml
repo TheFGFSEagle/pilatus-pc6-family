@@ -4,7 +4,7 @@
 
 <PropertyList>
 	
-	<path>pc6-b2h2.ac</path>
+	<path>pc6-b2h4.ac</path>
 	<nasal>
 		<load><![CDATA[
 var rplayer = cmdarg();
@@ -955,8 +955,8 @@ livery_update.stop();
 
 	<animation>
 		<type>knob</type>
-		<object-name>EngineControlsPropellerPitchLever</object-name>
-		<property>controls/engines/engine/propeller-pitch</property>
+		<object-name>EngineControlsPropellerFeatherLever</object-name>
+		<property>controls/engines/engine/propeller-feather</property>
 		<factor>70</factor>
 		<center>
 			<x-m>3.0663</x-m>
@@ -970,11 +970,8 @@ livery_update.stop();
 		</axis>
 		<action>
 			<binding>
-				<command>property-adjust</command>
-				<property>controls/engines/engine/propeller-pitch</property>
-				<factor>0.01</factor>
-				<min>0</min>
-				<max>1</max>
+				<command>property-toggle</command>
+				<property>controls/engines/engine/propeller-feather</property>
 			</binding>  
 		</action>
 	</animation>
@@ -1209,8 +1206,8 @@ livery_update.stop();
 		<type>rotate</type>
 		<object-name>LightLandingLeftCase</object-name>
 		<object-name>LightLandingLeftGlass</object-name>
-		<object-name>LightLandingLeft</object-name>
-		<property>sim/model/lights/landing-light[0]/pos-norm</property>
+		<object-name>LightLandingLeftLamp</object-name>
+		<property>sim/model/lights/landing[0]/pos-norm</property>
 		<factor>90</factor>
 		<center>
 			<x-m>4.17155</x-m>
@@ -1228,8 +1225,8 @@ livery_update.stop();
 		<type>rotate</type>
 		<object-name>LightLandingRightCase</object-name>
 		<object-name>LightLandingRightGlass</object-name>
-		<object-name>LightLandingRight</object-name>
-		<property>sim/model/lights/landing-light[1]/pos-norm</property>
+		<object-name>LightLandingRightLamp</object-name>
+		<property>sim/model/lights/landing[1]/pos-norm</property>
 		<factor>90.0</factor>
 		<center>
 			<x-m>4.17155</x-m>
@@ -2863,7 +2860,7 @@ livery_update.stop();
 
 	<!-- Registration (left) -->
 	<model>
-		<path>Models/registration.xml</path>
+		<path>registration.xml</path>
 		<offsets>
 			<x-m>7.66</x-m>
 			<y-m>-0.45</y-m>
@@ -2882,7 +2879,7 @@ livery_update.stop();
 
 	<!-- Registration (right) -->
 	<model>
-		<path>Models/registration.xml</path>
+		<path>registration.xml</path>
 		<offsets>
 			<x-m>7.66</x-m>
 			<y-m>0.45</y-m>
@@ -2901,7 +2898,7 @@ livery_update.stop();
 
 	<!-- Registration (wing) -->
 	<model>
-		<path>Models/registration.xml</path>
+		<path>registration.xml</path>
 		<offsets>
 			<x-m>4.25</x-m>
 			<y-m>-5.3</y-m>
@@ -2920,7 +2917,7 @@ livery_update.stop();
 
 	<!-- Registration (cockpit panel) Left -->
 	<model>
-		<path>Models/registration.xml</path>
+		<path>registration.xml</path>
 		<offsets>
 			<x-m>2.994</x-m>
 			<y-m>-0.487</y-m>
@@ -2941,7 +2938,7 @@ livery_update.stop();
 	
 	<!-- Registration (cockpit panel) Right -->
 	<model>
-		<path>Models/registration.xml</path>
+		<path>registration.xml</path>
 		<offsets>
 			<x-m>2.9915</x-m>
 			<y-m>0.428</y-m>
@@ -2961,8 +2958,7 @@ livery_update.stop();
 	</model>
 	
 	<model>
-		<path>Models/Lights/RedNavLight.xml</path>
-		<name>Left Nav Light</name>
+		<path>Lights/nav-light-left.xml</path>
 		<offsets>
 			<x-m>4.37</x-m>
 			<y-m>-8.42</y-m>
@@ -2971,8 +2967,7 @@ livery_update.stop();
 	</model>
 
 	<model>
-		<path>Models/Lights/GreenNavLight.xml</path>
-		<name>Right Nav Light</name>
+		<path>Lights/nav-light-right.xml</path>
 		<offsets>
 			<x-m>4.37</x-m>
 			<y-m>8.42</y-m>
@@ -2980,10 +2975,8 @@ livery_update.stop();
 		</offsets>
 	</model>
 
-	<!-- Rear Nav Light-->
 	<model>
-		<path>Models/Lights/WhiteLight.xml</path>
-		<name>Rear Nav Light</name>
+		<path>Lights/nav-light-tail.xml</path>
 		<offsets>
 			<x-m>10.67</x-m>
 			<y-m>0</y-m>
@@ -2992,8 +2985,8 @@ livery_update.stop();
 	</model>
 
 	<model>
-		<path>Models/Lights/StrobeLight.xml</path>
-		<name>StrobeLight</name>
+		<path>Lights/strobe-light.xml</path>
+		<name>LightStrobeLamp</name>
 		<offsets>
 			<x-m>5.546</x-m>
 			<y-m>0</y-m>
@@ -3002,147 +2995,68 @@ livery_update.stop();
 	</model>
 	<animation>
 		<type>material</type>
-		<object-name>LightStrobe</object-name>
+		<object-name>LightStrobeGlass</object-name>
 		<emission>
 			<red>1.0</red>
 			<green>1.0</green>
 			<blue>1.0</blue>
-			<factor-prop>sim/model/Lights/strobe/state</factor-prop>
+			<factor-prop>sim/model/lights/strobe/state</factor-prop>
 		</emission>
 	</animation>
 	
-	<light>
-		<name>LightLandingLeft</name>
-		<type>spot</type>
-		<position>
-			<x-m>4.26</x-m>
-			<y-m>-6.7</y-m>
-			<z-m>0.82</z-m>
-		</position>
-		<direction>
-			<x>0</x>
-			<y>0</y>
-			<z>-1</z>
-		</direction>
-		<ambient>
-			<r>0</r>
-			<g>0</g>
-			<b>0</b>
-			<a>0</a>
-		</ambient>
-		<diffuse>
-			<r>1.00</r>
-			<g>0.95</g>
-			<b>0.95</b>
-			<a>0</a>
-		</diffuse>
-		<specular>
-			<r>1.00</r>
-			<g>0.95</g>
-			<b>0.95</b>
-			<a>0</a>
-		</specular>
-		<attenuation>
-			<c>0.2</c>
-			<l>0</l>
-			<q>0.00001</q>
-		</attenuation>
-		<spot-exponent>5</spot-exponent>
-		<spot-cutoff>80</spot-cutoff>
-		<range-m>500</range-m>
-		<dim-factor>
-			<property>sim/model/lights/landing-light[0]/state</property>
-		</dim-factor>
-	</light>
-	<light>
-		<name>LightLandingRight</name>
-		<type>spot</type>
-		<position>
-			<x-m>4.26</x-m>
-			<y-m>6.7</y-m>
-			<z-m>0.82</z-m>
-		</position>
-		<direction>
-			<x>0</x>
-			<y>0</y>
-			<z>-1</z>
-		</direction>
-		<ambient>
-			<r>0</r>
-			<g>0</g>
-			<b>0</b>
-			<a>0</a>
-		</ambient>
-		<diffuse>
-			<r>1.00</r>
-			<g>0.95</g>
-			<b>0.95</b>
-			<a>0</a>
-		</diffuse>
-		<specular>
-			<r>1.00</r>
-			<g>0.95</g>
-			<b>0.95</b>
-			<a>0</a>
-		</specular>
-		<attenuation>
-			<c>0.2</c>
-			<l>0</l>
-			<q>0.00001</q>
-		</attenuation>
-		<spot-exponent>5</spot-exponent>
-		<spot-cutoff>80</spot-cutoff>
-		<range-m>500</range-m>
-		<dim-factor>
-			<property>sim/model/lights/landing-light[1]/state</property>
-		</dim-factor>
-	</light>
-	
 	<model>
-		<path>Models/Lights/LandingLight.xml</path>
+		<path>Lights/landing-light-left.xml</path>
 		<name>LightLandingLeftLamp</name>
 		<offsets>
 			<x-m>4.26</x-m>
-			<y-m>-6.70</y-m>
-			<z-m>0.82</z-m>
+			<y-m>-6.7</y-m>
+			<z-m>0.805</z-m>
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Lights/LandingLight.xml</path>
+		<path>Lights/landing-light-right.xml</path>
 		<name>LightLandingRightLamp</name>
 		<offsets>
 			<x-m>4.26</x-m>
-			<y-m>6.70</y-m>
-			<z-m>0.82</z-m>
+			<y-m>6.7</y-m>
+			<z-m>0.805</z-m>
 		</offsets>
 	</model>
 	
 	<animation>
-		<type>select</type>
-		<object-name>LightLandingLeft</object-name>
-		<object-name>LightLandingLeftLamp</object-name>
-		<condition>
-			<greater-than>
-				<property>sim/model/lights/landing-light[0]/pos-norm</property>
-				<value>0</value>
-			</greater-than>
-		</condition>
+		<type>material</type>
+		<object-name>LightLandingLeftGlass</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+			<factor-prop>sim/model/lights/landing[0]/state</factor-prop>
+		</emission>
 	</animation>
 	<animation>
-		<type>select</type>
-		<object-name>LightLandingRight</object-name>
-		<object-name>LightLandingRightLamp</object-name>
-		<condition>
-			<greater-than>
-				<property>sim/model/lights/landing-light[1]/pos-norm</property>
-				<value>0</value>
-			</greater-than>
-		</condition>
+		<type>material</type>
+		<object-name>LightLandingRightGlass</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+			<factor-prop>sim/model/lights/landing[1]/state</factor-prop>
+		</emission>
 	</animation>
+	
+	<model>
+		<path>Lights/beacon-light.xml</path>
+		<name>LightBeaconLamp</name>
+		<offsets>
+			<x-m>4.296</x-m>
+			<y-m>0</y-m>
+			<z-m>0.984</z-m>
+		</offsets>
+	</model>
 	
 	<animation>
 		<type>material</type>
-		<object-name>LightBeacon</object-name>
+		<object-name>LightBeaconGlass</object-name>
 		<emission>
 			<red>1.0</red>
 			<green>0.0</green>

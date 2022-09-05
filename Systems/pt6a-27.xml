@@ -40,31 +40,6 @@
 				<max>86</max>
 			</clipto>
 		</fcs_function>
-		
-		<switch>
-			<default value="0"/>
-			<test value="1">
-				fcs/advance-cmd-norm LT 0.4
-			</test>
-			<output>/controls/engines/engine/propeller-feather</output>
-		</switch>
-		
-		<fcs_function>
-			<function>
-				<ifthen>
-					<property>fcs/feather-pos-norm</property>
-					<value>0</value>
-					<table>
-						<independentVar lookup="row">fcs/advance-cmd-norm</independentVar>
-						<tableData>
-							0.4	0
-							1	1
-						</tableData>
-					</table>
-				</ifthen>
-			</function>
-			<output>fcs/advance-pos-norm</output>
-		</fcs_function>
 	</channel>
 	
 	<channel name="Engine">		

@@ -5,8 +5,8 @@ var init = func {
 }
 
 #activation des timers pour les lumieres clignotantes
-var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0.05, 0.05, 0.05, 1 ], "/controls/lighting/beacon" );
-var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0.05, 0.05, 0.05, 0.05, 0.05, 0.35 ], "/controls/lighting/strobe" );
+var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0.05, 0.05, 0.05, 1 ], "/sim/model/lights/beacon/powered" );
+var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0.05, 0.05, 0.05, 0.05, 0.05, 0.35 ], "/sim/model/lights/strobe/powered" );
 
 # Setup listener call to start update loop once the fdm is initialized
 setlistener("sim/signals/fdm-initialized", init);

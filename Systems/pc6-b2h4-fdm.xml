@@ -185,7 +185,7 @@
 	</mass_balance>
 	
 	<propulsion>
-		<engine file="Pratt-Whitney-PT6A-20">
+		<engine file="Pratt-Whitney-PT6A-27">
 			<!--<location unit="IN">
 				<x>85.1</x>
 				<y>0</y>
@@ -666,7 +666,7 @@
 		</channel>
 	</flight_control>
 	
-	<system file="pt6a-20"/>
+	<system file="pt6a-27"/>
 	
 	<hysteresis_limits unit="DEG">
 		<min>5</min>

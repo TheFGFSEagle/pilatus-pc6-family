@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 
-<turboprop_engine name="Pratt-Whitney-PT6A-20">
+<turboprop_engine name="Pratt-Whitney-PT6A-27">
 	<milthrust unit="LBS">1232</milthrust>
 	<idlen1>50.6</idlen1>
-	<idlen2>18750</idlen2>
 	<maxn1>110</maxn1>
 	<maxpower unit="HP">550</maxpower>
 	<psfc unit="LBS/HR/HP">0.5</psfc>
@@ -11,8 +10,8 @@
 	<maxstartingtime>30</maxstartingtime>
 	<startern1>20</startern1>
 	<!--<ielumaxtorque unit="FT*LB">1386.5</ielumaxtorque>-->
-	<itt_delay>3</itt_delay>
-	<betarangeend>30</betarangeend>
+	<itt_delay>0.5</itt_delay>
+	<betarangeend>0.1</betarangeend>
 	<reversemaxpower>100</reversemaxpower>
 
 	<function name="EnginePowerVC">
@@ -37,13 +36,13 @@
 	<table name="EnginePowerRPM_N1" type="internal">
 		<description> Engine Power, function of RPM and N1 </description>
 		<tableData>
-						0		5		60		86		110
-			0.0			0.0		0.4		0.4		0.4		0.4
-			811.4		0.0		0.4		25.9	148.1	459
-	 		1214.9		0.0		0.4		22.2	170.3	503.4
-			1620.6		0.0		0.4		3.7		177.7	533
-	 		2026.3		0.0		0.1		0.1		166.5	551.5
-			2200		0.0		0.1		0.1		151.7	550
+						0		60		86		110
+			0			0		0.4		0.4		0.4
+			811.4		0		25.9	148.1	459
+	 		1214.9		0		22.2	170.3	503.4
+			1620.6		0		3.7		177.7	533
+	 		2026.3		0		0.1		166.5	551.5
+			2200		0		0.1		151.7	550
 		</tableData>
 	</table>
 

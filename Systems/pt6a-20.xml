@@ -27,7 +27,7 @@
 							<property>propulsion/engine/blade-angle</property>
 							<product>
 								<property>simulation/channel-dt</property>
-								<value>5</value>
+								<value>10</value>
 							</product>
 						</sum>
 						<property>propulsion/engine/blade-angle</property>
@@ -46,8 +46,7 @@
 			<test value="1">
 				fcs/advance-cmd-norm LT 0.4
 			</test>
-			<output>fcs/feather-cmd-norm</output>
-			<output>fcs/feather-pos-norm</output>
+			<output>/controls/engines/engine/propeller-feather</output>
 		</switch>
 		
 		<fcs_function>

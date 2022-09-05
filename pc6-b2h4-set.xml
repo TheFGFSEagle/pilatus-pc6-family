@@ -67,10 +67,13 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 			<tag>turboprop</tag>
 			<tag>variable-pitch</tag>
 		</tags>
-		<startup>
-			<splash-texture>splash.png</splash-texture>
-			<splash-title>Pilatus PC6 B2/H4 "Turbo Porter"</splash-title>
-		</startup>
+		<previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/runway-threshold-at-night.png</path>
+			</preview>
+		</previews>
 		<systems>
 			<electrical>
 				<path>Systems/electrical.xml</path>

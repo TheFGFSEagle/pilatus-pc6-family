@@ -26613,7 +26613,7 @@ refs 3
 95 0.053153 0.172524
 kids 0
 OBJECT poly
-name "EngineControlsPropellerPitchLever"
+name "EngineControlsPropellerFeatherLever"
 data 17
 tige_feather.mesh
 crease 45.0

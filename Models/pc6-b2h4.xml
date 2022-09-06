@@ -957,7 +957,8 @@ livery_update.stop();
 		<type>knob</type>
 		<object-name>EngineControlsPropellerFeatherLever</object-name>
 		<property>controls/engines/engine/propeller-feather</property>
-		<factor>70</factor>
+		<factor>-70</factor>
+		<offset>70</offset>
 		<center>
 			<x-m>3.0663</x-m>
 			<y-m>0.827828</y-m>
@@ -1419,7 +1420,8 @@ livery_update.stop();
 		<axis>
 			<object-name>GearCylinderTailAxis</object-name>
 		</axis>
-		<property>gear/gear[2]/steering-angle-deg</property>
+		<property>gear/gear[2]/steering-norm</property>
+		<factor>25</factor>
 	</animation>
 
 	<animation>

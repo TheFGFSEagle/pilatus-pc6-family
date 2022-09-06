@@ -73,6 +73,11 @@ Decembre 2010 - Mars 2011	Cheney Jean-Pierre
 				<splash type="bool">true</splash>
 				<path>Previews/runway-threshold-at-night.png</path>
 			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/parked-fog-rain.png</path>
+			</preview>
 		</previews>
 		<systems>
 			<electrical>

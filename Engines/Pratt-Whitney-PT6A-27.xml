@@ -12,7 +12,7 @@
 	<!--<ielumaxtorque unit="FT*LB">1386.5</ielumaxtorque>-->
 	<itt_delay>0.5</itt_delay>
 	<betarangeend>0.1</betarangeend>
-	<reversemaxpower>100</reversemaxpower>
+	<reversemaxpower>500</reversemaxpower>
 
 	<function name="EnginePowerVC">
 		<table>

@@ -1301,16 +1301,16 @@ livery_update.stop();
 		<property>gear/gear[0]/compression-ft</property>
 		<interpolation>
 			<entry>
-				<ind>0.0</ind>
-				<dep>6.0</dep>
-			</entry>
-			<entry>
-				<ind>0.50</ind>
-				<dep>-2.0</dep>
-			</entry>
-			<entry>
-				<ind>1.00</ind>
+				<ind>0</ind>
 				<dep>-6.0</dep>
+			</entry>
+			<entry>
+				<ind>0.25</ind>
+				<dep>2.0</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>6.0</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -1324,16 +1324,16 @@ livery_update.stop();
 		<property>gear/gear[0]/compression-ft</property>
 		<interpolation>
 			<entry>
-				<ind>0.0</ind>
-				<dep>2.0</dep>
+				<ind>0</ind>
+				<dep>-2.0</dep>
+			</entry>
+			<entry>
+				<ind>0.25</ind>
+				<dep>1.0</dep>
 			</entry>
 			<entry>
 				<ind>0.5</ind>
-				<dep>-1.0</dep>
-			</entry>
-			<entry>
-				<ind>1.00</ind>
-				<dep>-3.0</dep>
+				<dep>3.0</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -1362,15 +1362,15 @@ livery_update.stop();
 		<property>gear/gear[1]/compression-ft</property>
 		<interpolation>
 			<entry>
-				<ind>0.0</ind>
+				<ind>0</ind>
 				<dep>6.0</dep>
 			</entry>
 			<entry>
-				<ind>0.50</ind>
+				<ind>0.25</ind>
 				<dep>-2.0</dep>
 			</entry>
 			<entry>
-				<ind>1.00</ind>
+				<ind>0.5</ind>
 				<dep>-6.0</dep>
 			</entry>
 		</interpolation>
@@ -1385,15 +1385,15 @@ livery_update.stop();
 		<property>gear/gear[1]/compression-ft</property>
 		<interpolation>
 			<entry>
-				<ind>0.0</ind>
+				<ind>0</ind>
 				<dep>2.0</dep>
 			</entry>
 			<entry>
-				<ind>0.5</ind>
+				<ind>0.25</ind>
 				<dep>-1.0</dep>
 			</entry>
 			<entry>
-				<ind>1.00</ind>
+				<ind>0.5</ind>
 				<dep>-3.0</dep>
 			</entry>
 		</interpolation>
@@ -1431,6 +1431,7 @@ livery_update.stop();
 			<object-name>GearCylinderTailAxis</object-name>
 		</axis>
 		<property>gear/gear[2]/compression-ft</property>
+		<factor>0.328</factor>
 	</animation>
 
 	<animation>
@@ -1443,7 +1444,16 @@ livery_update.stop();
 			<object-name>GearTorqueLinkTailLowerAxis</object-name>
 		</axis>
 		<property>gear/gear[2]/compression-ft</property>
-		<factor>-50</factor>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.328</ind>
+				<dep>17</dep>
+			</entry>
+		</interpolation>
 	</animation>
 
 	<animation>

@@ -64,6 +64,18 @@
 				<property>sim/sound/switch</property>
 			</binding>
 		</action>
+		<increase>
+			<condition>
+				<not>
+					<property>controls/electric/battery-switch</property>
+				</not>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electric/battery-generator-switch-lock</property>
+				<value type="bool">false</value>
+			</binding>
+		</increase>
 	</animation>
 	
 	<!--generator interrupt-->
@@ -102,6 +114,18 @@
 				<property>sim/sound/switch</property>
 			</binding>
 		</action>
+		<increase>
+			<condition>
+				<not>
+					<property>controls/electric/engine/generator</property>
+				</not>
+			</condition>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electric/battery-generator-switch-lock</property>
+				<value type="bool">false</value>
+			</binding>
+		</increase>
 	</animation>
 	
 	<!--gen reset interrupt-->

@@ -853,22 +853,25 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>aero/function/kCDge</property>
-					<table>
-						<independentVar lookup="row">aero/alpha-deg</independentVar>
-						<independentVar lookup="column">aero/beta-deg</independentVar>
-						<tableData>
-									-30.0		-10.0		0.0			10.0		30.0
-							-15.0	0.105372	0.067236	0.061691	0.066488	0.106254
-							-10.0	0.094946	0.035465	0.028419	0.035311	0.095512
-							-5.0	0.066179	0.021267	0.015280	0.021192	0.059074
-							0.0		0.065606	0.028282	0.021708	0.028377	0.082998
-							5.0		0.097108	0.056710	0.047297	0.057240	0.093072
-							10.0	0.136603	0.103010	0.096801	0.103093	0.138841
-							15.0	0.187837	0.204792	0.202854	0.205557	0.188804
-							20.0	0.282659	0.362847	0.364710	0.362697	0.286567
-							30.0	0.562146	0.826619	0.852779	0.825548	0.563887
-						</tableData>
-					</table>
+					<sum>
+						<table>
+							<independentVar lookup="row">aero/alpha-deg</independentVar>
+							<independentVar lookup="column">aero/beta-deg</independentVar>
+							<tableData>
+										-30.0		-10.0		0.0			10.0		30.0
+								-15.0	0.105372	0.067236	0.061691	0.066488	0.106254
+								-10.0	0.094946	0.035465	0.028419	0.035311	0.095512
+								-5.0	0.066179	0.021267	0.015280	0.021192	0.059074
+								0.0		0.065606	0.028282	0.021708	0.028377	0.082998
+								5.0		0.097108	0.056710	0.047297	0.057240	0.093072
+								10.0	0.136603	0.103010	0.096801	0.103093	0.138841
+								15.0	0.187837	0.204792	0.202854	0.205557	0.188804
+								20.0	0.282659	0.362847	0.364710	0.362697	0.286567
+								30.0	0.562146	0.826619	0.852779	0.825548	0.563887
+							</tableData>
+						</table>
+						<value>0.0143632</value> <!-- correction term for incorrect OpenVSP drag -->
+					</sum>
 				</product>
 			</function>
 			
@@ -929,7 +932,7 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
-					<value>0.004</value>
+					<value>0.0055</value>
 				</product>
 			</function>
 

@@ -139,7 +139,7 @@ var update_annunciators=func{
 #				setprop("/sim/alarms/annunciator.light_2_4",1);
 #			}
 			
-			var low_pitch_prop = getprop("/engines/engine/thruster/pitch-deg") < 0.5;
+			var low_pitch_prop = getprop("/engines/engine/thruster/pitch") < 0.5;
 			var wow1 = getprop("/gear/gear[0]/wow");
 			var wow2 = getprop("/gear/gear[1]/wow");
 			if(low_pitch_prop and !wow1 and !wow2){

@@ -116,20 +116,28 @@ var terrain_lookup = func {
 
 setlistener("/sim/signals/fdm-initialized", terrain_lookup);
 
+var check_vne_flaps_flag = 0;
 var check_vne_flaps = func{
-	var kias = getprop("velocities/airspeed-kt");
-	var flaps = getprop("/controls/flight/flaps");
-	if (kias != nil and kias > 95 and flaps != nil and flaps > 0) {
+	var kias = getprop("velocities/airspeed-kt") or 0;
+	var flaps = getprop("/controls/flight/flaps") or 0;
+	if (kias > 95 and flaps > 0 and check_vne_flaps_flag == 0) {
 		#setprop("/sim/failure-manager/controls/flight/flaps/serviceable",0);
-		setprop("/sim/messages/copilot","Vfe exceeded");
+		setprop("/sim/messages/copilot","Vfe exceeded !");
+		check_vne_flaps_flag = 1;
+	} else if (kias <= 95 or flaps == 0) {
+		check_vne_flaps_flag = 0;
 	}
 }
 
+var check_vne_structure_flag = 0;
 var	check_vne_structure = func{
-	var kias = getprop("velocities/airspeed-kt");
-	if (kias != nil and kias > 151) {
+	var kias = getprop("velocities/airspeed-kt") or 0;
+	if (kias > 151 and check_vne_structure_flag == 0) {
 		#setprop("/sim/sound/crash",1);
-		setprop("/sim/messages/copilot","VNE exceeded");
+		setprop("/sim/messages/copilot","Vne exceeded !");
+		check_vne_structure_flag = 1;
+	} else if (kias <= 151) {
+		check_vne_structure_flag = 0;
 	}
 }
 

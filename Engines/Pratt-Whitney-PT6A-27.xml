@@ -1,15 +1,12 @@
-<?xml version="1.0"?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <turboprop_engine name="Pratt-Whitney-PT6A-27">
-	<milthrust unit="LBS">1232</milthrust>
 	<idlen1>50.6</idlen1>
-	<maxn1>110</maxn1>
+	<maxn1>100</maxn1>
 	<maxpower unit="HP">550</maxpower>
-	<psfc unit="LBS/HR/HP">0.5</psfc>
+	<psfc unit="LBS/HR/HP">1</psfc>
 	<n1idle_max_delay>1.5</n1idle_max_delay>
 	<maxstartingtime>30</maxstartingtime>
 	<startern1>20</startern1>
-	<!--<ielumaxtorque unit="FT*LB">1386.5</ielumaxtorque>-->
 	<itt_delay>0.5</itt_delay>
 	<betarangeend>0.1</betarangeend>
 	<reversemaxpower>500</reversemaxpower>
@@ -51,8 +48,11 @@
 		<tableData>
 					0		1
 			0		0		0
-			15		130	130
-			110	400	1200
+			20		200	200
+			25		1090	1090
+			30		750	750
+			50		150	150
+			100	300	750
 		</tableData>
 	</table>
 

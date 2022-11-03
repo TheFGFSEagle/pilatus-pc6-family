@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
-
 <PropertyList>
-
-<path>turn-gauge.ac</path>
+	<path>turn-gauge.ac</path>
 
     <animation>
         <type>material</type>
@@ -51,5 +49,4 @@
             <z-m>0.036</z-m>
         </center>
     </animation>
-
 </PropertyList>

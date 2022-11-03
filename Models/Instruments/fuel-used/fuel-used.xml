@@ -32,11 +32,6 @@ Syd Adams
 				<property>instrumentation/fuel-used-indicator/reset-pressed</property>
 				<value type="bool">true</value>
 			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>instrumentation/fuel-used-indicator/indicated-fuel-used-lbs</property>
-				<value>0</value>
-			</binding>
 		</action>
 		<release>
 			<binding>

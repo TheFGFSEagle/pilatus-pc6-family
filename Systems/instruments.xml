@@ -28,6 +28,11 @@
 		<type>gain</type>
 		<enable>/instrumentation/fuel-used-indicator/serviceable</enable>
 		<input>
+			<condition>
+				<not>
+					<property>instrumentation/fuel-used-indicator/reset-pressed</property>
+				</not>
+			</condition>
 			<expression>
 				<sum>
 					<property>/instrumentation/fuel-used-indicator/indicated-fuel-used-lbs</property>
@@ -37,7 +42,7 @@
 							<!-- pph to pps -->
 							<value>3600</value>
 						</div>
-						<property>/sim/time/dt</property>
+						<property>/sim/time/delta-sec</property>
 					</product>
 				</sum>
 			</expression>
